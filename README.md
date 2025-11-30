@@ -3,7 +3,7 @@
 Scripts to ingest text into a simple neuron/edge graph, persist it (SQLite/Postgres), query it from the CLI, and serve a tiny HTTP API.
 
 ## What this project can do
-- Turn text files into “neurons” (tokens) with edges linking tokens in sequence and bridging across files.
+- Turn text files into "neurons" (tokens) with edges linking tokens in sequence and bridging across files.
 - Persist the graph to SQLite (`--sqlite-out`) or Postgres (`--pg-url`) to avoid holding everything in RAM.
 - Query by token via CLI (`query.py`) or HTTP (`graph_api.py`), including a basic natural-language-ish `/ask` endpoint.
 
@@ -64,11 +64,26 @@ Start the server:
 python3 graph_api.py --db graph.db --host 127.0.0.1 --port 8000
 ```
 Endpoints:
-- `GET /health` → `{"status":"ok"}`
+- `GET /health` -> `{"status":"ok"}`
 - `GET /query?term=foo&like=1&limit=50&neighbor_limit=200`
 - `GET /ask?text=How+do+I+work+with+sockets?&limit=50&neighbor_limit=200`
 
 `/ask` tokenizes the text, filters stopwords/short tokens, dedupes, and uses the `limit` as a total budget across tokens.
+
+## Use a local Llama as the "voice"
+Run your Llama server (OpenAI-compatible, e.g., llama.cpp `server`):
+```bash
+./server -m /path/to/model.gguf -c 4096 --port 8080  # adjust to your setup
+```
+Then ask questions with graph context:
+```bash
+python3 answer.py "How do I work with sockets in Python?" \
+  --graph-url http://127.0.0.1:8000 \
+  --llama-url http://127.0.0.1:8080/v1/chat/completions \
+  --model local-llama \
+  --neighbor-cap 50
+```
+`answer.py` hits `/ask` on the graph API to gather context, then prompts your Llama server to produce a human-readable answer.
 
 ## Working with graph.db elsewhere
 - Use `sqlite3 graph.db "SELECT COUNT(*) FROM neurons;"` or copy the DB to another project.
@@ -85,4 +100,4 @@ conn.close()
 ## Caveats
 - IDs restart at 0 each run; reuse the same sink only if you intend to overwrite matching IDs.
 - Bridge edges can grow fast; adjust `--bridge-limit` and neuron caps for large corpora.
-- `/ask` is keyword-based; for semantic search you’d add embeddings/vector search on top.
+- `/ask` is keyword-based; for semantic search you'd add embeddings/vector search on top.
