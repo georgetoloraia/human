@@ -35,3 +35,11 @@ def dict_merge(a, b):
     out.update(a or {})
     out.update(b or {})
     return out
+
+
+def map_square(values):
+    return [v * v for v in values]
+
+
+def string_reverse(s):
+    return s[::-1]

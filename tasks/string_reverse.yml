@@ -1,0 +1,11 @@
+name: string_reverse
+phase: 2
+difficulty: 2
+category: string
+target_plugin: sample_plugin.py
+target_function: string_reverse
+description: Reverse a string.
+requirements:
+  - string_reverse("abc") == "cba"
+  - string_reverse("") == ""
+  - string_reverse("a") == "a"

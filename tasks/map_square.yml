@@ -1,0 +1,11 @@
+name: map_square
+phase: 2
+difficulty: 2
+category: list
+target_plugin: sample_plugin.py
+target_function: map_square
+description: Return a list with each number squared.
+requirements:
+  - map_square([1,2,3]) == [1,4,9]
+  - map_square([]) == []
+  - map_square([-1,2]) == [1,4]
