@@ -14,6 +14,8 @@ from manager.evaluator import evaluate
 from manager.perception import observe_codebase
 from manager.task_tests import regenerate_task_tests
 from manager.curriculum import Curriculum
+from manager.tasks import load_tasks
+from manager.tasks_state import TaskStateManager
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -35,6 +37,8 @@ class Mind:
         self.brain = BrainMemory()
         self.graph = ConceptGraph()
         self.curriculum = Curriculum()
+        self.tasks = load_tasks()
+        self.task_state = TaskStateManager(self.tasks)
         self.goals = Goals(self.graph, self.curriculum)
         self.stage: int = 0
         self.last_error_type: str | None = None
@@ -90,19 +94,35 @@ class Mind:
         curiosity = 1.0 / (1.0 + growth_count)
         mastery = tests_passed - tests_failed
         stability_penalty = -abs(tests_failed)
+        tstats = self.task_state.plugin_task_stats(plugin_name)
+        task_count = tstats["task_count"]
+        avg_streak = tstats["avg_streak"]
+        failing_count = tstats["failing_count"]
+        task_need = failing_count
+        task_mastery_component = -avg_streak
+        task_drive = task_need + task_mastery_component
         if self.stage == 0:
-            w_c, w_m, w_s = 2.0, 1.0, 0.5
+            w_c, w_m, w_s, w_t = 2.0, 1.0, 0.5, 0.5
         elif self.stage == 1:
-            w_c, w_m, w_s = 1.5, 1.5, 1.0
+            w_c, w_m, w_s, w_t = 1.5, 1.5, 1.0, 1.0
         elif self.stage == 2:
-            w_c, w_m, w_s = 1.0, 2.0, 1.0
+            w_c, w_m, w_s, w_t = 1.0, 2.0, 1.0, 1.5
         else:
-            w_c, w_m, w_s = 0.8, 2.5, 1.2
-        total = w_c * curiosity + w_m * mastery + w_s * stability_penalty
+            w_c, w_m, w_s, w_t = 0.8, 2.5, 1.2, 2.0
+        total = (
+            w_c * curiosity
+            + w_m * mastery
+            + w_s * stability_penalty
+            + w_t * task_drive
+        )
         return {
             "curiosity": curiosity,
             "mastery": mastery,
             "stability_penalty": stability_penalty,
+            "task_count": task_count,
+            "task_avg_streak": avg_streak,
+            "task_failing_count": failing_count,
+            "task_drive": task_drive,
             "total": total,
         }
 
@@ -179,6 +199,7 @@ class Mind:
                 task_results[tname] = True
                 self.graph.record_task_result(tname, True)
         self.curriculum.update_results(task_results)
+        self.task_state.record_plugin_result(plugin_name, success=eval_ok, error_type=err_type)
 
         if eval_ok:
             self.brain.record_attempt(mutation_id, True)
@@ -211,6 +232,7 @@ class Mind:
             "skill": skill,
             "selected_plugins": self._last_selection_info,
             "actions": self._current_step_actions,
+            "tasks": self.task_state.summary(),
         }
         self._append_to_diary(entry)
 
