@@ -2,7 +2,7 @@ import time
 from pathlib import Path
 
 from manager.memory import BrainMemory
-from manager.generator import grow_code
+from manager.generator import propose_mutations
 from manager.safety import is_safe
 from manager.tester import run_tests
 from manager.evaluator import evaluate
@@ -39,31 +39,37 @@ def life_cycle():
             continue
 
         src = path.read_text(encoding="utf-8")
-        new_code = grow_code(src)
-        if not new_code:
-            continue
-
-        mutation_id = f"{plugin_name}:{hash(new_code)}"
-
-        if not is_safe(new_code):
-            brain.record_attempt(mutation_id, False)
-            graph.record_test_result(plugin_name, False)
+        pattern_scores = brain.pattern_scores()
+        proposals = propose_mutations(src, pattern_scores)
+        if not proposals:
             continue
 
         backup = src
-        path.write_text(new_code, encoding="utf-8")
+        for new_code, pattern_name in proposals:
+            mutation_id = f"{plugin_name}:{pattern_name}:{hash(new_code)}"
 
-        tests_ok = run_tests()
-        eval_ok = tests_ok and evaluate(backup, new_code)
+            if not is_safe(new_code):
+                brain.record_attempt(mutation_id, False)
+                brain.record_pattern_result(pattern_name, False)
+                graph.record_test_result(plugin_name, False)
+                continue
 
-        graph.record_test_result(plugin_name, tests_ok)
+            path.write_text(new_code, encoding="utf-8")
 
-        if eval_ok:
-            brain.record_attempt(mutation_id, True)
-            graph.record_growth(plugin_name)
-        else:
-            path.write_text(backup, encoding="utf-8")
-            brain.record_attempt(mutation_id, False)
+            tests_ok, err_type = run_tests()
+            eval_ok = tests_ok and evaluate(backup, new_code)
+
+            graph.record_test_result(plugin_name, tests_ok)
+
+            if eval_ok:
+                brain.record_attempt(mutation_id, True)
+                brain.record_pattern_result(pattern_name, True)
+                graph.record_growth(plugin_name)
+                break  # accept one success per plugin per cycle
+            else:
+                path.write_text(backup, encoding="utf-8")
+                brain.record_attempt(mutation_id, False)
+                brain.record_pattern_result(pattern_name, False)
 
 
 def run_forever():

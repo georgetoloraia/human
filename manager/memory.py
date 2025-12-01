@@ -10,6 +10,7 @@ class BrainMemory:
             "observations": [],
             "concepts": {},
             "attempts": {},
+            "patterns": {},
             "age": 0,
         }
         if MEMORY_FILE.exists():
@@ -42,6 +43,25 @@ class BrainMemory:
     def get_skill_level(self):
         total = sum(v["ok"] for v in self.state["attempts"].values())
         return total + self.state["age"]
+
+    def record_pattern_result(self, pattern: str, success: bool):
+        stats = self.state["patterns"].setdefault(pattern, {"ok": 0, "fail": 0})
+        if success:
+            stats["ok"] += 1
+        else:
+            stats["fail"] += 1
+        self.state["patterns"][pattern] = stats
+        self._save()
+
+    def pattern_scores(self):
+        # simple success rate heuristic with Laplace smoothing
+        scores = {}
+        for name, stats in self.state["patterns"].items():
+            ok = stats.get("ok", 0)
+            fail = stats.get("fail", 0)
+            total = ok + fail
+            scores[name] = (ok + 1) / (total + 2)
+        return scores
 
     def _save(self):
         MEMORY_FILE.write_text(json.dumps(self.state, indent=2))
