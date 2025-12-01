@@ -18,9 +18,26 @@ class Curriculum:
                 self.state = json.loads(STATE_FILE.read_text())
             except Exception:
                 pass
+        self._normalize_state()
 
     def save(self):
         STATE_FILE.write_text(json.dumps(self.state, indent=2))
+
+    def _normalize_state(self):
+        phase_stats = {}
+        for k, v in self.state.get("phase_stats", {}).items():
+            try:
+                ik = int(k)
+            except Exception:
+                continue
+            phase_stats[ik] = v
+        self.state["phase_stats"] = phase_stats
+        for name, info in self.state.get("task_status", {}).items():
+            try:
+                info["phase"] = int(info.get("phase", 1))
+            except Exception:
+                info["phase"] = 1
+            self.state["task_status"][name] = info
 
     def sync_tasks(self, tasks: List[Dict]):
         # ensure phase stats exists
