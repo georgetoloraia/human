@@ -3,6 +3,7 @@ import json
 from typing import Any, Dict
 
 MEMORY_FILE = Path("manager/brain_memory.json")
+MEMORY_VERSION = "1.0"
 
 
 class BrainMemory:
@@ -17,6 +18,7 @@ class BrainMemory:
             "error_streaks": {},
             "last_consult": {"source_id": None, "error_type": None},
             "age": 0,
+            "_version": MEMORY_VERSION,
         }
         if MEMORY_FILE.exists():
             try:
@@ -33,9 +35,12 @@ class BrainMemory:
         self.state.setdefault("error_streaks", {})
         self.state.setdefault("last_consult", {"source_id": None, "error_type": None})
         self.state.setdefault("age", 0)
+        self.state.setdefault("_version", MEMORY_VERSION)
 
     def observe(self, text: str):
         self.state["observations"].append(text)
+        if len(self.state["observations"]) > 1000:
+            self.state["observations"] = self.state["observations"][-1000:]
         self._save()
 
     def learn_concept(self, name: str, confidence: float):
@@ -104,6 +109,12 @@ class BrainMemory:
     def store_external_knowledge(self, source: str, text: str) -> None:
         self.state.setdefault("external_knowledge", {})
         self.state["external_knowledge"][source] = {"text": text[:4000]}
+        # cap entries to avoid unbounded growth
+        if len(self.state["external_knowledge"]) > 200:
+            # keep most recent 200 by insertion order (Py3.7+ dict preserves)
+            keys = list(self.state["external_knowledge"].keys())
+            for k in keys[:-200]:
+                self.state["external_knowledge"].pop(k, None)
         self._save()
 
     def record_error_event(self, plugin_name: str, error_type: str, success: bool) -> None:

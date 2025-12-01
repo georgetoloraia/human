@@ -19,6 +19,7 @@ from tasks_state import TaskStateManager
 from web_sensor import WebSensor
 from web_knowledge import extract_plain_text
 from reflection import generate_reflection
+from metrics import Metrics
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -44,6 +45,7 @@ class Mind:
         self.task_state = TaskStateManager(self.tasks)
         self.goals = Goals(self.graph, self.curriculum)
         self.web_sensor = WebSensor()
+        self.metrics = Metrics()
         self.stage: int = 0
         self.last_error_type: str | None = None
         self._last_selection_info: List[Dict[str, Any]] = []
@@ -58,6 +60,7 @@ class Mind:
         active_task_names = [t["name"] for t in tasks if "name" in t]
         self._perceive_world()
         self._act_and_learn(active_task_names)
+        self._update_metrics()
         self._log_step_thought()
 
     def _age_and_stage(self) -> None:
@@ -293,6 +296,22 @@ class Mind:
         if reflection_text:
             entry["reflection"] = reflection_text
         self._append_to_diary(entry)
+
+    def _update_metrics(self) -> None:
+        self.metrics.step()
+        accepted = sum(1 for a in self._current_step_actions if a.get("result") == "accepted")
+        rejected = sum(1 for a in self._current_step_actions if a.get("result") in {"rejected", "unsafe"})
+        web_consults = sum(1 for a in self._current_step_actions if a.get("web_consult"))
+        self.metrics.add_accepted(accepted)
+        self.metrics.add_rejected(rejected)
+        self.metrics.add_web_consult(web_consults)
+        mastered = 0
+        for tname, tinfo in self.task_state.state.items():
+            if tname.startswith("_"):
+                continue
+            if tinfo.get("streak", 0) >= 3 and tinfo.get("last_status") == "passing":
+                mastered += 1
+        self.metrics.set_tasks_mastered(mastered)
 
     def _append_to_diary(self, entry: Dict[str, Any]) -> None:
         try:

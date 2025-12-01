@@ -16,6 +16,7 @@ class ConceptGraph:
 
     def __init__(self):
         self.graph = {
+            "_version": "1.0",
             "plugins": {},    # name -> data
             "functions": {},  # plugin.name -> data
             "edges": [],      # (plugin, function)
@@ -26,6 +27,11 @@ class ConceptGraph:
                 self.graph = json.loads(GRAPH_FILE.read_text(encoding="utf-8"))
             except Exception:
                 pass
+        self.graph.setdefault("_version", "1.0")
+        self.graph.setdefault("plugins", {})
+        self.graph.setdefault("functions", {})
+        self.graph.setdefault("edges", [])
+        self.graph.setdefault("tasks", {})
 
     def _save(self):
         GRAPH_FILE.write_text(json.dumps(self.graph, indent=2), encoding="utf-8")

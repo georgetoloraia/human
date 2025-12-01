@@ -9,6 +9,7 @@ from .tasks import Task, tasks_by_plugin
 
 
 TASK_STATE_FILE = Path("manager/tasks_state.json")
+TASK_STATE_VERSION = "1.0"
 
 
 class TaskStateManager:
@@ -23,7 +24,7 @@ class TaskStateManager:
     def __init__(self, tasks: Dict[str, Task]) -> None:
         self.tasks = tasks
         self.by_plugin = tasks_by_plugin(tasks)
-        self.state: Dict[str, Dict[str, Any]] = {}
+        self.state: Dict[str, Any] = {}
 
         if TASK_STATE_FILE.exists():
             try:
@@ -32,6 +33,8 @@ class TaskStateManager:
                     self.state = loaded
             except Exception:
                 self.state = {}
+
+        self.state.setdefault("_version", TASK_STATE_VERSION)
 
         for name in tasks.keys():
             self.state.setdefault(
@@ -44,6 +47,11 @@ class TaskStateManager:
                     "last_error_type": "unknown",
                 },
             )
+
+        # drop tasks no longer present
+        stale = [k for k in self.state.keys() if k not in tasks and not k.startswith("_")]
+        for k in stale:
+            self.state.pop(k, None)
 
         self._save()
 
