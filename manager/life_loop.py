@@ -1,5 +1,5 @@
 import time
-from mind import Mind
+from manager.mind import Mind
 
 
 def run_forever():
