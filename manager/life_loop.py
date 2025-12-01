@@ -10,12 +10,14 @@ from manager.perception import observe_codebase
 from manager.concepts import ConceptGraph
 from manager.goals import Goals
 from manager.task_tests import regenerate_task_tests
+from manager.curriculum import Curriculum
 
 PLUGINS = Path("plugins")
 
 brain = BrainMemory()
 graph = ConceptGraph()
-goals = Goals(graph)
+curriculum = Curriculum()
+goals = Goals(graph, curriculum)
 last_error_type = None
 
 
@@ -23,11 +25,9 @@ def life_cycle():
     global last_error_type
     brain.grow()
 
-    tasks = regenerate_task_tests()
+    tasks = regenerate_task_tests(curriculum)
     graph.register_tasks(tasks)
-    tasks_by_plugin = {}
-    for t in tasks:
-        tasks_by_plugin.setdefault(t.get("target_plugin"), []).append(t.get("name"))
+    active_task_names = [t["name"] for t in tasks if "name" in t]
 
     observations = observe_codebase()
     for obs in observations:
@@ -70,13 +70,15 @@ def life_cycle():
             eval_ok = tests_ok and evaluate(backup, new_code)
 
             graph.record_test_result(plugin_name, tests_ok)
-            # task updates
-            if tests_ok:
-                for tname in tasks_by_plugin.get(plugin_name, []):
-                    graph.record_task_result(tname, True)
-            else:
-                for tname in failing_tasks:
+            task_results = {}
+            for tname in active_task_names:
+                if tname in failing_tasks:
+                    task_results[tname] = False
                     graph.record_task_result(tname, False)
+                else:
+                    task_results[tname] = True
+                    graph.record_task_result(tname, True)
+            curriculum.update_results(task_results)
 
             if eval_ok:
                 brain.record_attempt(mutation_id, True)

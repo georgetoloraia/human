@@ -1,5 +1,6 @@
 from typing import List
 from manager.concepts import ConceptGraph
+from manager.curriculum import Curriculum
 
 
 class Goals:
@@ -9,8 +10,9 @@ class Goals:
       - but also give chance to unexplored ones
     """
 
-    def __init__(self, graph: ConceptGraph):
+    def __init__(self, graph: ConceptGraph, curriculum: Curriculum):
         self.graph = graph
+        self.curriculum = curriculum
 
     def choose_plugins_to_grow(self, max_plugins: int = 3) -> List[str]:
         base = self.graph.prioritize_plugins()
@@ -21,6 +23,12 @@ class Goals:
             # prioritize failing or pending tasks
             score += task_status["fails"] * 2
             score += task_status["pending"] * 3
+            for tname in self.curriculum.tasks_by_plugin().get(name, []):
+                tinfo = self.curriculum.get_task_info(tname)
+                if tinfo.get("status") == "unlocked":
+                    score += 5
+                if tinfo.get("phase") == self.curriculum.state.get("current_phase"):
+                    score += 3
             scored.append((score, name))
         scored.sort(reverse=True)
         return [n for _, n in scored[:max_plugins]]

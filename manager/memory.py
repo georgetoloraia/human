@@ -19,6 +19,12 @@ class BrainMemory:
             except json.JSONDecodeError:
                 # If the file is corrupt, reset to defaults.
                 pass
+        self.state.setdefault("observations", [])
+        self.state.setdefault("concepts", {})
+        self.state.setdefault("attempts", {})
+        self.state.setdefault("patterns", {})
+        self.state.setdefault("pattern_error_stats", {})
+        self.state.setdefault("age", 0)
 
     def observe(self, text: str):
         self.state["observations"].append(text)

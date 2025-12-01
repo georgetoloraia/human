@@ -1,13 +1,15 @@
 import os
 from pathlib import Path
 from typing import List, Dict
+from manager.curriculum import Curriculum
 
 TASKS_DIR = Path("tasks")
 GENERATED_DIR = Path("tests/generated")
 
 
 def _parse_task_file(path: Path) -> Dict:
-    data = {"requirements": []}
+    data = {"requirements": [], "prerequisites": []}
+    current_list = None
     for line in path.read_text(encoding="utf-8").splitlines():
         stripped = line.strip()
         if not stripped or stripped.startswith("#"):
@@ -16,14 +18,22 @@ def _parse_task_file(path: Path) -> Dict:
             key, val = stripped.split(":", 1)
             key = key.strip()
             val = val.strip()
-            if key == "requirements":
-                data.setdefault("requirements", [])
+            if key in {"requirements", "prerequisites"}:
+                current_list = key
+                if val:
+                    data.setdefault(key, []).append(val)
+                else:
+                    data.setdefault(key, [])
             else:
                 data[key] = val
+                current_list = None
         elif stripped.startswith("-"):
             req = stripped.lstrip("-").strip()
             if req:
-                data.setdefault("requirements", []).append(req)
+                if current_list in {"requirements", "prerequisites"}:
+                    data.setdefault(current_list, []).append(req)
+                else:
+                    data.setdefault("requirements", []).append(req)
     return data
 
 
@@ -60,18 +70,24 @@ def _task_to_test_source(task: Dict) -> str:
     return "\n".join(lines)
 
 
-def regenerate_task_tests() -> List[Dict]:
+def regenerate_task_tests(curriculum: Curriculum) -> List[Dict]:
     tasks = load_tasks()
+    curriculum.sync_tasks(tasks)
+    active = {
+        name: t
+        for name, t in ((task["name"], task) for task in tasks if "name" in task)
+        if curriculum.state["task_status"].get(name, {}).get("status") in {"unlocked", "mastered"}
+    }
     GENERATED_DIR.mkdir(parents=True, exist_ok=True)
     # clear existing generated tests
     for old in GENERATED_DIR.glob("test_*.py"):
         old.unlink()
-    for task in tasks:
+    for task in active.values():
         test_src = _task_to_test_source(task)
         out_path = GENERATED_DIR / f"test_{task['name']}.py"
         out_path.write_text(test_src, encoding="utf-8")
-    return tasks
+    return list(active.values())
 
 
 if __name__ == "__main__":
-    regenerate_task_tests()
+    regenerate_task_tests(Curriculum())
