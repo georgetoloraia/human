@@ -2,15 +2,18 @@ from typing import Dict, List, Tuple
 from manager.mutations import PATTERNS, MutationPattern
 
 
-def propose_mutations(src: str, pattern_scores: Dict[str, float]) -> List[Tuple[str, str]]:
+def propose_mutations(
+    src: str, pattern_scores: Dict[str, float], error_scores: Dict[str, float]
+) -> List[Tuple[str, str]]:
     """
-    Return list of (new_code, pattern_name), ordered by learned pattern scores.
+    Return list of (new_code, pattern_name), ordered by combined scores.
     """
-    ordered = sorted(
-        PATTERNS,
-        key=lambda p: pattern_scores.get(p.name, 0.5),
-        reverse=True,
-    )
+    def combined_score(p: MutationPattern):
+        base = pattern_scores.get(p.name, 0.5)
+        err = error_scores.get(p.name, 0.5) if error_scores else 0.5
+        return 0.7 * base + 0.3 * err
+
+    ordered = sorted(PATTERNS, key=combined_score, reverse=True)
     proposals: List[Tuple[str, str]] = []
     seen_codes = set()
     for pattern in ordered:

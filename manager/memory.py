@@ -53,10 +53,34 @@ class BrainMemory:
         self.state["patterns"][pattern] = stats
         self._save()
 
+    def record_pattern_error_result(self, pattern: str, error_type: str, success: bool):
+        per_pattern = self.state.setdefault("pattern_error_stats", {})
+        pattern_stats = per_pattern.setdefault(pattern, {})
+        err_stats = pattern_stats.setdefault(error_type, {"ok": 0, "fail": 0})
+        if success:
+            err_stats["ok"] += 1
+        else:
+            err_stats["fail"] += 1
+        pattern_stats[error_type] = err_stats
+        per_pattern[pattern] = pattern_stats
+        self.state["pattern_error_stats"] = per_pattern
+        self._save()
+
     def pattern_scores(self):
         # simple success rate heuristic with Laplace smoothing
         scores = {}
         for name, stats in self.state["patterns"].items():
+            ok = stats.get("ok", 0)
+            fail = stats.get("fail", 0)
+            total = ok + fail
+            scores[name] = (ok + 1) / (total + 2)
+        return scores
+
+    def pattern_error_scores(self, error_type: str):
+        per_pattern = self.state.get("pattern_error_stats", {})
+        scores = {}
+        for name, err_map in per_pattern.items():
+            stats = err_map.get(error_type, {"ok": 0, "fail": 0})
             ok = stats.get("ok", 0)
             fail = stats.get("fail", 0)
             total = ok + fail

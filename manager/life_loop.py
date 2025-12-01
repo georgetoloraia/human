@@ -9,16 +9,25 @@ from manager.evaluator import evaluate
 from manager.perception import observe_codebase
 from manager.concepts import ConceptGraph
 from manager.goals import Goals
+from manager.task_tests import regenerate_task_tests
 
 PLUGINS = Path("plugins")
 
 brain = BrainMemory()
 graph = ConceptGraph()
 goals = Goals(graph)
+last_error_type = None
 
 
 def life_cycle():
+    global last_error_type
     brain.grow()
+
+    tasks = regenerate_task_tests()
+    graph.register_tasks(tasks)
+    tasks_by_plugin = {}
+    for t in tasks:
+        tasks_by_plugin.setdefault(t.get("target_plugin"), []).append(t.get("name"))
 
     observations = observe_codebase()
     for obs in observations:
@@ -40,7 +49,8 @@ def life_cycle():
 
         src = path.read_text(encoding="utf-8")
         pattern_scores = brain.pattern_scores()
-        proposals = propose_mutations(src, pattern_scores)
+        error_scores = brain.pattern_error_scores(last_error_type) if last_error_type else {}
+        proposals = propose_mutations(src, pattern_scores, error_scores)
         if not proposals:
             continue
 
@@ -56,20 +66,32 @@ def life_cycle():
 
             path.write_text(new_code, encoding="utf-8")
 
-            tests_ok, err_type = run_tests()
+            tests_ok, err_type, failing_tasks = run_tests()
             eval_ok = tests_ok and evaluate(backup, new_code)
 
             graph.record_test_result(plugin_name, tests_ok)
+            # task updates
+            if tests_ok:
+                for tname in tasks_by_plugin.get(plugin_name, []):
+                    graph.record_task_result(tname, True)
+            else:
+                for tname in failing_tasks:
+                    graph.record_task_result(tname, False)
 
             if eval_ok:
                 brain.record_attempt(mutation_id, True)
                 brain.record_pattern_result(pattern_name, True)
+                brain.record_pattern_error_result(pattern_name, err_type, True)
                 graph.record_growth(plugin_name)
+                if not tests_ok:
+                    last_error_type = err_type
                 break  # accept one success per plugin per cycle
             else:
                 path.write_text(backup, encoding="utf-8")
                 brain.record_attempt(mutation_id, False)
                 brain.record_pattern_result(pattern_name, False)
+                brain.record_pattern_error_result(pattern_name, err_type, False)
+                last_error_type = err_type
 
 
 def run_forever():

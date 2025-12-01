@@ -19,6 +19,7 @@ class ConceptGraph:
             "plugins": {},    # name -> data
             "functions": {},  # plugin.name -> data
             "edges": [],      # (plugin, function)
+            "tasks": {},      # task_name -> data
         }
         if GRAPH_FILE.exists():
             try:
@@ -115,3 +116,45 @@ class ConceptGraph:
             items.append((score, name))
         items.sort(reverse=True)
         return [name for score, name in items]
+
+    def register_tasks(self, tasks):
+        for task in tasks:
+            name = task.get("name")
+            if not name:
+                continue
+            entry = self.graph["tasks"].get(
+                name,
+                {
+                    "plugin": task.get("target_plugin"),
+                    "function": task.get("target_function"),
+                    "passed": 0,
+                    "failed": 0,
+                    "last_success": 0,
+                },
+            )
+            self.graph["tasks"][name] = entry
+        self._save()
+
+    def record_task_result(self, task_name: str, success: bool):
+        task = self.graph["tasks"].get(task_name)
+        if not task:
+            return
+        if success:
+            task["passed"] = task.get("passed", 0) + 1
+            task["last_success"] = time.time()
+        else:
+            task["failed"] = task.get("failed", 0) + 1
+        self.graph["tasks"][task_name] = task
+        self._save()
+
+    def task_status_for_plugin(self, plugin_name: str):
+        fails = 0
+        pending = 0
+        successes = 0
+        for name, task in self.graph["tasks"].items():
+            if task.get("plugin") == plugin_name:
+                fails += task.get("failed", 0)
+                successes += task.get("passed", 0)
+                if task.get("passed", 0) == 0:
+                    pending += 1
+        return {"fails": fails, "pending": pending, "successes": successes}

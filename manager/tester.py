@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import re
 
 
 def classify_error(output: str) -> str:
@@ -15,9 +16,16 @@ def classify_error(output: str) -> str:
     return "Other"
 
 
-def run_tests() -> tuple[bool, str]:
+def extract_failing_tasks(output: str):
+    tasks = set()
+    for match in re.finditer(r"test_([A-Za-z0-9_]+)\.py", output):
+        tasks.add(match.group(1))
+    return list(tasks)
+
+
+def run_tests() -> tuple[bool, str, list[str]]:
     """
-    Run pytest; return (success, error_type).
+    Run pytest; return (success, error_type, failing_tasks).
     Falls back to OK if pytest is unavailable.
     """
     try:
@@ -27,10 +35,11 @@ def run_tests() -> tuple[bool, str]:
             text=True,
         )
     except Exception:
-        return True, "OK"
-
-    if proc.returncode == 0:
-        return True, "OK"
+        return True, "OK", []
 
     combined = (proc.stdout or "") + "\n" + (proc.stderr or "")
-    return False, classify_error(combined)
+
+    if proc.returncode == 0:
+        return True, "OK", []
+
+    return False, classify_error(combined), extract_failing_tasks(combined)
