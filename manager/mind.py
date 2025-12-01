@@ -149,6 +149,7 @@ class Mind:
         if not base_targets:
             base_targets = [p.name for p in PLUGINS_DIR.glob("*.py") if p.name != "__init__.py"]
         scored: List[Tuple[float, str, Dict[str, float]]] = []
+        current_phase = self.curriculum.current_phase()
         for name in base_targets:
             scores = self._score_plugin(name)
             scored.append((scores["total"], name, scores))
@@ -299,6 +300,7 @@ class Mind:
             "actions": self._current_step_actions,
             "tasks": self.task_state.summary(),
             "curriculum": self.curriculum.summary(),
+            "phase_transition": self.curriculum.current_phase(),
         }
         external_knowledge_snippet = None
         ek = self.brain.state.get("external_knowledge", {})

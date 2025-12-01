@@ -43,3 +43,10 @@ def map_square(values):
 
 def string_reverse(s):
     return s[::-1]
+
+
+def set_union(a, b):
+    res = set()
+    res.update(a or set())
+    res.update(b or set())
+    return sorted(res)

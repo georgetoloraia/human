@@ -1,0 +1,11 @@
+name: set_union
+phase: 2
+difficulty: 2
+category: set
+target_plugin: sample_plugin.py
+target_function: set_union
+description: Return the union of two sets (as a sorted list).
+requirements:
+  - set_union({1,2}, {2,3}) == [1,2,3]
+  - set_union(set(), {5}) == [5]
+  - set_union({-1}, {-1,0}) == [-1,0]

@@ -191,7 +191,14 @@ class Curriculum:
     def should_advance_phase(self) -> bool:
         current = self.state.get("current_phase", 1)
         current_info = self.state.get("phase_stats", {}).get(current, {})
-        return bool(current_info.get("unlocked") and current_info.get("mastered"))
+        if not current_info.get("unlocked"):
+            return False
+        tasks = current_info.get("tasks", [])
+        if not tasks:
+            return False
+        mastered = sum(1 for t in tasks if self.state["task_status"].get(t, {}).get("status") == "mastered")
+        ratio = mastered / len(tasks)
+        return ratio >= 0.8
 
     def advance_phase(self) -> None:
         phases = sorted(self.state.get("phase_stats", {}).keys())
@@ -201,6 +208,9 @@ class Curriculum:
                 self.state["current_phase"] = p
                 break
         self.save()
+
+    def current_phase(self) -> int:
+        return int(self.state.get("current_phase", 1))
 
     def tasks_for_plugin(self, plugin: str) -> List[str]:
         return [
