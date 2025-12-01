@@ -1,0 +1,11 @@
+name: list_max
+phase: 1
+difficulty: 1
+category: math
+target_plugin: sample_plugin.py
+target_function: list_max
+description: Return the maximum of a list of integers (0 for empty).
+requirements:
+  - list_max([1, 2, 3]) == 3
+  - list_max([-1, -5, -2]) == -1
+  - list_max([]) == 0

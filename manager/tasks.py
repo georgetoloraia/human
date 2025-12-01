@@ -17,6 +17,9 @@ class Task:
     target_function: Optional[str]
     description: str
     requirements: List[str]
+    phase: int = 1
+    difficulty: int = 1
+    category: str = "general"
 
 
 def load_tasks() -> Dict[str, Task]:
@@ -35,6 +38,9 @@ def load_tasks() -> Dict[str, Task]:
         target_function = data.get("target_function")
         description = data.get("description", "")
         requirements = data.get("requirements") or []
+        phase = int(data.get("phase", 1))
+        difficulty = int(data.get("difficulty", 1)) if data.get("difficulty") is not None else 1
+        category = data.get("category", "general")
         if not name or not target_plugin:
             continue
         tasks[name] = Task(
@@ -43,6 +49,9 @@ def load_tasks() -> Dict[str, Task]:
             target_function=target_function,
             description=description,
             requirements=list(requirements),
+            phase=phase,
+            difficulty=difficulty,
+            category=category,
         )
     return tasks
 

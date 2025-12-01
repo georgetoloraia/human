@@ -1,0 +1,11 @@
+name: filter_even
+phase: 1
+difficulty: 1
+category: list
+target_plugin: sample_plugin.py
+target_function: filter_even
+description: Return only even numbers from a list.
+requirements:
+  - filter_even([1,2,3,4]) == [2,4]
+  - filter_even([]) == []
+  - filter_even([5,7]) == []
