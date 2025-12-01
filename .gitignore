@@ -4,3 +4,4 @@ manager/brain_memory.json
 manager/concept_graph.json
 manager/curriculum_state.json
 tests/generated/
+manager/tasks_state.json

@@ -16,6 +16,9 @@ from manager.task_tests import regenerate_task_tests
 from manager.curriculum import Curriculum
 from manager.tasks import load_tasks
 from manager.tasks_state import TaskStateManager
+from manager.web_sensor import WebSensor
+from manager.web_knowledge import extract_plain_text
+from manager.reflection import generate_reflection
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -40,6 +43,7 @@ class Mind:
         self.tasks = load_tasks()
         self.task_state = TaskStateManager(self.tasks)
         self.goals = Goals(self.graph, self.curriculum)
+        self.web_sensor = WebSensor()
         self.stage: int = 0
         self.last_error_type: str | None = None
         self._last_selection_info: List[Dict[str, Any]] = []
@@ -192,6 +196,8 @@ class Mind:
         if not is_safe(new_code):
             self.brain.record_pattern_result(pattern_name, False)
             self.graph.record_test_result(plugin_name, False)
+            self.task_state.record_plugin_result(plugin_name, success=False, error_type="Unsafe")
+            self.brain.record_error_event(plugin_name, "Unsafe", success=False)
             self._current_step_actions.append(
                 {"plugin": plugin_name, "pattern": pattern_name, "result": "unsafe", "tests_ok": False, "error_type": "Unsafe"}
             )
@@ -216,6 +222,12 @@ class Mind:
                 self.graph.record_task_result(tname, True)
         self.curriculum.update_results(task_results)
         self.task_state.record_plugin_result(plugin_name, success=eval_ok, error_type=err_type)
+        self.brain.record_error_event(plugin_name, err_type, success=eval_ok)
+        streak = self.brain.get_error_streak(plugin_name, err_type)
+        web_consult_info = None
+        if (not eval_ok) and self.stage >= 2 and err_type != "OK":
+            if streak >= 3:
+                web_consult_info = self._consult_web(plugin_name, err_type)
 
         if eval_ok:
             self.brain.record_attempt(mutation_id, True)
@@ -225,7 +237,14 @@ class Mind:
             if not tests_ok:
                 self.last_error_type = err_type
             self._current_step_actions.append(
-                {"plugin": plugin_name, "pattern": pattern_name, "result": "accepted", "tests_ok": tests_ok, "error_type": err_type}
+                {
+                    "plugin": plugin_name,
+                    "pattern": pattern_name,
+                    "result": "accepted",
+                    "tests_ok": tests_ok,
+                    "error_type": err_type,
+                    **({"web_consult": web_consult_info} if web_consult_info else {}),
+                }
             )
             return True
 
@@ -235,7 +254,14 @@ class Mind:
         self.brain.record_pattern_error_result(pattern_name, err_type, False)
         self.last_error_type = err_type
         self._current_step_actions.append(
-            {"plugin": plugin_name, "pattern": pattern_name, "result": "rejected", "tests_ok": tests_ok, "error_type": err_type}
+            {
+                "plugin": plugin_name,
+                "pattern": pattern_name,
+                "result": "rejected",
+                "tests_ok": tests_ok,
+                "error_type": err_type,
+                **({"web_consult": web_consult_info} if web_consult_info else {}),
+            }
         )
         return False
 
@@ -250,6 +276,14 @@ class Mind:
             "actions": self._current_step_actions,
             "tasks": self.task_state.summary(),
         }
+        external_knowledge_snippet = None
+        ek = self.brain.state.get("external_knowledge", {})
+        if isinstance(ek, dict) and ek:
+            last_key = next(reversed(ek))
+            external_knowledge_snippet = ek[last_key].get("text", "")
+        reflection_text = generate_reflection(entry, external_knowledge_snippet)
+        if reflection_text:
+            entry["reflection"] = reflection_text
         self._append_to_diary(entry)
 
     def _append_to_diary(self, entry: Dict[str, Any]) -> None:
@@ -264,3 +298,20 @@ class Mind:
             data = []
         data.append(entry)
         DIARY_FILE.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+    def _consult_web(self, plugin_name: str, error_type: str) -> Dict[str, str]:
+        error_docs = {
+            "TypeError": "https://docs.python.org/3/library/exceptions.html#TypeError",
+            "IndexError": "https://docs.python.org/3/library/exceptions.html#IndexError",
+            "KeyError": "https://docs.python.org/3/library/exceptions.html#KeyError",
+            "AssertionError": "https://docs.python.org/3/library/exceptions.html#AssertionError",
+        }
+        url = error_docs.get(error_type) or "https://docs.python.org/3/library/exceptions.html"
+        try:
+            html = self.web_sensor.fetch_text(url)
+            text = extract_plain_text(html)
+            source_id = f"web:{url}"
+            self.brain.store_external_knowledge(source_id, text)
+            return {"url": url, "status": "ok", "source_id": source_id}
+        except Exception as e:
+            return {"url": url, "status": "error", "error": str(e)}

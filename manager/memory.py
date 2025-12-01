@@ -11,6 +11,9 @@ class BrainMemory:
             "concepts": {},
             "attempts": {},
             "patterns": {},
+            "pattern_error_stats": {},
+            "external_knowledge": {},
+            "error_streaks": {},
             "age": 0,
         }
         if MEMORY_FILE.exists():
@@ -24,6 +27,8 @@ class BrainMemory:
         self.state.setdefault("attempts", {})
         self.state.setdefault("patterns", {})
         self.state.setdefault("pattern_error_stats", {})
+        self.state.setdefault("external_knowledge", {})
+        self.state.setdefault("error_streaks", {})
         self.state.setdefault("age", 0)
 
     def observe(self, text: str):
@@ -92,6 +97,25 @@ class BrainMemory:
             total = ok + fail
             scores[name] = (ok + 1) / (total + 2)
         return scores
+
+    def store_external_knowledge(self, source: str, text: str) -> None:
+        self.state.setdefault("external_knowledge", {})
+        self.state["external_knowledge"][source] = {"text": text[:4000]}
+        self._save()
+
+    def record_error_event(self, plugin_name: str, error_type: str, success: bool) -> None:
+        self.state.setdefault("error_streaks", {})
+        key = f"{plugin_name}|{error_type}"
+        if success:
+            self.state["error_streaks"][key] = 0
+        else:
+            current = self.state["error_streaks"].get(key, 0)
+            self.state["error_streaks"][key] = current + 1
+        self._save()
+
+    def get_error_streak(self, plugin_name: str, error_type: str) -> int:
+        key = f"{plugin_name}|{error_type}"
+        return int(self.state.get("error_streaks", {}).get(key, 0))
 
     def _save(self):
         MEMORY_FILE.write_text(json.dumps(self.state, indent=2))
