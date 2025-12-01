@@ -20,6 +20,7 @@ from manager.web_sensor import WebSensor
 from manager.web_knowledge import extract_plain_text
 from manager.reflection import generate_reflection
 from manager.metrics import Metrics
+from manager.graph_client import query_graph
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -349,12 +350,33 @@ class Mind:
             "AssertionError": "https://docs.python.org/3/library/exceptions.html#AssertionError",
         }
         url = error_docs.get(error_type) or "https://docs.python.org/3/library/exceptions.html"
+        graph_info = None
+        try:
+            g_results = query_graph(f"{plugin_name} {error_type}")[:3]
+            if g_results:
+                texts = []
+                for r in g_results:
+                    label = r.get("label") or ""
+                    source = r.get("source") or ""
+                    texts.append(f"{label} (from {source})")
+                graph_text = " ".join(texts)[:4000]
+                source_id = f"graph:{plugin_name}:{error_type}"
+                self.brain.store_external_knowledge(source_id, graph_text)
+                graph_info = {"source_id": source_id, "count": len(g_results)}
+        except Exception:
+            graph_info = None
         try:
             html = self.web_sensor.fetch_text(url)
             text = extract_plain_text(html)
             source_id = f"web:{url}"
             self.brain.store_external_knowledge(source_id, text)
             self.brain.record_last_consult(source_id, error_type)
-            return {"url": url, "status": "ok", "source_id": source_id}
+            out = {"url": url, "status": "ok", "source_id": source_id}
+            if graph_info:
+                out["graph"] = graph_info
+            return out
         except Exception as e:
-            return {"url": url, "status": "error", "error": str(e)}
+            out = {"url": url, "status": "error", "error": str(e)}
+            if graph_info:
+                out["graph"] = graph_info
+            return out
