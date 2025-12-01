@@ -176,6 +176,14 @@ class Mind:
                 continue
             src = path.read_text(encoding="utf-8")
             error_scores = self.brain.pattern_error_scores(self.last_error_type) if self.last_error_type else {}
+            last_consult = self.brain.get_last_consult()
+            if last_consult.get("error_type") and last_consult.get("error_type") == self.last_error_type:
+                # boost patterns that historically work for this error type
+                boosted = {}
+                base = self.brain.pattern_error_scores(self.last_error_type)
+                for name, score in base.items():
+                    boosted[name] = score * 1.5
+                error_scores.update(boosted)
             candidates = propose_mutations(src, pattern_scores, error_scores)
             if not candidates:
                 continue
@@ -312,6 +320,7 @@ class Mind:
             text = extract_plain_text(html)
             source_id = f"web:{url}"
             self.brain.store_external_knowledge(source_id, text)
+            self.brain.record_last_consult(source_id, error_type)
             return {"url": url, "status": "ok", "source_id": source_id}
         except Exception as e:
             return {"url": url, "status": "error", "error": str(e)}

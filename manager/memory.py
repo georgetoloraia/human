@@ -14,6 +14,7 @@ class BrainMemory:
             "pattern_error_stats": {},
             "external_knowledge": {},
             "error_streaks": {},
+            "last_consult": {"source_id": None, "error_type": None},
             "age": 0,
         }
         if MEMORY_FILE.exists():
@@ -29,6 +30,7 @@ class BrainMemory:
         self.state.setdefault("pattern_error_stats", {})
         self.state.setdefault("external_knowledge", {})
         self.state.setdefault("error_streaks", {})
+        self.state.setdefault("last_consult", {"source_id": None, "error_type": None})
         self.state.setdefault("age", 0)
 
     def observe(self, text: str):
@@ -116,6 +118,15 @@ class BrainMemory:
     def get_error_streak(self, plugin_name: str, error_type: str) -> int:
         key = f"{plugin_name}|{error_type}"
         return int(self.state.get("error_streaks", {}).get(key, 0))
+
+    def record_last_consult(self, source_id: str, error_type: str) -> None:
+        self.state.setdefault("last_consult", {})
+        self.state["last_consult"]["source_id"] = source_id
+        self.state["last_consult"]["error_type"] = error_type
+        self._save()
+
+    def get_last_consult(self) -> Dict[str, Any]:
+        return self.state.get("last_consult", {})
 
     def _save(self):
         MEMORY_FILE.write_text(json.dumps(self.state, indent=2))
