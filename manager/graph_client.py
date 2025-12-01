@@ -23,6 +23,29 @@ def query_graph(query: str, limit: int = 5, neighbor_limit: int = 50) -> List[Di
         )
         resp.raise_for_status()
         data = resp.json()
-        return data.get("neighbors", []) or data.get("matches", [])
+        neighbors = data.get("neighbors", []) or data.get("matches", [])
+        # normalize fields
+        norm = []
+        for n in neighbors:
+            norm.append(
+                {
+                    "id": n.get("id"),
+                    "label": n.get("label"),
+                    "source": n.get("source"),
+                }
+            )
+        return norm
     except Exception:
         return []
+
+
+def fetch_neighbors(node_ids: List[int], limit: int = 20) -> List[Dict[str, Any]]:
+    """
+    Placeholder neighbor fetch; if graph_api exposes such an endpoint, wire it here.
+    Currently reuses /query by label lookup if ids are known.
+    """
+    results: List[Dict[str, Any]] = []
+    if not node_ids:
+        return results
+    # With current graph_api, we can't fetch by id; this is a stub for future expansion.
+    return results

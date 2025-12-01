@@ -308,7 +308,12 @@ class Mind:
         if isinstance(ek, dict) and ek:
             last_key = next(reversed(ek))
             external_knowledge_snippet = ek[last_key].get("text", "")
-        reflection_text = generate_reflection(entry, external_knowledge_snippet)
+        graph_snippet = self._build_graph_context()
+        if graph_snippet and external_knowledge_snippet:
+            combined = graph_snippet + "\n" + external_knowledge_snippet
+        else:
+            combined = graph_snippet or external_knowledge_snippet
+        reflection_text = generate_reflection(entry, combined)
         if reflection_text:
             entry["reflection"] = reflection_text
         self._append_to_diary(entry)
@@ -350,21 +355,7 @@ class Mind:
             "AssertionError": "https://docs.python.org/3/library/exceptions.html#AssertionError",
         }
         url = error_docs.get(error_type) or "https://docs.python.org/3/library/exceptions.html"
-        graph_info = None
-        try:
-            g_results = query_graph(f"{plugin_name} {error_type}")[:3]
-            if g_results:
-                texts = []
-                for r in g_results:
-                    label = r.get("label") or ""
-                    source = r.get("source") or ""
-                    texts.append(f"{label} (from {source})")
-                graph_text = " ".join(texts)[:4000]
-                source_id = f"graph:{plugin_name}:{error_type}"
-                self.brain.store_external_knowledge(source_id, graph_text)
-                graph_info = {"source_id": source_id, "count": len(g_results)}
-        except Exception:
-            graph_info = None
+        graph_info = self._build_graph_context(error_type=error_type, plugin_name=plugin_name, store=True)
         try:
             html = self.web_sensor.fetch_text(url)
             text = extract_plain_text(html)
@@ -380,3 +371,29 @@ class Mind:
             if graph_info:
                 out["graph"] = graph_info
             return out
+
+    def _build_graph_context(self, error_type: str | None = None, plugin_name: str | None = None, store: bool = False):
+        try:
+            parts = []
+            if plugin_name:
+                parts.append(plugin_name)
+            if error_type:
+                parts.append(error_type)
+            query = " ".join(parts) if parts else None
+            if not query:
+                return None
+            g_results = query_graph(query)[:3]
+            if not g_results:
+                return None
+            texts = []
+            for r in g_results:
+                label = r.get("label") or ""
+                source = r.get("source") or ""
+                texts.append(f"{label} (from {source})")
+            graph_text = " ".join(texts)[:4000]
+            source_id = f"graph:{plugin_name or 'generic'}:{error_type or 'none'}"
+            if store:
+                self.brain.store_external_knowledge(source_id, graph_text)
+            return {"source_id": source_id, "count": len(g_results), "text": graph_text}
+        except Exception:
+            return None
