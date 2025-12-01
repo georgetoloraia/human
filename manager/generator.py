@@ -1,5 +1,5 @@
 from typing import Dict, List, Tuple
-from mutations import PATTERNS, MutationPattern
+from manager.mutations import PATTERNS, MutationPattern
 
 
 def propose_mutations(

@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Any
 
 STATE_FILE = Path("manager/curriculum_state.json")
 
@@ -148,7 +148,7 @@ class Curriculum:
         self._recompute_unlocks()
         self.save()
 
-    def sync_with_task_state(self, task_state: Dict[str, Dict[str, Any]]):
+    def sync_with_task_state(self, task_state: Dict[str, Dict[str, any]]):
         for tname, info in task_state.items():
             if tname.startswith("_"):
                 continue
@@ -175,8 +175,8 @@ class Curriculum:
             self.state["phase_stats"][phase] = info
         self.save()
 
-    def summary(self) -> Dict[int, Dict[str, Any]]:
-        summary: Dict[int, Dict[str, Any]] = {}
+    def summary(self) -> Dict[int, Dict[str, any]]:
+        summary: Dict[int, Dict[str, any]] = {}
         for phase, info in self.state.get("phase_stats", {}).items():
             tasks = info.get("tasks", [])
             mastered = [t for t in tasks if self.state["task_status"].get(t, {}).get("status") == "mastered"]
