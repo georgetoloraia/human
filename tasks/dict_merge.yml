@@ -1,0 +1,11 @@
+name: dict_merge
+phase: 2
+difficulty: 2
+category: dict
+target_plugin: sample_plugin.py
+target_function: dict_merge
+description: Merge two dictionaries; values from the second override the first.
+requirements:
+  - dict_merge({"a":1}, {"b":2}) == {"a":1,"b":2}
+  - dict_merge({"a":1}, {"a":2,"c":3}) == {"a":2,"c":3}
+  - dict_merge({}, {"x":5}) == {"x":5}

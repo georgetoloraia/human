@@ -18,3 +18,10 @@ def list_max(values):
 
 def filter_even(values):
     return [v for v in values if v % 2 == 0]
+
+
+def dict_merge(a, b):
+    out = {}
+    out.update(a or {})
+    out.update(b or {})
+    return out

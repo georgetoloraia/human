@@ -295,6 +295,7 @@ class Mind:
             "selected_plugins": self._last_selection_info,
             "actions": self._current_step_actions,
             "tasks": self.task_state.summary(),
+            "curriculum": self.curriculum.summary(),
         }
         external_knowledge_snippet = None
         ek = self.brain.state.get("external_knowledge", {})

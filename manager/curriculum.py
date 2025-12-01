@@ -156,6 +156,19 @@ class Curriculum:
             self.state["phase_stats"][phase] = info
         self.save()
 
+    def summary(self) -> Dict[int, Dict[str, Any]]:
+        summary: Dict[int, Dict[str, Any]] = {}
+        for phase, info in self.state.get("phase_stats", {}).items():
+            tasks = info.get("tasks", [])
+            mastered = [t for t in tasks if self.state["task_status"].get(t, {}).get("status") == "mastered"]
+            summary[phase] = {
+                "tasks_total": len(tasks),
+                "tasks_mastered": len(mastered),
+                "unlocked": info.get("unlocked", False),
+                "mastered_phase": info.get("mastered", False),
+            }
+        return summary
+
     def tasks_for_plugin(self, plugin: str) -> List[str]:
         return [
             name
