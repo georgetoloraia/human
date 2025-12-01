@@ -62,6 +62,8 @@ class Mind:
         self._last_selection_info = []
         self._current_step_actions = []
         self._age_and_stage()
+        current_age = self.brain.state.get("age", 0)
+        current_skill = self.brain.get_skill_level()
         tasks = regenerate_task_tests(self.curriculum)
         self.graph.register_tasks(tasks)
         active_task_names = [t["name"] for t in tasks if "name" in t]
@@ -72,7 +74,7 @@ class Mind:
         if self.curriculum.should_advance_phase():
             self.curriculum.advance_phase()
         self._update_meta_skill()
-        meta_status = self.meta_policy.tick(age, skill)
+        meta_status = self.meta_policy.tick(current_age, current_skill)
         self._detect_stagnation()
         self._log_step_thought()
 
