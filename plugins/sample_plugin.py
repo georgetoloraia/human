@@ -50,3 +50,13 @@ def set_union(a, b):
     res.update(a or set())
     res.update(b or set())
     return sorted(res)
+
+
+def abs_value(x):
+    return x if x >= 0 else -x
+
+
+def list_average(values):
+    if not values:
+        return 0.0
+    return sum(values) / len(values)

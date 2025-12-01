@@ -20,6 +20,7 @@ from manager.web_sensor import WebSensor
 from manager.web_knowledge import extract_plain_text
 from manager.reflection import generate_reflection
 from manager.metrics import Metrics
+from manager.meta_policy import MetaPolicy
 from manager.graph_client import query_graph
 
 PLUGINS_DIR = Path("plugins")
@@ -47,6 +48,7 @@ class Mind:
         self.goals = Goals(self.graph, self.curriculum)
         self.web_sensor = WebSensor()
         self.metrics = Metrics()
+        self.meta_policy = MetaPolicy(self.brain)
         self.stage: int = 0
         self.last_error_type: str | None = None
         self._last_selection_info: List[Dict[str, Any]] = []
@@ -70,6 +72,7 @@ class Mind:
         if self.curriculum.should_advance_phase():
             self.curriculum.advance_phase()
         self._update_meta_skill()
+        self.meta_policy.step(skill, age)
         self._detect_stagnation()
         self._log_step_thought()
 
@@ -164,13 +167,15 @@ class Mind:
             scores = self._score_plugin(name)
             scored.append((scores["total"], name, scores))
         scored.sort(reverse=True, key=lambda x: x[0])
+        policy = self.brain.get_learning_policy()
+        policy_max_plugins = int(policy.get("max_plugins_per_step", 2))
         if self.stage == 0:
-            max_plugins = 3
+            max_plugins = min(3, policy_max_plugins)
         elif self.stage == 1:
-            max_plugins = 2
+            max_plugins = min(2, policy_max_plugins)
         else:
-            max_plugins = 1
-        selected = scored[:max_plugins]
+            max_plugins = min(1, policy_max_plugins)
+        selected = scored[: max(1, max_plugins)]
         self._last_selection_info = [
             {
                 "plugin": name,
@@ -186,14 +191,16 @@ class Mind:
     def _act_and_learn(self, active_task_names: List[str]) -> None:
         pattern_scores = self.brain.pattern_scores()
         targets = self._select_targets()
+        policy = self.brain.get_learning_policy()
+        depth_override = int(policy.get("exploration_depth", 3))
         if self.stage == 0:
-            max_candidates_per_plugin = 5
+            max_candidates_per_plugin = min(5, depth_override)
         elif self.stage == 1:
-            max_candidates_per_plugin = 3
+            max_candidates_per_plugin = min(3, depth_override)
         elif self.stage == 2:
-            max_candidates_per_plugin = 2
+            max_candidates_per_plugin = min(2, depth_override)
         else:
-            max_candidates_per_plugin = 1
+            max_candidates_per_plugin = min(1, depth_override)
         meta = self.brain.state.get("meta_skill", 0.0)
         if meta > 0.6:
             max_candidates_per_plugin = max(1, max_candidates_per_plugin - 1)
@@ -318,6 +325,7 @@ class Mind:
             "phase_transition": self.curriculum.current_phase(),
             "meta_skill": self.brain.state.get("meta_skill", 0.0),
             "lifecycle_event": self._lifecycle_event,
+            "learning_policy": self.brain.get_learning_policy(),
         }
         external_knowledge_snippet = None
         ek = self.brain.state.get("external_knowledge", {})

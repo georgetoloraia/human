@@ -21,6 +21,18 @@ class BrainMemory:
             "_version": MEMORY_VERSION,
             "meta_skill": 0.0,
             "meta_skill_history": [],
+            "learning_policy": {
+                "exploration_depth": 3,
+                "max_plugins_per_step": 2,
+                "web_consult_threshold": 3,
+                "weights": {
+                    "curiosity": 1.5,
+                    "mastery": 1.5,
+                    "stability": 1.0,
+                    "task": 1.0,
+                },
+            },
+            "meta_trials": [],
         }
         if MEMORY_FILE.exists():
             try:
@@ -39,6 +51,21 @@ class BrainMemory:
         self.state.setdefault("age", 0)
         self.state.setdefault("meta_skill", 0.0)
         self.state.setdefault("meta_skill_history", [])
+        self.state.setdefault(
+            "learning_policy",
+            {
+                "exploration_depth": 3,
+                "max_plugins_per_step": 2,
+                "web_consult_threshold": 3,
+                "weights": {
+                    "curiosity": 1.5,
+                    "mastery": 1.5,
+                    "stability": 1.0,
+                    "task": 1.0,
+                },
+            },
+        )
+        self.state.setdefault("meta_trials", [])
         self.state.setdefault("_version", MEMORY_VERSION)
 
     def observe(self, text: str):
@@ -154,6 +181,21 @@ class BrainMemory:
         if len(history) > 200:
             history = history[-200:]
         self.state["meta_skill_history"] = history
+        self._save()
+
+    def get_learning_policy(self) -> Dict[str, Any]:
+        return dict(self.state.get("learning_policy", {}))
+
+    def set_learning_policy(self, policy: Dict[str, Any]) -> None:
+        self.state["learning_policy"] = policy
+        self._save()
+
+    def record_meta_trial(self, trial: Dict[str, Any]) -> None:
+        trials = self.state.get("meta_trials", [])
+        trials.append(trial)
+        if len(trials) > 200:
+            trials = trials[-200:]
+        self.state["meta_trials"] = trials
         self._save()
 
     def _save(self):

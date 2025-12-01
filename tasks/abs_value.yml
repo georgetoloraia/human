@@ -1,0 +1,11 @@
+name: abs_value
+phase: 1
+difficulty: 1
+category: math
+target_plugin: sample_plugin.py
+target_function: abs_value
+description: Return the absolute value of an integer.
+requirements:
+  - abs_value(5) == 5
+  - abs_value(-3) == 3
+  - abs_value(0) == 0
