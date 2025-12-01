@@ -1,6 +1,6 @@
 from typing import List
-from manager.concepts import ConceptGraph
-from manager.curriculum import Curriculum
+from concepts import ConceptGraph
+from curriculum import Curriculum
 
 
 class Goals:
