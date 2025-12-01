@@ -61,6 +61,7 @@ class Mind:
         self._perceive_world()
         self._act_and_learn(active_task_names)
         self._update_metrics()
+        self.curriculum.sync_with_task_state(self.task_state.state)
         self._log_step_thought()
 
     def _age_and_stage(self) -> None:

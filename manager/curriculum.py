@@ -148,6 +148,25 @@ class Curriculum:
         self._recompute_unlocks()
         self.save()
 
+    def sync_with_task_state(self, task_state: Dict[str, Dict[str, Any]]):
+        for tname, info in task_state.items():
+            if tname.startswith("_"):
+                continue
+            status = self.state["task_status"].get(tname)
+            if not status:
+                continue
+            streak = info.get("streak", 0)
+            last_status = info.get("last_status", "unknown")
+            if streak >= self.required_streak and last_status == "passing":
+                status["status"] = "mastered"
+            elif last_status == "failing":
+                status["status"] = "unlocked"
+                status["streak"] = 0
+            self.state["task_status"][tname] = status
+        self._update_phase_mastery()
+        self._recompute_unlocks()
+        self.save()
+
     def _update_phase_mastery(self):
         for phase, info in self.state["phase_stats"].items():
             tasks = info.get("tasks", [])
