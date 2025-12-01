@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from typing import List, Dict
-from curriculum import Curriculum
+from manager.curriculum import Curriculum
 
 TASKS_DIR = Path("tasks")
 GENERATED_DIR = Path("tests/generated")

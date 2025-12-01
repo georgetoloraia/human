@@ -1,6 +1,6 @@
 name: list_sum
 phase: 1
-difficulty: easy
+difficulty: 1
 target_plugin: sample_plugin.py
 target_function: process
 description: The function must return the sum of a list of integers.
