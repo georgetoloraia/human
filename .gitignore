@@ -1,2 +1,4 @@
 graph.db
 venv
+manager/brain_memory.json
+manager/concept_graph.json
