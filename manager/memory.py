@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+from typing import Any, Dict
 
 MEMORY_FILE = Path("manager/brain_memory.json")
 
