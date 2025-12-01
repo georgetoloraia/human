@@ -70,6 +70,21 @@ Endpoints:
 
 `/ask` tokenizes the text, filters stopwords/short tokens, dedupes, and uses the `limit` as a total budget across tokens.
 
+## Self-growing loop (experimental)
+Files under `manager/` implement a small self-evolution loop with persistence in `manager/brain_memory.json`.
+
+Run the loop:
+```bash
+python3 -m manager.life_loop
+```
+- Observes `plugins/*.py`, records observations in memory.
+- Grows functions by inserting safe lines.
+- Uses `manager/safety.py` to reject syntactically invalid or oversized mutations.
+- Uses `manager/tester.py` and `manager/evaluator.py` stubs to accept/reject mutations (customize these for real checks).
+- Rolls back on failure; increments skill/age on success.
+
+Add your own plugin files under `plugins/` to see mutations in action. Adjust the sleep interval or logic in `manager/life_loop.py` as needed.
+
 ## Use a local Llama as the "voice"
 Run your Llama server (OpenAI-compatible, e.g., llama.cpp `server`):
 ```bash
