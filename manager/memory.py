@@ -19,6 +19,8 @@ class BrainMemory:
             "last_consult": {"source_id": None, "error_type": None},
             "age": 0,
             "_version": MEMORY_VERSION,
+            "meta_skill": 0.0,
+            "meta_skill_history": [],
         }
         if MEMORY_FILE.exists():
             try:
@@ -35,6 +37,8 @@ class BrainMemory:
         self.state.setdefault("error_streaks", {})
         self.state.setdefault("last_consult", {"source_id": None, "error_type": None})
         self.state.setdefault("age", 0)
+        self.state.setdefault("meta_skill", 0.0)
+        self.state.setdefault("meta_skill_history", [])
         self.state.setdefault("_version", MEMORY_VERSION)
 
     def observe(self, text: str):
@@ -139,6 +143,18 @@ class BrainMemory:
 
     def get_last_consult(self) -> Dict[str, Any]:
         return self.state.get("last_consult", {})
+
+    def update_meta_skill(self, acceptance_rate: float) -> None:
+        # exponential moving average
+        current = float(self.state.get("meta_skill", 0.0))
+        updated = 0.8 * current + 0.2 * acceptance_rate
+        self.state["meta_skill"] = updated
+        history = self.state.get("meta_skill_history", [])
+        history.append({"rate": acceptance_rate, "score": updated})
+        if len(history) > 200:
+            history = history[-200:]
+        self.state["meta_skill_history"] = history
+        self._save()
 
     def _save(self):
         MEMORY_FILE.write_text(json.dumps(self.state, indent=2))

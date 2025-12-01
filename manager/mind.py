@@ -51,6 +51,10 @@ class Mind:
         self.last_error_type: str | None = None
         self._last_selection_info: List[Dict[str, Any]] = []
         self._current_step_actions: List[Dict[str, Any]] = []
+        self._stagnation_steps: int = 0
+        self._last_mastered: int = 0
+        self._last_step_stats: Dict[str, Any] = {}
+        self._lifecycle_event: Dict[str, Any] | None = None
 
     def step(self) -> None:
         self._last_selection_info = []
@@ -65,6 +69,8 @@ class Mind:
         self.curriculum.sync_with_task_state(self.task_state.state)
         if self.curriculum.should_advance_phase():
             self.curriculum.advance_phase()
+        self._update_meta_skill()
+        self._detect_stagnation()
         self._log_step_thought()
 
     def _age_and_stage(self) -> None:
@@ -114,12 +120,15 @@ class Mind:
         task_drive = task_need + task_mastery_component
         current_phase = self.curriculum.state.get("current_phase", 1)
         phase_boost = 0.0
+        future_penalty = 0.0
         for tname, info in self.task_state.state.items():
             if tname.startswith("_"):
                 continue
             if info.get("phase") == current_phase and info.get("last_status") == "failing":
                 if info.get("plugin") == plugin_name:
                     phase_boost += 1.0
+            if info.get("phase", 1) > current_phase and info.get("plugin") == plugin_name:
+                future_penalty += 1.0
         if self.stage == 0:
             w_c, w_m, w_s, w_t = 2.0, 0.5, 0.5, 0.3
         elif self.stage == 1:
@@ -132,7 +141,7 @@ class Mind:
             w_c * curiosity
             + w_m * mastery
             + w_s * stability_penalty
-            + w_t * (task_drive + phase_boost)
+            + w_t * (task_drive + phase_boost - future_penalty)
         )
         return {
             "curiosity": curiosity,
@@ -141,7 +150,7 @@ class Mind:
             "task_count": task_count,
             "task_avg_streak": avg_streak,
             "task_failing_count": failing_count,
-            "task_drive": task_drive + phase_boost,
+            "task_drive": task_drive + phase_boost - future_penalty,
             "total": total,
         }
 
@@ -185,6 +194,11 @@ class Mind:
             max_candidates_per_plugin = 2
         else:
             max_candidates_per_plugin = 1
+        meta = self.brain.state.get("meta_skill", 0.0)
+        if meta > 0.6:
+            max_candidates_per_plugin = max(1, max_candidates_per_plugin - 1)
+        elif meta < 0.3:
+            max_candidates_per_plugin = min(5, max_candidates_per_plugin + 1)
 
         for plugin_name in targets:
             path = PLUGINS_DIR / plugin_name
@@ -302,6 +316,8 @@ class Mind:
             "tasks": self.task_state.summary(),
             "curriculum": self.curriculum.summary(),
             "phase_transition": self.curriculum.current_phase(),
+            "meta_skill": self.brain.state.get("meta_skill", 0.0),
+            "lifecycle_event": self._lifecycle_event,
         }
         external_knowledge_snippet = None
         ek = self.brain.state.get("external_knowledge", {})
@@ -317,6 +333,7 @@ class Mind:
         if reflection_text:
             entry["reflection"] = reflection_text
         self._append_to_diary(entry)
+        self._lifecycle_event = None
 
     def _update_metrics(self) -> None:
         self.metrics.step()
@@ -333,6 +350,34 @@ class Mind:
             if tinfo.get("streak", 0) >= 3 and tinfo.get("last_status") == "passing":
                 mastered += 1
         self.metrics.set_tasks_mastered(mastered)
+        self._last_step_stats = {
+            "accepted": accepted,
+            "rejected": rejected,
+            "web_consults": web_consults,
+            "tasks_mastered": mastered,
+        }
+
+    def _update_meta_skill(self) -> None:
+        total = len(self._current_step_actions)
+        accepted = sum(1 for a in self._current_step_actions if a.get("result") == "accepted")
+        rate = accepted / total if total else 0.0
+        self.brain.update_meta_skill(rate)
+
+    def _detect_stagnation(self) -> None:
+        accepted = self._last_step_stats.get("accepted", 0)
+        mastered = self._last_step_stats.get("tasks_mastered", 0)
+        if accepted == 0 and mastered <= self._last_mastered:
+            self._stagnation_steps += 1
+        else:
+            self._stagnation_steps = 0
+        self._last_mastered = mastered
+        if self._stagnation_steps >= 10:
+            self._lifecycle_event = {
+                "type": "stagnation_detected",
+                "steps": self._stagnation_steps,
+                "action": "none",
+            }
+            self._stagnation_steps = 0
 
     def _append_to_diary(self, entry: Dict[str, Any]) -> None:
         try:
