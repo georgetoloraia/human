@@ -108,6 +108,14 @@ class Mind:
         task_need = failing_count
         task_mastery_component = -avg_streak
         task_drive = task_need + task_mastery_component
+        current_phase = self.curriculum.state.get("current_phase", 1)
+        phase_boost = 0.0
+        for tname, info in self.task_state.state.items():
+            if tname.startswith("_"):
+                continue
+            if info.get("phase") == current_phase and info.get("last_status") == "failing":
+                if info.get("plugin") == plugin_name:
+                    phase_boost += 1.0
         if self.stage == 0:
             w_c, w_m, w_s, w_t = 2.0, 0.5, 0.5, 0.3
         elif self.stage == 1:
@@ -120,7 +128,7 @@ class Mind:
             w_c * curiosity
             + w_m * mastery
             + w_s * stability_penalty
-            + w_t * task_drive
+            + w_t * (task_drive + phase_boost)
         )
         return {
             "curiosity": curiosity,
@@ -129,7 +137,7 @@ class Mind:
             "task_count": task_count,
             "task_avg_streak": avg_streak,
             "task_failing_count": failing_count,
-            "task_drive": task_drive,
+            "task_drive": task_drive + phase_boost,
             "total": total,
         }
 
@@ -283,6 +291,7 @@ class Mind:
             "age": age,
             "stage": self.stage,
             "skill": skill,
+            "current_phase": self.curriculum.state.get("current_phase", 1),
             "selected_plugins": self._last_selection_info,
             "actions": self._current_step_actions,
             "tasks": self.task_state.summary(),

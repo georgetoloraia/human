@@ -36,7 +36,7 @@ class TaskStateManager:
 
         self.state.setdefault("_version", TASK_STATE_VERSION)
 
-        for name in tasks.keys():
+        for name, task in tasks.items():
             self.state.setdefault(
                 name,
                 {
@@ -45,6 +45,9 @@ class TaskStateManager:
                     "streak": 0,
                     "last_status": "unknown",
                     "last_error_type": "unknown",
+                    "phase": getattr(task, "phase", 1),
+                    "difficulty": getattr(task, "difficulty", 1),
+                    "category": getattr(task, "category", "general"),
                 },
             )
 
