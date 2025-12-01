@@ -7,6 +7,8 @@ def observe_codebase():
     if not plugins_dir.exists():
         return observations
     for p in plugins_dir.glob("*.py"):
+        if p.name == "__init__.py":
+            continue
         txt = p.read_text()
         observations.append(
             {
