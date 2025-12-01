@@ -102,13 +102,13 @@ class Mind:
         task_mastery_component = -avg_streak
         task_drive = task_need + task_mastery_component
         if self.stage == 0:
-            w_c, w_m, w_s, w_t = 2.0, 1.0, 0.5, 0.5
+            w_c, w_m, w_s, w_t = 2.0, 0.5, 0.5, 0.3
         elif self.stage == 1:
-            w_c, w_m, w_s, w_t = 1.5, 1.5, 1.0, 1.0
+            w_c, w_m, w_s, w_t = 1.5, 1.2, 1.0, 1.0
         elif self.stage == 2:
-            w_c, w_m, w_s, w_t = 1.0, 2.0, 1.0, 1.5
+            w_c, w_m, w_s, w_t = 0.8, 2.0, 1.0, 1.8
         else:
-            w_c, w_m, w_s, w_t = 0.8, 2.5, 1.2, 2.0
+            w_c, w_m, w_s, w_t = 0.5, 2.5, 1.5, 2.5
         total = (
             w_c * curiosity
             + w_m * mastery
@@ -135,7 +135,13 @@ class Mind:
             scores = self._score_plugin(name)
             scored.append((scores["total"], name, scores))
         scored.sort(reverse=True, key=lambda x: x[0])
-        selected = scored[:2]
+        if self.stage == 0:
+            max_plugins = 3
+        elif self.stage == 1:
+            max_plugins = 2
+        else:
+            max_plugins = 1
+        selected = scored[:max_plugins]
         self._last_selection_info = [
             {
                 "plugin": name,
@@ -151,6 +157,15 @@ class Mind:
     def _act_and_learn(self, active_task_names: List[str]) -> None:
         pattern_scores = self.brain.pattern_scores()
         targets = self._select_targets()
+        if self.stage == 0:
+            max_candidates_per_plugin = 5
+        elif self.stage == 1:
+            max_candidates_per_plugin = 3
+        elif self.stage == 2:
+            max_candidates_per_plugin = 2
+        else:
+            max_candidates_per_plugin = 1
+
         for plugin_name in targets:
             path = PLUGINS_DIR / plugin_name
             if not path.exists():
@@ -160,6 +175,7 @@ class Mind:
             candidates = propose_mutations(src, pattern_scores, error_scores)
             if not candidates:
                 continue
+            candidates = candidates[:max_candidates_per_plugin]
             for new_code, pattern_name in candidates:
                 accepted = self._try_candidate(path, plugin_name, new_code, pattern_name, active_task_names)
                 if accepted:
