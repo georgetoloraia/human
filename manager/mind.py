@@ -72,7 +72,7 @@ class Mind:
         if self.curriculum.should_advance_phase():
             self.curriculum.advance_phase()
         self._update_meta_skill()
-        self.meta_policy.step(skill, age)
+        meta_status = self.meta_policy.tick(age, skill)
         self._detect_stagnation()
         self._log_step_thought()
 

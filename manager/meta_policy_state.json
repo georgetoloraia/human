@@ -1,0 +1,23 @@
+{
+  "status": "baseline",
+  "current_policy": {
+    "exploration_depth": 3,
+    "max_plugins_per_step": 2,
+    "web_consult_threshold": 3,
+    "weights": {
+      "curiosity": 1.5,
+      "mastery": 1.5,
+      "stability": 1.0,
+      "task": 1.0
+    }
+  },
+  "prev_policy": null,
+  "experiment": null,
+  "baseline_speed": 0.0,
+  "last_age": null,
+  "last_skill": null,
+  "candidate_start_age": null,
+  "candidate_start_skill": null,
+  "experiments": [],
+  "step_counter": 0
+}
