@@ -54,6 +54,13 @@ Files/state:
 - `manager/curriculum_state.json`: curriculum phases (if used).
 - `manager/tasks_state.json`: per-task streaks and status.
 - `manager/mind_diary.json`: per-step thoughts, actions, tasks, reflections.
+- `manager/metrics.json`: counts of steps, accepted/rejected mutations, web consults, tasks mastered.
+
+Resetting state (fresh life):
+```bash
+python3 scripts/reset_state.py
+```
+This clears state JSONs and recreates sample plugin/task.
 
 LLaMA reflections:
 - Configure env vars if not default:

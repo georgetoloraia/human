@@ -4,22 +4,22 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 import json
 
-from memory import BrainMemory
-from concepts import ConceptGraph
-from goals import Goals
-from generator import propose_mutations
-from safety import is_safe
-from tester import run_tests
-from evaluator import evaluate
-from perception import observe_codebase
-from task_tests import regenerate_task_tests
-from curriculum import Curriculum
-from tasks import load_tasks
-from tasks_state import TaskStateManager
-from web_sensor import WebSensor
-from web_knowledge import extract_plain_text
-from reflection import generate_reflection
-from metrics import Metrics
+from manager.memory import BrainMemory
+from manager.concepts import ConceptGraph
+from manager.goals import Goals
+from manager.generator import propose_mutations
+from manager.safety import is_safe
+from manager.tester import run_tests
+from manager.evaluator import evaluate
+from manager.perception import observe_codebase
+from manager.task_tests import regenerate_task_tests
+from manager.curriculum import Curriculum
+from manager.tasks import load_tasks
+from manager.tasks_state import TaskStateManager
+from manager.web_sensor import WebSensor
+from manager.web_knowledge import extract_plain_text
+from manager.reflection import generate_reflection
+from manager.metrics import Metrics
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
