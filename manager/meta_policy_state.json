@@ -13,11 +13,11 @@
   },
   "prev_policy": null,
   "experiment": null,
-  "baseline_speed": 0.0,
-  "last_age": null,
-  "last_skill": null,
+  "baseline_speed": 0.51,
+  "last_age": 91,
+  "last_skill": 91,
   "candidate_start_age": null,
   "candidate_start_skill": null,
   "experiments": [],
-  "step_counter": 0
+  "step_counter": 3
 }

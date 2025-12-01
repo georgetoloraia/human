@@ -8,6 +8,7 @@ import requests
 
 LLM_BASE_URL = os.getenv("MIND_LLM_BASE_URL", "http://127.0.0.1:11434/v1/chat/completions")
 LLM_MODEL = os.getenv("MIND_LLM_MODEL", "llama3.2:1b")
+LLM_TIMEOUT = float(os.getenv("MIND_LLM_TIMEOUT", "60"))
 
 
 def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str]) -> str:
@@ -85,7 +86,7 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "stream": False,
     }
     try:
-        resp = requests.post(LLM_BASE_URL, json=body, timeout=20)
+        resp = requests.post(LLM_BASE_URL, json=body, timeout=LLM_TIMEOUT)
         resp.raise_for_status()
         data = resp.json()
         choices = data.get("choices") or []
