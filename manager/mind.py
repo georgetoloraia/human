@@ -62,6 +62,8 @@ class Mind:
         self._act_and_learn(active_task_names)
         self._update_metrics()
         self.curriculum.sync_with_task_state(self.task_state.state)
+        if self.curriculum.should_advance_phase():
+            self.curriculum.advance_phase()
         self._log_step_thought()
 
     def _age_and_stage(self) -> None:

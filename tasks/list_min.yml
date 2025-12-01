@@ -1,0 +1,11 @@
+name: list_min
+phase: 1
+difficulty: 1
+category: math
+target_plugin: sample_plugin.py
+target_function: list_min
+description: Return the minimum of a list of integers (0 for empty).
+requirements:
+  - list_min([1, 2, 3]) == 1
+  - list_min([-1, -5, -2]) == -5
+  - list_min([]) == 0

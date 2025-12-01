@@ -188,6 +188,20 @@ class Curriculum:
             }
         return summary
 
+    def should_advance_phase(self) -> bool:
+        current = self.state.get("current_phase", 1)
+        current_info = self.state.get("phase_stats", {}).get(current, {})
+        return bool(current_info.get("unlocked") and current_info.get("mastered"))
+
+    def advance_phase(self) -> None:
+        phases = sorted(self.state.get("phase_stats", {}).keys())
+        current = self.state.get("current_phase", 1)
+        for p in phases:
+            if p > current and self.state["phase_stats"].get(p, {}).get("unlocked"):
+                self.state["current_phase"] = p
+                break
+        self.save()
+
     def tasks_for_plugin(self, plugin: str) -> List[str]:
         return [
             name
