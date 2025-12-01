@@ -8,7 +8,7 @@ import requests
 
 LLM_BASE_URL = os.getenv("MIND_LLM_BASE_URL", "http://127.0.0.1:11434/v1/chat/completions")
 LLM_MODEL = os.getenv("MIND_LLM_MODEL", "llama3.2:1b")
-LLM_TIMEOUT = float(os.getenv("MIND_LLM_TIMEOUT", "60"))
+LLM_TIMEOUT = float(os.getenv("MIND_LLM_TIMEOUT", "300"))
 
 
 def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str]) -> str:
