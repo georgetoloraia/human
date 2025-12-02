@@ -62,13 +62,14 @@ def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str
 
     if external_knowledge:
         parts.append(f"external_knowledge_snippet: {external_knowledge[:500]}")
-    if "guidance" in step_summary:
-        g_items = step_summary.get("guidance") or []
-        if g_items:
-            msgs = []
-            for g in g_items:
-                msgs.append(f"{g.get('author')}: {g.get('message')}")
-            parts.append("guidance: " + "; ".join(msgs))
+    guidance_items = step_summary.get("guidance") or []
+    last_guidance = step_summary.get("last_guidance")
+    if guidance_items:
+        parts.append("guidance_messages:")
+        for g in guidance_items:
+            parts.append(f"- {g.get('author')}: {g.get('message')}")
+    if last_guidance:
+        parts.append(f"latest_guidance: {last_guidance.get('author')}: {last_guidance.get('message')}")
 
     return "\n".join(parts)
 
@@ -78,13 +79,13 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
     system_msg = (
         "You are the inner voice of a young self-improving code agent. "
         "You see a summary of one life step: age, stage, skill, which plugins were selected, "
-        "what actions were taken (patterns tried, accepted/rejected, errors) and task status. "
-        "You may also see recent teacher guidance under a 'guidance' field. "
-        "Optionally you also see a short snippet of external documentation text that you recently read. "
+        "what actions were taken (patterns tried, accepted/rejected, errors), task status, "
+        "and optionally external knowledge snippets or guidance messages from a human teacher. "
         "You only know error types as short labels (e.g. 'TypeError', 'AssertionError', or 'Other'); do not invent specific Python versions or details not present. "
-        "In 2-5 sentences, describe what you think happened, why it happened, and what you might try next. "
-        "Speak in first person, be concise, and focus on reasoning rather than emotions. "
-        "If guidance is present, end with 1-2 sentences starting with 'To my teacher:' that directly respond to the latest guidance."
+        "If guidance is present, do two things: "
+        "1) briefly reflect on what happened this step (1–3 sentences); "
+        "2) then write 1–2 sentences starting with 'To my teacher:' that directly respond to the MOST RECENT guidance message only, in your own words. "
+        "Do not repeat all past messages; be concise and honest about uncertainty."
     )
     body = {
         "model": LLM_MODEL,

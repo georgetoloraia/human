@@ -333,6 +333,7 @@ class Mind:
         }
         if guidance_msgs:
             entry["guidance"] = guidance_msgs
+            entry["last_guidance"] = guidance_msgs[-1]
         external_knowledge_snippet = None
         ek = self.brain.state.get("external_knowledge", {})
         if isinstance(ek, dict) and ek:
