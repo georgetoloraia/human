@@ -60,6 +60,17 @@ def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str
             )
         parts.append("tasks: " + "; ".join(task_lines))
 
+    doc_event = step_summary.get("doc_curriculum")
+    if doc_event:
+        doc_bits = [str(doc_event.get("concept") or "unknown_concept")]
+        task_files = doc_event.get("task_files") or []
+        if task_files:
+            doc_bits.append("tasks=" + ",".join(task_files))
+        snippet = doc_event.get("doc_snippet")
+        if snippet:
+            doc_bits.append(f"note={snippet}")
+        parts.append("doc_curriculum: " + "; ".join(doc_bits))
+
     if external_knowledge:
         parts.append(f"external_knowledge_snippet: {external_knowledge[:500]}")
     guidance_items = step_summary.get("guidance") or []
@@ -80,6 +91,7 @@ def _fallback_reflection(step_summary: Dict[str, Any]) -> str:
     skill = step_summary.get("skill")
     actions = step_summary.get("actions") or []
     tasks = step_summary.get("tasks") or []
+    doc_event = step_summary.get("doc_curriculum")
 
     passing = sum(1 for t in tasks if t.get("last_status") == "passing")
     failing = sum(1 for t in tasks if t.get("last_status") == "failing")
@@ -92,7 +104,11 @@ def _fallback_reflection(step_summary: Dict[str, Any]) -> str:
             f"{a.get('plugin')} pattern={a.get('pattern')} result={a.get('result')} error={a.get('error_type')}"
         )
 
-    part_one = f"Now: age {age}, stage {stage}, skill {skill}; tasks {task_note}; recent action {action_note}."
+    doc_note = ""
+    if doc_event:
+        doc_note = f" New concept focus: {doc_event.get('concept')}."
+
+    part_one = f"Now: age {age}, stage {stage}, skill {skill}; tasks {task_note}; recent action {action_note}.{doc_note}"
     last_guidance = step_summary.get("last_guidance") or {}
     guidance_msg = last_guidance.get("message")
     if guidance_msg:
@@ -108,12 +124,13 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "You are the inner voice of a young self-improving code agent. "
         "You see a summary of one life step: age, stage, skill, which plugins were selected, "
         "what actions were taken (patterns tried, accepted/rejected, errors), task status, "
+        "and optionally doc_curriculum entries describing new concepts and tasks derived from Python docs, "
         "and optionally external knowledge snippets or guidance messages from a human teacher. "
         "You only know error types as short labels (e.g. 'TypeError', 'AssertionError', or 'Other'); do not invent details not present. "
         "Always respond in two parts, in this order: "
-        "1) briefly describe what you are doing now based on this step (actions, tasks, successes/failures) using the provided age/stage/skill as-is; "
+        "1) briefly describe what you are doing now based on this step (actions, tasks, successes/failures, and if present the newest doc concept/tasks) using the provided age/stage/skill as-is; "
         "2) then write 1–2 sentences starting with 'To my teacher:' that directly respond to the MOST RECENT guidance message (or note that none was given), in your own words. "
-        "Be concise and honest about uncertainty."
+        "Be concise and honest about uncertainty. If you see doc_curriculum details, mention what new concept is being added or practiced and whether you feel ready to move on."
     )
     body = {
         "model": LLM_MODEL,

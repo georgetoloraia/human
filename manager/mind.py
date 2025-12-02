@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 import json
@@ -23,6 +24,9 @@ from manager.metrics import Metrics
 from manager.meta_policy import MetaPolicy
 from manager.graph_client import query_graph
 from manager.guidance import latest_guidance
+from manager.doc_index import load_concepts
+from manager.concept_miner import choose_next_concept
+from manager.task_grower import ensure_tasks_for_concept
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -58,11 +62,16 @@ class Mind:
         self._last_mastered: int = 0
         self._last_step_stats: Dict[str, Any] = {}
         self._lifecycle_event: Dict[str, Any] | None = None
+        self.doc_concepts = load_concepts()
+        self.doc_curriculum_enabled = os.getenv("HUMAN_DOC_CURRICULUM", "1") != "0"
+        self._doc_curriculum_event: Dict[str, Any] | None = None
 
     def step(self) -> None:
         self._last_selection_info = []
         self._current_step_actions = []
+        self._doc_curriculum_event = None
         self._age_and_stage()
+        self._maybe_expand_doc_curriculum()
         current_age = self.brain.state.get("age", 0)
         current_skill = self.brain.get_skill_level()
         tasks = regenerate_task_tests(self.curriculum)
@@ -92,6 +101,39 @@ class Mind:
         else:
             self.stage = 3
 
+    def _doc_curriculum_ready(self) -> bool:
+        if not self.doc_curriculum_enabled:
+            return False
+        state = getattr(self.task_state, "state", {})
+        if not state:
+            return False
+        total_passes = sum(int(info.get("passes", 0) or 0) for name, info in state.items() if not name.startswith("_"))
+        if total_passes < 5:
+            return False
+        core_tasks = ["easy_pass", "list_sum", "add_two_numbers"]
+        mastered_core = 0
+        for task in core_tasks:
+            info = state.get(task, {})
+            if info.get("last_status") == "passing" and info.get("streak", 0) > 0:
+                mastered_core += 1
+        return mastered_core >= 2
+
+    def _maybe_expand_doc_curriculum(self) -> None:
+        if not self._doc_curriculum_ready():
+            return
+        concept = choose_next_concept(self.task_state, self.doc_concepts)
+        if not concept:
+            return
+        created = ensure_tasks_for_concept(concept)
+        if created:
+            self.tasks = load_tasks()
+            self.task_state = TaskStateManager(self.tasks)
+            self._doc_curriculum_event = {
+                "action": "added_concept",
+                "concept": concept.get("id") or concept.get("name"),
+                "task_files": created,
+                "doc_snippet": concept.get("doc_snippet"),
+            }
     def _perceive_world(self) -> None:
         for p in PLUGINS_DIR.glob("*.py"):
             if p.name == "__init__.py":
@@ -333,6 +375,8 @@ class Mind:
             "lifecycle_event": self._lifecycle_event,
             "learning_policy": self.brain.get_learning_policy(),
         }
+        if self._doc_curriculum_event:
+            entry["doc_curriculum"] = self._doc_curriculum_event
         if guidance_msgs:
             entry["guidance"] = guidance_msgs
             entry["last_guidance"] = guidance_msgs[-1]
