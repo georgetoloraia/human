@@ -3,7 +3,7 @@
   "current_policy": {
     "exploration_depth": 3,
     "max_plugins_per_step": 2,
-    "web_consult_threshold": 3,
+    "web_consult_threshold": 4,
     "weights": {
       "curiosity": 1.5,
       "mastery": 1.5,
@@ -13,11 +13,973 @@
   },
   "prev_policy": null,
   "experiment": null,
-  "baseline_speed": 0.51,
-  "last_age": 91,
-  "last_skill": 91,
+  "baseline_speed": 1.0,
+  "last_age": 626,
+  "last_skill": 626,
   "candidate_start_age": null,
   "candidate_start_skill": null,
-  "experiments": [],
-  "step_counter": 3
+  "experiments": [
+    {
+      "id": 1,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 3,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 9,
+      "end_age": 19,
+      "baseline_speed": -0.7132857865185365,
+      "candidate_speed": 1.0,
+      "outcome": "accepted"
+    },
+    {
+      "id": 2,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 29,
+      "end_age": 39,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 3,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 49,
+      "end_age": 59,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 4,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 69,
+      "end_age": 79,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 5,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 89,
+      "end_age": 99,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 6,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 109,
+      "end_age": 119,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 7,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 129,
+      "end_age": 139,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 8,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 149,
+      "end_age": 159,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 9,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 169,
+      "end_age": 179,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 10,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 189,
+      "end_age": 199,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 11,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 209,
+      "end_age": 219,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 12,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 229,
+      "end_age": 239,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 13,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 249,
+      "end_age": 259,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 14,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 269,
+      "end_age": 279,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 15,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 289,
+      "end_age": 299,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 16,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 309,
+      "end_age": 319,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 17,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 329,
+      "end_age": 339,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 18,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 349,
+      "end_age": 359,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 19,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 369,
+      "end_age": 379,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 20,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 389,
+      "end_age": 399,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 21,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 409,
+      "end_age": 419,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 22,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 429,
+      "end_age": 439,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 23,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 449,
+      "end_age": 459,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 24,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 469,
+      "end_age": 479,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 25,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 489,
+      "end_age": 499,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 26,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 509,
+      "end_age": 519,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 27,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 529,
+      "end_age": 539,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 28,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 549,
+      "end_age": 559,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 29,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 569,
+      "end_age": 579,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 30,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 4,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 589,
+      "end_age": 599,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    },
+    {
+      "id": 31,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 5,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 609,
+      "end_age": 619,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
+    }
+  ],
+  "step_counter": 637
 }

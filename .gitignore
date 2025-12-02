@@ -6,4 +6,5 @@ manager/curriculum_state.json
 tests/generated/
 manager/tasks_state.json
 manager/metrics.json
+manager/guidance_log.json
 mind_diary.json

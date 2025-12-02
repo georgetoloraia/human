@@ -62,6 +62,13 @@ def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str
 
     if external_knowledge:
         parts.append(f"external_knowledge_snippet: {external_knowledge[:500]}")
+    if "guidance" in step_summary:
+        g_items = step_summary.get("guidance") or []
+        if g_items:
+            msgs = []
+            for g in g_items:
+                msgs.append(f"{g.get('author')}: {g.get('message')}")
+            parts.append("guidance: " + "; ".join(msgs))
 
     return "\n".join(parts)
 
@@ -72,6 +79,7 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "You are the inner voice of a young self-improving code agent. "
         "You see a summary of one life step: age, stage, skill, which plugins were selected, "
         "what actions were taken (patterns tried, accepted/rejected, errors) and task status. "
+        "You may also see recent teacher guidance under a 'guidance' field. "
         "Optionally you also see a short snippet of external documentation text that you recently read. "
         "In 2-5 sentences, describe what you think happened, why it happened, and what you might try next. "
         "Speak in first person, be concise, and focus on reasoning rather than emotions."

@@ -22,6 +22,7 @@ from manager.reflection import generate_reflection
 from manager.metrics import Metrics
 from manager.meta_policy import MetaPolicy
 from manager.graph_client import query_graph
+from manager.guidance import latest_guidance
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -315,6 +316,7 @@ class Mind:
     def _log_step_thought(self) -> None:
         age = self.brain.state.get("age", 0)
         skill = self.brain.get_skill_level()
+        guidance_msgs = latest_guidance()
         entry: Dict[str, Any] = {
             "age": age,
             "stage": self.stage,
@@ -329,6 +331,8 @@ class Mind:
             "lifecycle_event": self._lifecycle_event,
             "learning_policy": self.brain.get_learning_policy(),
         }
+        if guidance_msgs:
+            entry["guidance"] = guidance_msgs
         external_knowledge_snippet = None
         ek = self.brain.state.get("external_knowledge", {})
         if isinstance(ek, dict) and ek:
