@@ -1,6 +1,6 @@
 import ast
 import copy
-from typing import Optional
+from typing import Dict, Optional, Tuple
 
 
 class MutationPattern:
@@ -18,6 +18,100 @@ def _module_to_source(tree: ast.Module) -> str:
     return "\n\n".join(parts) + "\n"
 
 
+def _handlers_equivalent(a: list, b: list) -> bool:
+    if len(a) != len(b):
+        return False
+    for ha, hb in zip(a, b):
+        if ast.dump(ha, include_attributes=False) != ast.dump(hb, include_attributes=False):
+            return False
+    return True
+
+
+def try_stats(src: str) -> Tuple[Dict[str, int], int]:
+    """
+    Return (per-function try count, max nesting depth across functions).
+    """
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return {}, 0
+
+    func_counts: Dict[str, int] = {}
+    max_depth = 0
+
+    def visit(node, depth=0, current_func=None):
+        nonlocal max_depth
+        if isinstance(node, ast.FunctionDef):
+            current_func = node.name
+        if isinstance(node, ast.Try):
+            max_depth = max(max_depth, depth + 1)
+            if current_func:
+                func_counts[current_func] = func_counts.get(current_func, 0) + 1
+            for child in ast.iter_child_nodes(node):
+                visit(child, depth + 1, current_func)
+        else:
+            for child in ast.iter_child_nodes(node):
+                visit(child, depth, current_func)
+
+    visit(tree)
+    return func_counts, max_depth
+
+
+def _max_try_depth_in_function(func: ast.FunctionDef) -> int:
+    max_depth = 0
+
+    def visit(node, depth=0):
+        nonlocal max_depth
+        if isinstance(node, ast.Try):
+            depth += 1
+            max_depth = max(max_depth, depth)
+        for child in ast.iter_child_nodes(node):
+            visit(child, depth)
+
+    visit(func)
+    return max_depth
+
+
+class _TryNormalizer(ast.NodeTransformer):
+    """
+    Collapse trivial nested try blocks with identical handlers.
+    """
+
+    def visit_Try(self, node: ast.Try):
+        self.generic_visit(node)
+        while (
+            len(node.body) == 1
+            and isinstance(node.body[0], ast.Try)
+            and not node.orelse
+            and not node.finalbody
+            and not node.body[0].orelse
+            and not node.body[0].finalbody
+            and _handlers_equivalent(node.handlers, node.body[0].handlers)
+        ):
+            inner = node.body[0]
+            node = ast.Try(
+                body=inner.body,
+                handlers=inner.handlers,
+                orelse=[],
+                finalbody=[],
+            )
+            self.generic_visit(node)
+        return node
+
+
+def normalize_try_blocks(src: str) -> str:
+    """
+    Collapse redundant nested try blocks to simplify code before mutation.
+    """
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return src
+    tree = _TryNormalizer().visit(tree)
+    ast.fix_missing_locations(tree)
+    return _module_to_source(tree)
+
+
 class TryWrapPattern(MutationPattern):
     def __init__(self):
         super().__init__("try_wrap")
@@ -27,6 +121,10 @@ class TryWrapPattern(MutationPattern):
         changed = False
         for i, node in enumerate(tree.body):
             if isinstance(node, ast.FunctionDef):
+                if _max_try_depth_in_function(node) >= 1:
+                    continue
+                if node.body and isinstance(node.body[0], ast.Try):
+                    continue
                 new_node = copy.deepcopy(node)
                 try_block = ast.Try(
                     body=new_node.body,

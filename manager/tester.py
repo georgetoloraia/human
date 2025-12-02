@@ -6,12 +6,14 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 from manager.tasks import Task, load_tasks
+from manager.mutations import try_stats
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 DEFAULT_ERROR = "Other"
+MAX_TRY_DEPTH = 2
 
 
 def _plugin_module_name(plugin_path: str) -> str:
@@ -93,6 +95,33 @@ def run_tests(plugin_name: str | None = None) -> tuple[bool, str, List[str], Dic
 
     if not tasks:
         return True, "OK", failing, results
+
+    # Hard safety: reject code with excessive try nesting.
+    target_plugin_file = None
+    if plugin_name:
+        target_plugin_file = ROOT / "plugins" / f"{Path(plugin_name).stem}.py"
+    else:
+        # pick the first plugin from tasks to inspect
+        first = next(iter(tasks.values()))
+        target_plugin_file = ROOT / "plugins" / f"{Path(first.target_plugin).stem}.py"
+
+    if target_plugin_file and target_plugin_file.exists():
+        try:
+            src = target_plugin_file.read_text(encoding="utf-8")
+            _, max_depth = try_stats(src)
+            if max_depth > MAX_TRY_DEPTH:
+                overall_error = "TryDepthExceeded"
+                for tname in tasks:
+                    failing.append(tname)
+                    results[tname] = (False, overall_error)
+                return False, overall_error, failing, results
+        except Exception as exc:  # pylint: disable=broad-except
+            # If we cannot parse, surface the real error.
+            err = classify_error(exc)
+            for tname in tasks:
+                failing.append(tname)
+                results[tname] = (False, err)
+            return False, err, failing, results
 
     overall_error = "OK"
     all_passed = True

@@ -1,12 +1,10 @@
 def process(values):
-    try:            
-        total = 0
-        for v in values:
-            total += v
-        return total
-    except Exception:
-        None
-  
+    total = 0
+    for v in values:
+        total += v
+    return total
+
+
 def add_two_numbers(a, b):
     return a + b
 
