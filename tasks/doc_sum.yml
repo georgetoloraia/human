@@ -1,0 +1,10 @@
+name: doc_sum
+phase: 1
+difficulty: 1
+target_plugin: sample_plugin.py
+target_function: use_sum
+description: Use Python's built-in sum() to total an iterable of numbers.
+requirements:
+  - use_sum([1,2,3]) == 6
+  - use_sum([]) == 0
+  - use_sum([-2,2,5]) == 5

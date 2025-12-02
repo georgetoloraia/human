@@ -1,6 +1,12 @@
 def process(values):
     if values is None:
         return None
+    if values is None:
+        return None
+    if values is None:
+        return None
+    if values is None:
+        return None
     total = 0
     for v in values:
         total += v
@@ -59,6 +65,9 @@ def list_average(values):
 def easy_pass():
     return 1
 
-
 def use_len(obj):
     return len(obj)
+
+
+def use_sum(values):
+    return sum(values)
