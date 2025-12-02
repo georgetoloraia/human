@@ -14,8 +14,8 @@
   "prev_policy": null,
   "experiment": null,
   "baseline_speed": 1.0,
-  "last_age": 626,
-  "last_skill": 626,
+  "last_age": 643,
+  "last_skill": 643,
   "candidate_start_age": null,
   "candidate_start_skill": null,
   "experiments": [
@@ -979,7 +979,38 @@
       "baseline_speed": 1.0,
       "candidate_speed": 1.0,
       "outcome": "reverted"
+    },
+    {
+      "id": 32,
+      "param": "auto",
+      "old": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 2,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "new": {
+        "exploration_depth": 3,
+        "max_plugins_per_step": 3,
+        "web_consult_threshold": 4,
+        "weights": {
+          "curiosity": 1.5,
+          "mastery": 1.5,
+          "stability": 1.0,
+          "task": 1.0
+        }
+      },
+      "start_age": 629,
+      "end_age": 639,
+      "baseline_speed": 1.0,
+      "candidate_speed": 1.0,
+      "outcome": "reverted"
     }
   ],
-  "step_counter": 637
+  "step_counter": 653
 }

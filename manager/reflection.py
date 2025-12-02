@@ -82,7 +82,8 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "You may also see recent teacher guidance under a 'guidance' field. "
         "Optionally you also see a short snippet of external documentation text that you recently read. "
         "In 2-5 sentences, describe what you think happened, why it happened, and what you might try next. "
-        "Speak in first person, be concise, and focus on reasoning rather than emotions."
+        "Speak in first person, be concise, and focus on reasoning rather than emotions. "
+        "If guidance is present, end with 1-2 sentences starting with 'To my teacher:' that directly respond to the latest guidance."
     )
     body = {
         "model": LLM_MODEL,

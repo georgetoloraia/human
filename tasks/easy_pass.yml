@@ -1,0 +1,9 @@
+name: easy_pass
+phase: 1
+difficulty: 1
+category: basic
+target_plugin: sample_plugin.py
+target_function: easy_pass
+description: Always return 1.
+requirements:
+  - easy_pass() == 1

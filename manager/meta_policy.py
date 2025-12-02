@@ -47,20 +47,12 @@ class MetaPolicy:
         META_STATE_FILE.write_text(json.dumps(self.state, indent=2), encoding="utf-8")
 
     def _mutate_policy(self, policy: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Single-parameter meta experiment: only tune exploration_depth.
+        """
         new_policy = dict(policy)
-        weights = dict(new_policy.get("weights", {}))
-        new_policy["weights"] = weights
-        choices = ["exploration_depth", "max_plugins_per_step", "web_consult_threshold"]
-        param = choices[self.state["step_counter"] % len(choices)]
-        if param == "exploration_depth":
-            val = int(new_policy.get("exploration_depth", 3))
-            new_policy["exploration_depth"] = max(1, min(10, val + 1))
-        elif param == "max_plugins_per_step":
-            val = int(new_policy.get("max_plugins_per_step", 2))
-            new_policy["max_plugins_per_step"] = max(1, min(4, val + 1))
-        elif param == "web_consult_threshold":
-            val = int(new_policy.get("web_consult_threshold", 3))
-            new_policy["web_consult_threshold"] = max(1, min(10, val + 1))
+        val = int(new_policy.get("exploration_depth", 3))
+        new_policy["exploration_depth"] = max(1, min(10, val + 1))
         return new_policy
 
     def tick(self, age: int, skill: float) -> Dict[str, Any]:
@@ -97,7 +89,7 @@ class MetaPolicy:
                 self.state["candidate_start_skill"] = skill
                 self.state["experiment"] = {
                     "id": len(self.state.get("experiments", [])) + 1,
-                    "param": "auto",
+                    "param": "exploration_depth",
                     "old": prev_policy,
                     "new": candidate,
                     "start_age": age,
