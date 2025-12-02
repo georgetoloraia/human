@@ -41,7 +41,10 @@ def _extract_doc(lines: List[str], name: str) -> Optional[Concept]:
     """
     Find a function signature and a short snippet that follows it.
     """
-    pattern = re.compile(rf"^{re.escape(name)}\\(")
+    try:
+        pattern = re.compile(f"^{re.escape(name)}\\(")
+    except re.error:
+        return None
     for idx, raw in enumerate(lines):
         line = raw.strip()
         if not pattern.match(line):
