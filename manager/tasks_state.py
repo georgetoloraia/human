@@ -37,7 +37,7 @@ class TaskStateManager:
         self.state.setdefault("_version", TASK_STATE_VERSION)
 
         for name, task in tasks.items():
-            self.state.setdefault(
+            s = self.state.setdefault(
                 name,
                 {
                     "passes": 0,
@@ -48,8 +48,14 @@ class TaskStateManager:
                     "phase": getattr(task, "phase", 1),
                     "difficulty": getattr(task, "difficulty", 1),
                     "category": getattr(task, "category", "general"),
+                    "plugin": getattr(task, "target_plugin", None),
                 },
             )
+            # refresh metadata when tasks change over time
+            s.setdefault("phase", getattr(task, "phase", 1))
+            s.setdefault("difficulty", getattr(task, "difficulty", 1))
+            s.setdefault("category", getattr(task, "category", "general"))
+            s.setdefault("plugin", getattr(task, "target_plugin", None))
 
         # drop tasks no longer present
         stale = [k for k in self.state.keys() if k not in tasks and not k.startswith("_")]
@@ -67,6 +73,7 @@ class TaskStateManager:
         self._save()
 
     def _record_task_result(self, task_name: str, success: bool, error_type: str) -> None:
+        task_obj = self.tasks.get(task_name)
         s = self.state.setdefault(
             task_name,
             {
@@ -75,18 +82,30 @@ class TaskStateManager:
                 "streak": 0,
                 "last_status": "unknown",
                 "last_error_type": "unknown",
+                "phase": getattr(task_obj, "phase", 1) if task_obj else 1,
+                "difficulty": getattr(task_obj, "difficulty", 1) if task_obj else 1,
+                "category": getattr(task_obj, "category", "general") if task_obj else "general",
+                "plugin": getattr(task_obj, "target_plugin", None) if task_obj else None,
             },
         )
         if success:
             s["passes"] += 1
-            s["streak"] += 1
+            s["streak"] = s["streak"] + 1 if s.get("streak", 0) > 0 else 1
             s["last_status"] = "passing"
-            s["last_error_type"] = error_type
+            s["last_error_type"] = error_type or "OK"
         else:
             s["fails"] += 1
-            s["streak"] = 0
+            s["streak"] = s["streak"] - 1 if s.get("streak", 0) < 0 else -1
             s["last_status"] = "failing"
-            s["last_error_type"] = error_type
+            s["last_error_type"] = error_type or "Other"
+
+    def record_task_results(self, results: Dict[str, tuple[bool, str]]) -> None:
+        """
+        Record per-task outcomes in bulk.
+        """
+        for tname, (success, err) in results.items():
+            self._record_task_result(tname, success, err)
+        self._save()
 
     def plugin_task_stats(self, plugin_name: str) -> Dict[str, float]:
         task_names = self.by_plugin.get(plugin_name, [])

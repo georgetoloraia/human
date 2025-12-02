@@ -254,7 +254,7 @@ class Mind:
         orig = path.read_text(encoding="utf-8")
         path.write_text(new_code, encoding="utf-8")
 
-        tests_ok, err_type, failing_tasks = run_tests()
+        tests_ok, err_type, _failing_tasks, task_outcomes = run_tests(plugin_name=plugin_name)
         eval_ok = tests_ok and evaluate(orig, new_code)
 
         mutation_id = f"{plugin_name}:{pattern_name}"
@@ -262,14 +262,16 @@ class Mind:
         self.graph.record_test_result(plugin_name, tests_ok)
         task_results = {}
         for tname in active_task_names:
-            if tname in failing_tasks:
-                task_results[tname] = False
-                self.graph.record_task_result(tname, False)
-            else:
-                task_results[tname] = True
-                self.graph.record_task_result(tname, True)
+            passed = task_outcomes.get(tname, (True, "OK"))[0]
+            task_results[tname] = passed
+            self.graph.record_task_result(tname, passed)
+        for tname, (passed, _) in task_outcomes.items():
+            if tname not in task_results:
+                task_results[tname] = passed
+                self.graph.record_task_result(tname, passed)
         self.curriculum.update_results(task_results)
-        self.task_state.record_plugin_result(plugin_name, success=eval_ok, error_type=err_type)
+        if task_outcomes:
+            self.task_state.record_task_results(task_outcomes)
         self.brain.record_error_event(plugin_name, err_type, success=eval_ok)
         streak = self.brain.get_error_streak(plugin_name, err_type)
         web_consult_info = None

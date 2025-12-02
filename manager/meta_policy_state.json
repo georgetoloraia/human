@@ -50,8 +50,8 @@
     "start_age": 650
   },
   "baseline_speed": 1.0,
-  "last_age": 15,
-  "last_skill": 15,
+  "last_age": 627,
+  "last_skill": 627,
   "candidate_start_age": 650,
   "candidate_start_skill": 650,
   "experiments": [
@@ -1048,5 +1048,5 @@
       "outcome": "reverted"
     }
   ],
-  "step_counter": 675
+  "step_counter": 1303
 }
