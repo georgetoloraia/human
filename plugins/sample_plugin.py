@@ -1,9 +1,10 @@
 def process(values):
+    if values is None:
+        return None
     total = 0
     for v in values:
         total += v
     return total
-
 
 def add_two_numbers(a, b):
     return a + b
@@ -57,3 +58,7 @@ def list_average(values):
 
 def easy_pass():
     return 1
+
+
+def use_len(obj):
+    return len(obj)

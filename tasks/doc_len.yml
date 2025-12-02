@@ -1,0 +1,10 @@
+name: doc_len
+phase: 1
+difficulty: 1
+target_plugin: sample_plugin.py
+target_function: use_len
+description: Use Python's built-in len() to compute the length of a sequence.
+requirements:
+  - use_len([1,2,3]) == 3
+  - use_len('hello') == 5
+  - use_len([]) == 0

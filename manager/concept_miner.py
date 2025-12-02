@@ -42,13 +42,19 @@ def _is_learned(task_info: Optional[Dict[str, Any]]) -> bool:
     return False
 
 
-def choose_next_concept(tasks_state: Any, doc_concepts: List[Concept]) -> Optional[Concept]:
+def choose_next_concept(
+    tasks_state: Any, doc_concepts: List[Concept], doc_mastery: Optional[Dict[str, Dict[str, Any]]] = None
+) -> Optional[Concept]:
     """
     Given the current task performance state, pick the next unlearned concept
     in document order. Returns None if everything in the index looks learned.
     """
     state = _extract_state(tasks_state)
+    mastery = doc_mastery or {}
     for concept in doc_concepts:
+        cid = concept.get("id") or concept.get("name")
+        if cid and mastery.get(cid, {}).get("mastered"):
+            continue
         task_name = task_name_for_concept(concept)
         info = state.get(task_name)
         if _is_learned(info):

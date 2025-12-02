@@ -60,16 +60,27 @@ def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str
             )
         parts.append("tasks: " + "; ".join(task_lines))
 
-    doc_event = step_summary.get("doc_curriculum")
-    if doc_event:
-        doc_bits = [str(doc_event.get("concept") or "unknown_concept")]
-        task_files = doc_event.get("task_files") or []
-        if task_files:
-            doc_bits.append("tasks=" + ",".join(task_files))
-        snippet = doc_event.get("doc_snippet")
-        if snippet:
-            doc_bits.append(f"note={snippet}")
-        parts.append("doc_curriculum: " + "; ".join(doc_bits))
+    doc_events = step_summary.get("doc_curriculum") or []
+    if isinstance(doc_events, dict):
+        doc_events = [doc_events]
+    if doc_events:
+        doc_lines = []
+        for ev in doc_events:
+            bits = [ev.get("action", "doc_event"), str(ev.get("concept") or "unknown_concept")]
+            task_files = ev.get("task_files") or ev.get("tasks") or []
+            if task_files:
+                bits.append("tasks=" + ",".join(task_files))
+            snippet = ev.get("doc_snippet")
+            if snippet:
+                bits.append(f"note={snippet}")
+            passes = ev.get("passes")
+            streak = ev.get("streak")
+            if passes is not None:
+                bits.append(f"passes={passes}")
+            if streak is not None:
+                bits.append(f"streak={streak}")
+            doc_lines.append(" ".join(str(b) for b in bits if b))
+        parts.append("doc_curriculum: " + "; ".join(doc_lines))
 
     if external_knowledge:
         parts.append(f"external_knowledge_snippet: {external_knowledge[:500]}")
@@ -91,7 +102,9 @@ def _fallback_reflection(step_summary: Dict[str, Any]) -> str:
     skill = step_summary.get("skill")
     actions = step_summary.get("actions") or []
     tasks = step_summary.get("tasks") or []
-    doc_event = step_summary.get("doc_curriculum")
+    doc_events = step_summary.get("doc_curriculum")
+    if isinstance(doc_events, dict):
+        doc_events = [doc_events]
 
     passing = sum(1 for t in tasks if t.get("last_status") == "passing")
     failing = sum(1 for t in tasks if t.get("last_status") == "failing")
@@ -105,8 +118,9 @@ def _fallback_reflection(step_summary: Dict[str, Any]) -> str:
         )
 
     doc_note = ""
-    if doc_event:
-        doc_note = f" New concept focus: {doc_event.get('concept')}."
+    if doc_events:
+        recent = doc_events[-1]
+        doc_note = f" New concept focus: {recent.get('concept')} ({recent.get('action')})."
 
     part_one = f"Now: age {age}, stage {stage}, skill {skill}; tasks {task_note}; recent action {action_note}.{doc_note}"
     last_guidance = step_summary.get("last_guidance") or {}
@@ -130,7 +144,7 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "Always respond in two parts, in this order: "
         "1) briefly describe what you are doing now based on this step (actions, tasks, successes/failures, and if present the newest doc concept/tasks) using the provided age/stage/skill as-is; "
         "2) then write 1–2 sentences starting with 'To my teacher:' that directly respond to the MOST RECENT guidance message (or note that none was given), in your own words. "
-        "Be concise and honest about uncertainty. If you see doc_curriculum details, mention what new concept is being added or practiced and whether you feel ready to move on."
+        "Be concise and honest about uncertainty. If you see doc_curriculum details (added_concept or mastered_concept), mention what new concept is being added or practiced and whether you feel ready to move on."
     )
     body = {
         "model": LLM_MODEL,

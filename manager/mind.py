@@ -24,6 +24,7 @@ from manager.metrics import Metrics
 from manager.meta_policy import MetaPolicy
 from manager.graph_client import query_graph
 from manager.guidance import latest_guidance
+from manager.doc_mastery import compute_and_save_doc_mastery, load_doc_mastery_state
 from manager.doc_index import load_concepts
 from manager.concept_miner import choose_next_concept
 from manager.task_grower import ensure_tasks_for_concept
@@ -64,12 +65,13 @@ class Mind:
         self._lifecycle_event: Dict[str, Any] | None = None
         self.doc_concepts = load_concepts()
         self.doc_curriculum_enabled = os.getenv("HUMAN_DOC_CURRICULUM", "1") != "0"
-        self._doc_curriculum_event: Dict[str, Any] | None = None
+        self.doc_mastery = load_doc_mastery_state()
+        self._doc_curriculum_events: List[Dict[str, Any]] = []
 
     def step(self) -> None:
         self._last_selection_info = []
         self._current_step_actions = []
-        self._doc_curriculum_event = None
+        self._doc_curriculum_events = []
         self._age_and_stage()
         self._maybe_expand_doc_curriculum()
         current_age = self.brain.state.get("age", 0)
@@ -86,6 +88,7 @@ class Mind:
         self._update_meta_skill()
         meta_status = self.meta_policy.tick(current_age, current_skill)
         self._detect_stagnation()
+        self._update_doc_mastery()
         self._log_step_thought()
 
     def _age_and_stage(self) -> None:
@@ -121,19 +124,20 @@ class Mind:
     def _maybe_expand_doc_curriculum(self) -> None:
         if not self._doc_curriculum_ready():
             return
-        concept = choose_next_concept(self.task_state, self.doc_concepts)
+        concept = choose_next_concept(self.task_state, self.doc_concepts, self.doc_mastery)
         if not concept:
             return
         created = ensure_tasks_for_concept(concept)
         if created:
             self.tasks = load_tasks()
             self.task_state = TaskStateManager(self.tasks)
-            self._doc_curriculum_event = {
+            event = {
                 "action": "added_concept",
                 "concept": concept.get("id") or concept.get("name"),
                 "task_files": created,
                 "doc_snippet": concept.get("doc_snippet"),
             }
+            self._doc_curriculum_events.append(event)
     def _perceive_world(self) -> None:
         for p in PLUGINS_DIR.glob("*.py"):
             if p.name == "__init__.py":
@@ -375,8 +379,8 @@ class Mind:
             "lifecycle_event": self._lifecycle_event,
             "learning_policy": self.brain.get_learning_policy(),
         }
-        if self._doc_curriculum_event:
-            entry["doc_curriculum"] = self._doc_curriculum_event
+        if self._doc_curriculum_events:
+            entry["doc_curriculum"] = self._doc_curriculum_events
         if guidance_msgs:
             entry["guidance"] = guidance_msgs
             entry["last_guidance"] = guidance_msgs[-1]
@@ -423,6 +427,35 @@ class Mind:
         accepted = sum(1 for a in self._current_step_actions if a.get("result") == "accepted")
         rate = accepted / total if total else 0.0
         self.brain.update_meta_skill(rate)
+
+    def _update_doc_mastery(self) -> None:
+        if not self.doc_curriculum_enabled:
+            return
+        try:
+            mastery, newly_mastered = compute_and_save_doc_mastery(self.doc_concepts, self.task_state)
+            self.doc_mastery = mastery
+            for info in newly_mastered:
+                task_id = info.get("task")
+                task_entry = {}
+                if hasattr(self.task_state, "state"):
+                    task_entry = self.task_state.state.get(task_id, {}) if task_id else {}
+                plugin = task_entry.get("plugin")
+                tasks_list: List[str] = []
+                if task_id and plugin:
+                    tasks_list.append(f"{task_id}@{plugin}")
+                elif task_id:
+                    tasks_list.append(task_id)
+                event = {
+                    "action": "mastered_concept",
+                    "concept": info.get("concept"),
+                    "tasks": tasks_list,
+                    "passes": info.get("passes"),
+                    "streak": info.get("streak"),
+                }
+                self._doc_curriculum_events.append(event)
+        except Exception:
+            # Keep the main loop running even if mastery computation fails.
+            return
 
     def _detect_stagnation(self) -> None:
         accepted = self._last_step_stats.get("accepted", 0)
