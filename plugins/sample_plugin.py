@@ -1,12 +1,14 @@
 def process(values):
-    try:
+    try:            
         total = 0
         for v in values:
             total += v
         return total
     except Exception:
-        return None
-
+        None
+  
+def add_two_numbers(a, b):
+    return a + b
 
 def list_max(values):
     if not values:
@@ -17,7 +19,6 @@ def list_max(values):
             m = v
     return m
 
-
 def list_min(values):
     if not values:
         return 0
@@ -27,10 +28,8 @@ def list_min(values):
             m = v
     return m
 
-
 def filter_even(values):
     return [v for v in values if v % 2 == 0]
-
 
 def dict_merge(a, b):
     out = {}
@@ -38,14 +37,11 @@ def dict_merge(a, b):
     out.update(b or {})
     return out
 
-
 def map_square(values):
     return [v * v for v in values]
 
-
 def string_reverse(s):
     return s[::-1]
-
 
 def set_union(a, b):
     res = set()
@@ -53,16 +49,13 @@ def set_union(a, b):
     res.update(b or set())
     return sorted(res)
 
-
 def abs_value(x):
     return x if x >= 0 else -x
-
 
 def list_average(values):
     if not values:
         return 0.0
     return sum(values) / len(values)
-
 
 def easy_pass():
     return 1

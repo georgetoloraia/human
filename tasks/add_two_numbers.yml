@@ -1,0 +1,11 @@
+name: add_two_numbers
+phase: 1
+difficulty: 1
+category: math
+target_plugin: sample_plugin.py
+target_function: add_two_numbers
+description: Return the sum of two integers.
+requirements:
+  - add_two_numbers(1, 2) == 3
+  - add_two_numbers(-1, 1) == 0
+  - add_two_numbers(0, 0) == 0

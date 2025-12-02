@@ -74,6 +74,34 @@ def _build_prompt(step_summary: Dict[str, Any], external_knowledge: Optional[str
     return "\n".join(parts)
 
 
+def _fallback_reflection(step_summary: Dict[str, Any]) -> str:
+    age = step_summary.get("age")
+    stage = step_summary.get("stage")
+    skill = step_summary.get("skill")
+    actions = step_summary.get("actions") or []
+    tasks = step_summary.get("tasks") or []
+
+    passing = sum(1 for t in tasks if t.get("last_status") == "passing")
+    failing = sum(1 for t in tasks if t.get("last_status") == "failing")
+    task_note = f"{passing} passing, {failing} failing" if tasks else "no tasks"
+
+    action_note = "none"
+    if actions:
+        a = actions[-1]
+        action_note = (
+            f"{a.get('plugin')} pattern={a.get('pattern')} result={a.get('result')} error={a.get('error_type')}"
+        )
+
+    part_one = f"Now: age {age}, stage {stage}, skill {skill}; tasks {task_note}; recent action {action_note}."
+    last_guidance = step_summary.get("last_guidance") or {}
+    guidance_msg = last_guidance.get("message")
+    if guidance_msg:
+        part_two = f"To my teacher: I see your latest guidance '{guidance_msg}'. I'm working on the current tasks and will keep reporting progress."
+    else:
+        part_two = "To my teacher: No new guidance yet, but I'm continuing with the current practice set."
+    return f"{part_one} {part_two}"
+
+
 def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Optional[str] = None) -> str:
     prompt = _build_prompt(step_summary, external_knowledge)
     system_msg = (
@@ -81,11 +109,11 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "You see a summary of one life step: age, stage, skill, which plugins were selected, "
         "what actions were taken (patterns tried, accepted/rejected, errors), task status, "
         "and optionally external knowledge snippets or guidance messages from a human teacher. "
-        "You only know error types as short labels (e.g. 'TypeError', 'AssertionError', or 'Other'); do not invent specific Python versions or details not present. "
-        "If guidance is present, do two things: "
-        "1) briefly reflect on what happened this step (1–3 sentences); "
-        "2) then write 1–2 sentences starting with 'To my teacher:' that directly respond to the MOST RECENT guidance message only, in your own words. "
-        "Do not repeat all past messages; be concise and honest about uncertainty."
+        "You only know error types as short labels (e.g. 'TypeError', 'AssertionError', or 'Other'); do not invent details not present. "
+        "Always respond in two parts, in this order: "
+        "1) briefly describe what you are doing now based on this step (actions, tasks, successes/failures) using the provided age/stage/skill as-is; "
+        "2) then write 1–2 sentences starting with 'To my teacher:' that directly respond to the MOST RECENT guidance message (or note that none was given), in your own words. "
+        "Be concise and honest about uncertainty."
     )
     body = {
         "model": LLM_MODEL,
@@ -102,7 +130,8 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         data = resp.json()
         choices = data.get("choices") or []
         if not choices:
-            return ""
-        return (choices[0].get("message", {}) or {}).get("content", "").strip()
+            return _fallback_reflection(step_summary)
+        content = (choices[0].get("message", {}) or {}).get("content", "").strip()
+        return content or _fallback_reflection(step_summary)
     except Exception:
-        return ""
+        return _fallback_reflection(step_summary)
