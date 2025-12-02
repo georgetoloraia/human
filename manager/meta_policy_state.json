@@ -1,6 +1,17 @@
 {
-  "status": "baseline",
+  "status": "candidate",
   "current_policy": {
+    "exploration_depth": 4,
+    "max_plugins_per_step": 2,
+    "web_consult_threshold": 4,
+    "weights": {
+      "curiosity": 1.5,
+      "mastery": 1.5,
+      "stability": 1.0,
+      "task": 1.0
+    }
+  },
+  "prev_policy": {
     "exploration_depth": 3,
     "max_plugins_per_step": 2,
     "web_consult_threshold": 4,
@@ -11,13 +22,38 @@
       "task": 1.0
     }
   },
-  "prev_policy": null,
-  "experiment": null,
+  "experiment": {
+    "id": 33,
+    "param": "exploration_depth",
+    "old": {
+      "exploration_depth": 3,
+      "max_plugins_per_step": 2,
+      "web_consult_threshold": 4,
+      "weights": {
+        "curiosity": 1.5,
+        "mastery": 1.5,
+        "stability": 1.0,
+        "task": 1.0
+      }
+    },
+    "new": {
+      "exploration_depth": 4,
+      "max_plugins_per_step": 2,
+      "web_consult_threshold": 4,
+      "weights": {
+        "curiosity": 1.5,
+        "mastery": 1.5,
+        "stability": 1.0,
+        "task": 1.0
+      }
+    },
+    "start_age": 650
+  },
   "baseline_speed": 1.0,
-  "last_age": 643,
-  "last_skill": 643,
-  "candidate_start_age": null,
-  "candidate_start_skill": null,
+  "last_age": 650,
+  "last_skill": 650,
+  "candidate_start_age": 650,
+  "candidate_start_skill": 650,
   "experiments": [
     {
       "id": 1,
@@ -1012,5 +1048,5 @@
       "outcome": "reverted"
     }
   ],
-  "step_counter": 653
+  "step_counter": 660
 }

@@ -9,7 +9,11 @@ def classify_error(output: str) -> str:
         return "IndexError"
     if "typeerror" in lowered:
         return "TypeError"
-    if "assertionerror" in lowered or "assert " in lowered:
+    if "valueerror" in lowered:
+        return "ValueError"
+    if "zerodivisionerror" in lowered:
+        return "ZeroDivisionError"
+    if "assertionerror" in lowered or "assert " in lowered or "failed" in lowered:
         return "AssertionError"
     if "keyerror" in lowered:
         return "KeyError"

@@ -81,6 +81,7 @@ def generate_reflection(step_summary: Dict[str, Any], external_knowledge: Option
         "what actions were taken (patterns tried, accepted/rejected, errors) and task status. "
         "You may also see recent teacher guidance under a 'guidance' field. "
         "Optionally you also see a short snippet of external documentation text that you recently read. "
+        "You only know error types as short labels (e.g. 'TypeError', 'AssertionError', or 'Other'); do not invent specific Python versions or details not present. "
         "In 2-5 sentences, describe what you think happened, why it happened, and what you might try next. "
         "Speak in first person, be concise, and focus on reasoning rather than emotions. "
         "If guidance is present, end with 1-2 sentences starting with 'To my teacher:' that directly respond to the latest guidance."
