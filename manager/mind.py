@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import random
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 import json
@@ -28,6 +29,12 @@ from manager.doc_mastery import compute_and_save_doc_mastery, load_doc_mastery_s
 from manager.doc_index import load_concepts
 from manager.concept_miner import choose_next_concept
 from manager.task_grower import ensure_tasks_for_concept
+from manager.embeddings import get_embedding
+from manager.neuron_graph import NeuronGraph
+from manager.value_function import ValueFunction
+from manager.reward import compute_reward
+from manager.agents import PlannerAgent, CoderAgent, CriticAgent, MemoryAgent
+from manager.envs import TextPuzzleEnv, SymbolEnv
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -54,11 +61,21 @@ class Mind:
         self.goals = Goals(self.graph, self.curriculum)
         self.web_sensor = WebSensor()
         self.metrics = Metrics()
+        self.neuron_graph = NeuronGraph()
+        self.value_function = ValueFunction(self.neuron_graph, metrics=self.metrics)
+        self.multi_agent_enabled = os.getenv("HUMAN_MULTI_AGENT", "0") != "0"
+        self.use_value_function = os.getenv("USE_VALUE_FUNCTION", "0") != "0"
+        self.enable_envs = os.getenv("HUMAN_ENABLE_ENVS", "0") != "0"
+        try:
+            self.env_ratio = float(os.getenv("HUMAN_ENV_RATIO", "0.2"))
+        except ValueError:
+            self.env_ratio = 0.2
         self.meta_policy = MetaPolicy(self.brain)
         self.stage: int = 0
         self.last_error_type: str | None = None
         self._last_selection_info: List[Dict[str, Any]] = []
         self._current_step_actions: List[Dict[str, Any]] = []
+        self._percepts: List[Dict[str, Any]] = []
         self._stagnation_steps: int = 0
         self._last_mastered: int = 0
         self._last_step_stats: Dict[str, Any] = {}
@@ -67,20 +84,34 @@ class Mind:
         self.doc_curriculum_enabled = os.getenv("HUMAN_DOC_CURRICULUM", "1") != "0"
         self.doc_mastery = load_doc_mastery_state()
         self._doc_curriculum_events: List[Dict[str, Any]] = []
+        self._diary_logged: bool = False
+        self.envs = [TextPuzzleEnv(), SymbolEnv()]
+        if self.multi_agent_enabled:
+            self.planner_agent = PlannerAgent(self.value_function)
+            self.coder_agent = CoderAgent(self)
+            self.critic_agent = CriticAgent(self.neuron_graph, self.value_function, self.metrics)
+            self.memory_agent = MemoryAgent(self)
 
     def step(self) -> None:
         self._last_selection_info = []
         self._current_step_actions = []
+        self._percepts = []
         self._doc_curriculum_events = []
+        self._diary_logged = False
         self._age_and_stage()
         self._maybe_expand_doc_curriculum()
         current_age = self.brain.state.get("age", 0)
         current_skill = self.brain.get_skill_level()
         tasks = regenerate_task_tests(self.curriculum)
+        self._register_task_nodes(tasks)
         self.graph.register_tasks(tasks)
         active_task_names = [t["name"] for t in tasks if "name" in t]
         self._perceive_world()
-        self._act_and_learn(active_task_names)
+        self._maybe_environment_step()
+        if self.multi_agent_enabled:
+            self._step_multi_agent(active_task_names)
+        else:
+            self._act_and_learn(active_task_names)
         self._update_metrics()
         self.curriculum.sync_with_task_state(self.task_state.state)
         if self.curriculum.should_advance_phase():
@@ -89,7 +120,8 @@ class Mind:
         meta_status = self.meta_policy.tick(current_age, current_skill)
         self._detect_stagnation()
         self._update_doc_mastery()
-        self._log_step_thought()
+        if not self._diary_logged:
+            self._log_step_thought()
 
     def _age_and_stage(self) -> None:
         self.brain.grow()
@@ -154,6 +186,63 @@ class Mind:
             }
             self.brain.observe(obs)
             self.graph.observe_plugin(p)
+            node_id = f"plugin:{p.name}"
+            embedding = get_embedding(f"{p.name}\n{src[:200]}")
+            meta = {"file": p.name, "lines": obs["lines"]}
+            self.neuron_graph.add_node(node_id, "plugin", embedding, meta)
+
+    def _register_task_nodes(self, tasks: List[Dict[str, Any]]) -> None:
+        for task in tasks:
+            name = task.get("name")
+            desc = task.get("description", "") or task.get("target_function", "")
+            plugin = task.get("target_plugin")
+            if not name or not plugin:
+                continue
+            node_id = f"task:{name}"
+            meta = {"plugin": plugin, "function": task.get("target_function")}
+            self._ensure_node(node_id, "task", f"{name}:{desc}", meta)
+
+    def _maybe_environment_step(self) -> Dict[str, Any] | None:
+        if not self.enable_envs:
+            return None
+        ratio = min(max(self.env_ratio, 0.0), 1.0)
+        if random.random() >= ratio:
+            return None
+        env = random.choice(self.envs)
+        state = env.reset()
+        if isinstance(env, TextPuzzleEnv):
+            target = state.get("target")
+            word = state.get("word", "")
+            action = word[::-1] if target == "reverse" else word.upper()
+        elif isinstance(env, SymbolEnv):
+            seq = state.get("sequence", [0])
+            step = state.get("step", 1)
+            action = (seq[-1] + step) if seq else step
+        else:
+            action = ""
+        next_state, reward, done, info = env.step(action)
+        percept = {
+            "type": "environment",
+            "env": env.__class__.__name__,
+            "state": state,
+            "next_state": next_state,
+            "reward": reward,
+            "done": done,
+            "info": info,
+        }
+        self._record_percept(percept)
+        action_entry = {
+            "plugin": "environment",
+            "pattern": env.__class__.__name__,
+            "result": "env_step",
+            "tests_ok": True,
+            "error_type": "OK",
+            "reward": reward,
+            "strategy": env.__class__.__name__,
+        }
+        self._current_step_actions.append(action_entry)
+        self._apply_learning("environment", env.__class__.__name__, reward, "OK", {})
+        return percept
 
     def _score_plugin(self, plugin_name: str) -> Dict[str, float]:
         p = self.graph.graph.get("plugins", {}).get(plugin_name, {})
@@ -195,6 +284,10 @@ class Mind:
             + w_s * stability_penalty
             + w_t * (task_drive + phase_boost - future_penalty)
         )
+        value_bonus = 0.0
+        if self.use_value_function:
+            value_bonus = self.value_function.score(f"plugin:{plugin_name}", candidate_type="plugin")
+            total += value_bonus
         return {
             "curiosity": curiosity,
             "mastery": mastery,
@@ -203,6 +296,7 @@ class Mind:
             "task_avg_streak": avg_streak,
             "task_failing_count": failing_count,
             "task_drive": task_drive + phase_boost - future_penalty,
+            "value_bonus": value_bonus,
             "total": total,
         }
 
@@ -237,9 +331,9 @@ class Mind:
         ]
         return [name for (total, name, scores) in selected]
 
-    def _act_and_learn(self, active_task_names: List[str]) -> None:
+    def _act_and_learn(self, active_task_names: List[str], forced_targets: List[str] | None = None, strategy: str | None = None) -> None:
         pattern_scores = self.brain.pattern_scores()
-        targets = self._select_targets()
+        targets = forced_targets if forced_targets else self._select_targets()
         policy = self.brain.get_learning_policy()
         depth_override = int(policy.get("exploration_depth", 3))
         if self.stage == 0:
@@ -275,9 +369,45 @@ class Mind:
                 continue
             candidates = candidates[:max_candidates_per_plugin]
             for new_code, pattern_name in candidates:
-                accepted = self._try_candidate(path, plugin_name, new_code, pattern_name, active_task_names)
+                accepted = self._try_candidate(
+                    path, plugin_name, new_code, pattern_name, active_task_names, strategy=strategy
+                )
                 if accepted:
                     break
+
+    def _build_shared_state(self, active_task_names: List[str]) -> Dict[str, Any]:
+        plugin_files = [p.name for p in PLUGINS_DIR.glob("*.py") if p.name != "__init__.py"]
+        plugin_scores = {name: self._score_plugin(name)["total"] for name in plugin_files}
+        return {
+            "plugin_scores": plugin_scores,
+            "active_tasks": active_task_names,
+            "percepts": list(self._percepts),
+            "stage": self.stage,
+        }
+
+    def _step_multi_agent(self, active_task_names: List[str]) -> None:
+        shared_state = self._build_shared_state(active_task_names)
+        self.planner_agent.observe(shared_state)
+        plan = self.planner_agent.act() or {}
+        coder_state = dict(shared_state)
+        coder_state["plan"] = plan
+        self.coder_agent.observe(coder_state)
+        coder_result = self.coder_agent.act() or {}
+        critic_state = {
+            "actions": coder_result.get("actions", []),
+            "plan": plan,
+        }
+        self.critic_agent.observe(critic_state)
+        critic_feedback = self.critic_agent.act() or {}
+        if critic_feedback:
+            self.planner_agent.receive_feedback(critic_feedback)
+        memory_state = {
+            "plan": plan,
+            "critic": critic_feedback,
+            "actions": coder_result.get("actions", []),
+        }
+        self.memory_agent.observe(memory_state)
+        self.memory_agent.act()
 
     def _try_candidate(
         self,
@@ -286,6 +416,7 @@ class Mind:
         new_code: str,
         pattern_name: str,
         active_task_names: List[str],
+        strategy: str | None = None,
     ) -> bool:
         if not is_safe(new_code):
             self.brain.record_pattern_result(pattern_name, False)
@@ -293,8 +424,16 @@ class Mind:
             self.task_state.record_plugin_result(plugin_name, success=False, error_type="Unsafe")
             self.brain.record_error_event(plugin_name, "Unsafe", success=False)
             self._current_step_actions.append(
-                {"plugin": plugin_name, "pattern": pattern_name, "result": "unsafe", "tests_ok": False, "error_type": "Unsafe"}
+                {
+                    "plugin": plugin_name,
+                    "pattern": pattern_name,
+                    "result": "unsafe",
+                    "tests_ok": False,
+                    "error_type": "Unsafe",
+                    "strategy": strategy or "mutation",
+                }
             )
+            self._apply_learning(plugin_name, pattern_name, compute_reward({"result": "unsafe"}), "Unsafe", {})
             return False
 
         orig = path.read_text(encoding="utf-8")
@@ -315,6 +454,15 @@ class Mind:
             if tname not in task_results:
                 task_results[tname] = passed
                 self.graph.record_task_result(tname, passed)
+        if err_type and err_type != "OK":
+            self._record_percept(
+                {
+                    "type": "task_error",
+                    "plugin": plugin_name,
+                    "error_type": err_type,
+                    "tasks": [name for name, ok in task_results.items() if not ok],
+                }
+            )
         self.curriculum.update_results(task_results)
         if task_outcomes:
             self.task_state.record_task_results(task_outcomes)
@@ -326,6 +474,16 @@ class Mind:
                 web_consult_info = self._consult_web(plugin_name, err_type)
 
         if eval_ok:
+            outcome = {
+                "plugin": plugin_name,
+                "pattern": pattern_name,
+                "result": "accepted",
+                "tests_ok": tests_ok,
+                "eval_ok": eval_ok,
+                "error_type": err_type,
+                "strategy": strategy or "mutation",
+            }
+            reward = compute_reward(outcome)
             self.brain.record_attempt(mutation_id, True)
             self.brain.record_pattern_result(pattern_name, True)
             self.brain.record_pattern_error_result(pattern_name, err_type, True)
@@ -339,12 +497,25 @@ class Mind:
                     "result": "accepted",
                     "tests_ok": tests_ok,
                     "error_type": err_type,
+                    "reward": reward,
+                    "strategy": strategy or "mutation",
                     **({"web_consult": web_consult_info} if web_consult_info else {}),
                 }
             )
+            self._apply_learning(plugin_name, pattern_name, reward, err_type, task_results)
             return True
 
         path.write_text(orig, encoding="utf-8")
+        outcome = {
+            "plugin": plugin_name,
+            "pattern": pattern_name,
+            "result": "rejected",
+            "tests_ok": tests_ok,
+            "eval_ok": eval_ok,
+            "error_type": err_type,
+            "strategy": strategy or "mutation",
+        }
+        reward = compute_reward(outcome)
         self.brain.record_attempt(mutation_id, False)
         self.brain.record_pattern_result(pattern_name, False)
         self.brain.record_pattern_error_result(pattern_name, err_type, False)
@@ -356,10 +527,69 @@ class Mind:
                 "result": "rejected",
                 "tests_ok": tests_ok,
                 "error_type": err_type,
+                "reward": reward,
+                "strategy": strategy or "mutation",
                 **({"web_consult": web_consult_info} if web_consult_info else {}),
             }
         )
+        self._apply_learning(plugin_name, pattern_name, reward, err_type, task_results)
         return False
+
+    def _ensure_node(self, node_id: str, node_type: str, text: str, meta: Dict[str, Any] | None = None) -> None:
+        if node_id in self.neuron_graph.nodes:
+            return
+        self.neuron_graph.add_node(node_id, node_type, get_embedding(text), meta or {})
+
+    def _apply_learning(
+        self,
+        plugin_name: str,
+        pattern_name: str,
+        reward: float,
+        error_type: str,
+        task_results: Dict[str, bool],
+    ) -> None:
+        plugin_node = f"plugin:{plugin_name}"
+        self._ensure_node(plugin_node, "plugin", plugin_name, {"plugin": plugin_name})
+        error_node = f"error:{error_type}"
+        self._ensure_node(error_node, "error", error_type, {"error_type": error_type})
+        self.neuron_graph.update_edge_weight(plugin_node, error_node, reward * 0.2)
+        for tname, passed in task_results.items():
+            tnode = f"task:{tname}"
+            self._ensure_node(tnode, "task", tname, {"plugin": plugin_name})
+            delta = reward * (1.0 if passed else -0.5)
+            self.neuron_graph.update_edge_weight(plugin_node, tnode, delta)
+        self.metrics.record_plugin_outcome(plugin_node, reward > 0, reward)
+        if pattern_name:
+            self.metrics.record_strategy_outcome(pattern_name, reward > 0, reward)
+        if self.use_value_function:
+            self.value_function.update_plugin(plugin_node, reward)
+            if pattern_name:
+                self.value_function.update_strategy(pattern_name, reward)
+        self._record_percept(
+            {
+                "type": "learning_update",
+                "plugin": plugin_name,
+                "pattern": pattern_name,
+                "error_type": error_type,
+                "reward": reward,
+                "tasks": list(task_results.keys()),
+            }
+        )
+
+    def _record_percept(self, event: Dict[str, Any]) -> None:
+        event["age"] = self.brain.state.get("age", 0)
+        self._percepts.append(event)
+
+    def _register_reflection(self, text: str) -> None:
+        rid = f"reflection:{self.brain.state.get('age', 0)}"
+        self._ensure_node(rid, "reflection", text, {"age": self.brain.state.get("age", 0)})
+        for info in self._last_selection_info:
+            plugin = info.get("plugin")
+            if not plugin:
+                continue
+            pid = f"plugin:{plugin}"
+            self._ensure_node(pid, "plugin", plugin)
+            self.neuron_graph.update_edge_weight(rid, pid, 0.1)
 
     def _log_step_thought(self) -> None:
         age = self.brain.state.get("age", 0)
@@ -372,6 +602,7 @@ class Mind:
             "current_phase": self.curriculum.state.get("current_phase", 1),
             "selected_plugins": self._last_selection_info,
             "actions": self._current_step_actions,
+            "percepts": list(self._percepts),
             "tasks": self.task_state.summary(),
             "curriculum": self.curriculum.summary(),
             "phase_transition": self.curriculum.current_phase(),
@@ -397,6 +628,7 @@ class Mind:
         reflection_text = generate_reflection(entry, combined)
         if reflection_text:
             entry["reflection"] = reflection_text
+            self._register_reflection(reflection_text)
         self._append_to_diary(entry)
         self._lifecycle_event = None
 

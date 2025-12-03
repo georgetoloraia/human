@@ -8,3 +8,5 @@ requirements:
   - use_len([1,2,3]) == 3
   - use_len('hello') == 5
   - use_len([]) == 0
+  - use_len((1,2,3)) == 3
+  - use_len({'a': 1, 'b': 2}) == 2

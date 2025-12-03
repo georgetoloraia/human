@@ -8,3 +8,5 @@ requirements:
   - use_sum([1,2,3]) == 6
   - use_sum([]) == 0
   - use_sum([-2,2,5]) == 5
+  - use_sum((1,2,3)) == 6
+  - use_sum([0.5, 0.5], start=1) == 2.0

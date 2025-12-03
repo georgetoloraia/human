@@ -18,6 +18,8 @@ class Metrics:
             "mutations_rejected": 0,
             "web_consults": 0,
             "tasks_mastered": 0,
+            "plugin_stats": {},
+            "strategy_stats": {},
         }
         if METRICS_FILE.exists():
             try:
@@ -50,3 +52,30 @@ class Metrics:
     def set_tasks_mastered(self, count: int) -> None:
         self.state["tasks_mastered"] = count
         self._save()
+
+    def _update_stat_bucket(self, bucket: str, key: str, success: bool, reward: float) -> None:
+        stats = self.state.setdefault(bucket, {}).setdefault(
+            key,
+            {"invocations": 0, "success": 0, "fail": 0, "reward_sum": 0.0},
+        )
+        stats["invocations"] = stats.get("invocations", 0) + 1
+        stats["reward_sum"] = stats.get("reward_sum", 0.0) + float(reward)
+        if success:
+            stats["success"] = stats.get("success", 0) + 1
+        else:
+            stats["fail"] = stats.get("fail", 0) + 1
+        self.state[bucket][key] = stats
+        self._save()
+
+    def record_plugin_outcome(self, plugin_name: str, success: bool, reward: float) -> None:
+        self._update_stat_bucket("plugin_stats", plugin_name, success, reward)
+
+    def record_strategy_outcome(self, strategy: str, success: bool, reward: float) -> None:
+        self._update_stat_bucket("strategy_stats", strategy, success, reward)
+
+    def average_reward(self, key: str, bucket: str = "plugin_stats") -> float:
+        stats = self.state.get(bucket, {}).get(key, {})
+        invocations = float(stats.get("invocations", 0))
+        if invocations <= 0:
+            return 0.0
+        return float(stats.get("reward_sum", 0.0)) / invocations

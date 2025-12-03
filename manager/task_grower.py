@@ -44,6 +44,8 @@ def _task_spec_for_concept(concept: Dict[str, Any]) -> Optional[Dict[str, Any]]:
                 "use_len([1,2,3]) == 3",
                 "use_len('hello') == 5",
                 "use_len([]) == 0",
+                "use_len((1,2,3)) == 3",
+                "use_len({'a': 1, 'b': 2}) == 2",
             ],
             "impl": [
                 "def use_len(obj):",
@@ -63,10 +65,14 @@ def _task_spec_for_concept(concept: Dict[str, Any]) -> Optional[Dict[str, Any]]:
                 "use_sum([1,2,3]) == 6",
                 "use_sum([]) == 0",
                 "use_sum([-2,2,5]) == 5",
+                "use_sum((1,2,3)) == 6",
+                "use_sum([0.5, 0.5], start=1) == 2.0",
             ],
             "impl": [
-                "def use_sum(values):",
-                "    return sum(values)",
+                "def use_sum(values, start=0):",
+                "    if values is None:",
+                "        return start",
+                "    return sum(values, start)",
             ],
         }
 
@@ -82,6 +88,7 @@ def _task_spec_for_concept(concept: Dict[str, Any]) -> Optional[Dict[str, Any]]:
                 "use_min([3,1,2]) == 1",
                 "use_min([-5,-2,10]) == -5",
                 "use_min([7]) == 7",
+                "use_min((3,3,1)) == 1",
             ],
             "impl": [
                 "def use_min(values):",
@@ -101,6 +108,7 @@ def _task_spec_for_concept(concept: Dict[str, Any]) -> Optional[Dict[str, Any]]:
                 "use_max([3,1,2]) == 3",
                 "use_max([-5,-2,10]) == 10",
                 "use_max([7]) == 7",
+                "use_max((3,3,1)) == 3",
             ],
             "impl": [
                 "def use_max(values):",

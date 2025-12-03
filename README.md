@@ -67,3 +67,10 @@ requirements:
 ```
 
 License: see LICENSE (all rights reserved by George Toloraia).
+
+# Architecture additions
+- **NeuronGraph** (`manager/neuron_graph.py`): embedding-backed nodes for plugins/tasks/errors/reflections with weighted edges and Hebbian updates; persisted to `manager/neuron_graph.json`.
+- **Embeddings + Value Function** (`manager/embeddings.py`, `manager/value_function.py`): pluggable embeddings with offline fallback and reward-informed scoring (`USE_VALUE_FUNCTION=1`).
+- **Multi-agent loop** (`manager/agents/`): planner → coder → critic → memory agents orchestrated inside the life loop when `HUMAN_MULTI_AGENT=1`.
+- **Online learning + reward** (`manager/reward.py`, metrics extensions): moving averages per plugin/strategy plus neuron-graph edge updates driven by rewards.
+- **Perception & practice envs** (`manager/envs/`): structured error/percept logging and lightweight text/symbol environments (`HUMAN_ENABLE_ENVS=1`, `HUMAN_ENV_RATIO`).
