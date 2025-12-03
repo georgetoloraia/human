@@ -10,24 +10,20 @@ Concept = Dict[str, Any]
 DOCS_ROOT = Path(os.getenv("PYTHON_DOCS_ROOT", "python-3.14-docs-text"))
 FUNCTIONS_FILE = DOCS_ROOT / "library" / "functions.txt"
 
-SUPPORTED_FUNCTIONS = {
-    "len": {
-        "id": "builtin.len",
-        "section": "builtins",
-    },
-    "sum": {
-        "id": "builtin.sum",
-        "section": "builtins",
-    },
-    "min": {
-        "id": "builtin.min",
-        "section": "builtins",
-    },
-    "max": {
-        "id": "builtin.max",
-        "section": "builtins",
-    },
+DOC_FILES = {
+    "functions": FUNCTIONS_FILE,
 }
+
+SUPPORTED_ENTRIES: List[Dict[str, str]] = [
+    {"name": "len", "id": "builtin.len", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "sum", "id": "builtin.sum", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "min", "id": "builtin.min", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "max", "id": "builtin.max", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "abs", "id": "builtin.abs", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "any", "id": "builtin.any", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "all", "id": "builtin.all", "section": "builtins", "kind": "function", "file_key": "functions"},
+    {"name": "sorted", "id": "builtin.sorted", "section": "builtins", "kind": "function", "file_key": "functions"},
+]
 
 
 def _read_lines(path: Path) -> List[str]:
@@ -37,10 +33,11 @@ def _read_lines(path: Path) -> List[str]:
         return []
 
 
-def _extract_doc(lines: List[str], name: str) -> Optional[Concept]:
+def _extract_doc(lines: List[str], entry: Dict[str, str]) -> Optional[Concept]:
     """
     Find a function signature and a short snippet that follows it.
     """
+    name = entry.get("name", "")
     try:
         pattern = re.compile(f"^{re.escape(name)}\\(")
     except re.error:
@@ -71,7 +68,7 @@ def _extract_doc(lines: List[str], name: str) -> Optional[Concept]:
                 break
             i += 1
         doc_snippet = " ".join(snippet_lines).strip()
-        meta = SUPPORTED_FUNCTIONS.get(name, {})
+        meta = entry
         if not doc_snippet:
             continue
         return {
@@ -86,39 +83,26 @@ def _extract_doc(lines: List[str], name: str) -> Optional[Concept]:
 
 
 def _fallback_concepts() -> List[Concept]:
+    defaults = [
+        ("builtin.len", "len", "len(obj)", "Return the number of items in a container."),
+        ("builtin.sum", "sum", "sum(iterable, start=0)", "Return the sum of a 'start' value (default: 0) plus an iterable of numbers."),
+        ("builtin.min", "min", "min(iterable, *[, key, default])", "Return the smallest item in an iterable or of two or more arguments."),
+        ("builtin.max", "max", "max(iterable, *[, key, default])", "Return the largest item in an iterable or of two or more arguments."),
+        ("builtin.abs", "abs", "abs(x)", "Return the absolute value of a number."),
+        ("builtin.any", "any", "any(iterable)", "Return True if any element of the iterable is true."),
+        ("builtin.all", "all", "all(iterable)", "Return True if all elements of the iterable are true."),
+        ("builtin.sorted", "sorted", "sorted(iterable)", "Return a new sorted list from the items in iterable."),
+    ]
     return [
         {
-            "id": "builtin.len",
+            "id": cid,
             "kind": "function",
-            "name": "len",
-            "signature": "len(obj)",
+            "name": name,
+            "signature": sig,
             "section": "builtins",
-            "doc_snippet": "Return the number of items in a container.",
-        },
-        {
-            "id": "builtin.sum",
-            "kind": "function",
-            "name": "sum",
-            "signature": "sum(iterable, start=0)",
-            "section": "builtins",
-            "doc_snippet": "Return the sum of a 'start' value (default: 0) plus an iterable of numbers.",
-        },
-        {
-            "id": "builtin.min",
-            "kind": "function",
-            "name": "min",
-            "signature": "min(iterable, *[, key, default])",
-            "section": "builtins",
-            "doc_snippet": "Return the smallest item in an iterable or of two or more arguments.",
-        },
-        {
-            "id": "builtin.max",
-            "kind": "function",
-            "name": "max",
-            "signature": "max(iterable, *[, key, default])",
-            "section": "builtins",
-            "doc_snippet": "Return the largest item in an iterable or of two or more arguments.",
-        },
+            "doc_snippet": snippet,
+        }
+        for cid, name, sig, snippet in defaults
     ]
 
 
@@ -127,12 +111,15 @@ def load_concepts() -> List[Concept]:
     Parse a subset of the local Python docs to build concept entries.
     Falls back to a minimal hardcoded list when docs are missing or unreadable.
     """
-    lines = _read_lines(FUNCTIONS_FILE)
+    line_cache: Dict[str, List[str]] = {}
+    for key, path in DOC_FILES.items():
+        line_cache[key] = _read_lines(path)
     concepts: List[Concept] = []
-    for name in SUPPORTED_FUNCTIONS.keys():
+    for entry in SUPPORTED_ENTRIES:
+        lines = line_cache.get(entry.get("file_key", ""), [])
         if not lines:
-            break
-        parsed = _extract_doc(lines, name)
+            continue
+        parsed = _extract_doc(lines, entry)
         if parsed:
             concepts.append(parsed)
     if concepts:

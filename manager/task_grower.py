@@ -108,6 +108,82 @@ def _task_spec_for_concept(concept: Dict[str, Any]) -> Optional[Dict[str, Any]]:
             ],
         }
 
+    if name in {"abs", "builtin.abs"}:
+        return {
+            "name": task_name,
+            "phase": 1,
+            "difficulty": 1,
+            "target_plugin": "sample_plugin.py",
+            "target_function": "use_abs",
+            "description": "Use Python's built-in abs() to return the absolute value.",
+            "requirements": [
+                "use_abs(-3) == 3",
+                "use_abs(0) == 0",
+                "use_abs(7) == 7",
+            ],
+            "impl": [
+                "def use_abs(value):",
+                "    return abs(value)",
+            ],
+        }
+
+    if name in {"any", "builtin.any"}:
+        return {
+            "name": task_name,
+            "phase": 1,
+            "difficulty": 1,
+            "target_plugin": "sample_plugin.py",
+            "target_function": "use_any",
+            "description": "Use Python's built-in any() to test truthiness in an iterable.",
+            "requirements": [
+                "use_any([False, False, True]) is True",
+                "use_any([]) is False",
+                "use_any([0, '', []]) is False",
+            ],
+            "impl": [
+                "def use_any(values):",
+                "    return any(values)",
+            ],
+        }
+
+    if name in {"all", "builtin.all"}:
+        return {
+            "name": task_name,
+            "phase": 1,
+            "difficulty": 1,
+            "target_plugin": "sample_plugin.py",
+            "target_function": "use_all",
+            "description": "Use Python's built-in all() to ensure every element is truthy.",
+            "requirements": [
+                "use_all([True, True]) is True",
+                "use_all([True, False]) is False",
+                "use_all([]) is True",
+            ],
+            "impl": [
+                "def use_all(values):",
+                "    return all(values)",
+            ],
+        }
+
+    if name in {"sorted", "builtin.sorted"}:
+        return {
+            "name": task_name,
+            "phase": 1,
+            "difficulty": 1,
+            "target_plugin": "sample_plugin.py",
+            "target_function": "use_sorted",
+            "description": "Use Python's built-in sorted() to return a sorted list from an iterable.",
+            "requirements": [
+                "use_sorted([3,1,2]) == [1,2,3]",
+                "use_sorted(['b','a']) == ['a','b']",
+                "use_sorted([]) == []",
+            ],
+            "impl": [
+                "def use_sorted(values):",
+                "    return sorted(values)",
+            ],
+        }
+
     if name in {"list.append", "list_append"}:
         return {
             "name": task_name,
