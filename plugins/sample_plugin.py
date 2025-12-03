@@ -7,6 +7,12 @@ def process(values):
         return None
     if values is None:
         return None
+    if values is None:
+        return None
+    if values is None:
+        return None
+    if values is None:
+        return None
     total = 0
     for v in values:
         total += v
@@ -68,6 +74,9 @@ def easy_pass():
 def use_len(obj):
     return len(obj)
 
-
 def use_sum(values):
     return sum(values)
+
+
+def use_min(values):
+    return min(values)

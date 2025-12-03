@@ -1,0 +1,10 @@
+name: doc_min
+phase: 1
+difficulty: 1
+target_plugin: sample_plugin.py
+target_function: use_min
+description: Use Python's built-in min() to find the smallest value.
+requirements:
+  - use_min([3,1,2]) == 1
+  - use_min([-5,-2,10]) == -5
+  - use_min([7]) == 7
