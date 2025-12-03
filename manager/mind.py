@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
 import os
 import random
+import time
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
-import json
 
 from manager.memory import BrainMemory
 from manager.concepts import ConceptGraph
@@ -35,6 +36,7 @@ from manager.value_function import ValueFunction
 from manager.reward import compute_reward
 from manager.agents import PlannerAgent, CoderAgent, CriticAgent, MemoryAgent
 from manager.envs import TextPuzzleEnv, SymbolEnv
+from manager.async_orchestrator import AsyncOrchestrator
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -70,12 +72,19 @@ class Mind:
             self.env_ratio = float(os.getenv("HUMAN_ENV_RATIO", "0.2"))
         except ValueError:
             self.env_ratio = 0.2
+        self.async_enabled = os.getenv("HUMAN_ASYNC", "0") != "0"
+        self.trace_enabled = os.getenv("HUMAN_TRACE", "0") != "0"
+        self.trace_dir = Path("manager/traces")
+        if self.trace_enabled:
+            self.trace_dir.mkdir(parents=True, exist_ok=True)
+        self.async_orchestrator = AsyncOrchestrator(self.async_enabled)
         self.meta_policy = MetaPolicy(self.brain)
         self.stage: int = 0
         self.last_error_type: str | None = None
         self._last_selection_info: List[Dict[str, Any]] = []
         self._current_step_actions: List[Dict[str, Any]] = []
         self._percepts: List[Dict[str, Any]] = []
+        self._domain_choice: str = "code"
         self._stagnation_steps: int = 0
         self._last_mastered: int = 0
         self._last_step_stats: Dict[str, Any] = {}
@@ -98,6 +107,7 @@ class Mind:
         self._percepts = []
         self._doc_curriculum_events = []
         self._diary_logged = False
+        self._domain_choice = "code"
         self._age_and_stage()
         self._maybe_expand_doc_curriculum()
         current_age = self.brain.state.get("age", 0)
@@ -106,12 +116,24 @@ class Mind:
         self._register_task_nodes(tasks)
         self.graph.register_tasks(tasks)
         active_task_names = [t["name"] for t in tasks if "name" in t]
-        self._perceive_world()
-        self._maybe_environment_step()
+        env_percept = None
+        if self.async_enabled:
+            results = self.async_orchestrator.run([self._perceive_world, self._maybe_environment_step])
+            env_percept = results[1] if len(results) > 1 else None
+        else:
+            self._perceive_world()
+            env_percept = self._maybe_environment_step()
         if self.multi_agent_enabled:
             self._step_multi_agent(active_task_names)
         else:
             self._act_and_learn(active_task_names)
+        if env_percept:
+            self._domain_choice = "env"
+        if any(a.get("plugin") != "environment" for a in self._current_step_actions):
+            self._domain_choice = "mixed" if env_percept else "code"
+        elif not self._current_step_actions and not env_percept:
+            self._domain_choice = "idle"
+        self.metrics.record_domain_choice(self._domain_choice)
         self._update_metrics()
         self.curriculum.sync_with_task_state(self.task_state.state)
         if self.curriculum.should_advance_phase():
@@ -122,6 +144,7 @@ class Mind:
         self._update_doc_mastery()
         if not self._diary_logged:
             self._log_step_thought()
+        self._trace_step(env_percept)
 
     def _age_and_stage(self) -> None:
         self.brain.grow()
@@ -221,6 +244,13 @@ class Mind:
         else:
             action = ""
         next_state, reward, done, info = env.step(action)
+        descriptor = info.get("descriptor") if isinstance(info, dict) else None
+        if not descriptor and hasattr(env, "describe_state"):
+            descriptor = env.describe_state()
+        descriptor = descriptor or {"env": env.__class__.__name__}
+        descriptor_text = json.dumps(descriptor, sort_keys=True)
+        env_node = f"env:{env.__class__.__name__}:{abs(hash(descriptor_text)) % 100000}"
+        self._ensure_node(env_node, "environment", descriptor_text, descriptor)
         percept = {
             "type": "environment",
             "env": env.__class__.__name__,
@@ -229,19 +259,32 @@ class Mind:
             "reward": reward,
             "done": done,
             "info": info,
+            "descriptor": descriptor,
         }
         self._record_percept(percept)
+        outcome = {
+            "domain": "env",
+            "env_reward": reward,
+            "progress": 1.0 if done else 0.0,
+            "result": "env_step",
+            "strategy": env.__class__.__name__,
+        }
+        reward_value, details = compute_reward(outcome, return_details=True)
+        plugin_label = f"env_{env.__class__.__name__}"
         action_entry = {
             "plugin": "environment",
             "pattern": env.__class__.__name__,
             "result": "env_step",
             "tests_ok": True,
             "error_type": "OK",
-            "reward": reward,
+            "reward": reward_value,
             "strategy": env.__class__.__name__,
+            "domain": "env",
         }
         self._current_step_actions.append(action_entry)
-        self._apply_learning("environment", env.__class__.__name__, reward, "OK", {})
+        self._apply_learning(plugin_label, env.__class__.__name__, reward_value, "OK", {}, details, domain="env")
+        plugin_node = f"plugin:{plugin_label}"
+        self.neuron_graph.update_edge_weight(plugin_node, env_node, reward_value * 0.3)
         return percept
 
     def _score_plugin(self, plugin_name: str) -> Dict[str, float]:
@@ -423,6 +466,8 @@ class Mind:
             self.graph.record_test_result(plugin_name, False)
             self.task_state.record_plugin_result(plugin_name, success=False, error_type="Unsafe")
             self.brain.record_error_event(plugin_name, "Unsafe", success=False)
+            unsafe_outcome = {"result": "unsafe", "domain": "code", "error_type": "Unsafe", "strategy": strategy}
+            reward_value, details = compute_reward(unsafe_outcome, return_details=True)
             self._current_step_actions.append(
                 {
                     "plugin": plugin_name,
@@ -431,9 +476,10 @@ class Mind:
                     "tests_ok": False,
                     "error_type": "Unsafe",
                     "strategy": strategy or "mutation",
+                    "reward": reward_value,
                 }
             )
-            self._apply_learning(plugin_name, pattern_name, compute_reward({"result": "unsafe"}), "Unsafe", {})
+            self._apply_learning(plugin_name, pattern_name, reward_value, "Unsafe", {}, reward_details=details)
             return False
 
         orig = path.read_text(encoding="utf-8")
@@ -473,6 +519,10 @@ class Mind:
             if streak >= 3:
                 web_consult_info = self._consult_web(plugin_name, err_type)
 
+        passed_count = sum(1 for ok in task_results.values() if ok)
+        failed_count = max(len(task_results) - passed_count, 0)
+        tests_delta = passed_count - failed_count
+
         if eval_ok:
             outcome = {
                 "plugin": plugin_name,
@@ -482,8 +532,11 @@ class Mind:
                 "eval_ok": eval_ok,
                 "error_type": err_type,
                 "strategy": strategy or "mutation",
+                "domain": "code",
+                "tests_delta": tests_delta,
+                "regressions": failed_count if not tests_ok else 0.0,
             }
-            reward = compute_reward(outcome)
+            reward, details = compute_reward(outcome, return_details=True)
             self.brain.record_attempt(mutation_id, True)
             self.brain.record_pattern_result(pattern_name, True)
             self.brain.record_pattern_error_result(pattern_name, err_type, True)
@@ -502,7 +555,7 @@ class Mind:
                     **({"web_consult": web_consult_info} if web_consult_info else {}),
                 }
             )
-            self._apply_learning(plugin_name, pattern_name, reward, err_type, task_results)
+            self._apply_learning(plugin_name, pattern_name, reward, err_type, task_results, reward_details=details)
             return True
 
         path.write_text(orig, encoding="utf-8")
@@ -514,8 +567,11 @@ class Mind:
             "eval_ok": eval_ok,
             "error_type": err_type,
             "strategy": strategy or "mutation",
+            "domain": "code",
+            "tests_delta": tests_delta,
+            "regressions": failed_count if tests_ok is False else 0.0,
         }
-        reward = compute_reward(outcome)
+        reward, details = compute_reward(outcome, return_details=True)
         self.brain.record_attempt(mutation_id, False)
         self.brain.record_pattern_result(pattern_name, False)
         self.brain.record_pattern_error_result(pattern_name, err_type, False)
@@ -532,7 +588,7 @@ class Mind:
                 **({"web_consult": web_consult_info} if web_consult_info else {}),
             }
         )
-        self._apply_learning(plugin_name, pattern_name, reward, err_type, task_results)
+        self._apply_learning(plugin_name, pattern_name, reward, err_type, task_results, reward_details=details)
         return False
 
     def _ensure_node(self, node_id: str, node_type: str, text: str, meta: Dict[str, Any] | None = None) -> None:
@@ -547,6 +603,8 @@ class Mind:
         reward: float,
         error_type: str,
         task_results: Dict[str, bool],
+        reward_details: Dict[str, Any] | None = None,
+        domain: str = "code",
     ) -> None:
         plugin_node = f"plugin:{plugin_name}"
         self._ensure_node(plugin_node, "plugin", plugin_name, {"plugin": plugin_name})
@@ -558,9 +616,9 @@ class Mind:
             self._ensure_node(tnode, "task", tname, {"plugin": plugin_name})
             delta = reward * (1.0 if passed else -0.5)
             self.neuron_graph.update_edge_weight(plugin_node, tnode, delta)
-        self.metrics.record_plugin_outcome(plugin_node, reward > 0, reward)
+        self.metrics.record_plugin_outcome(plugin_node, reward > 0, reward, reward_details)
         if pattern_name:
-            self.metrics.record_strategy_outcome(pattern_name, reward > 0, reward)
+            self.metrics.record_strategy_outcome(pattern_name, reward > 0, reward, reward_details)
         if self.use_value_function:
             self.value_function.update_plugin(plugin_node, reward)
             if pattern_name:
@@ -573,6 +631,7 @@ class Mind:
                 "error_type": error_type,
                 "reward": reward,
                 "tasks": list(task_results.keys()),
+                "domain": domain,
             }
         )
 
@@ -609,6 +668,7 @@ class Mind:
             "meta_skill": self.brain.state.get("meta_skill", 0.0),
             "lifecycle_event": self._lifecycle_event,
             "learning_policy": self.brain.get_learning_policy(),
+            "domain": self._domain_choice,
         }
         if self._doc_curriculum_events:
             entry["doc_curriculum"] = self._doc_curriculum_events
@@ -631,6 +691,35 @@ class Mind:
             self._register_reflection(reflection_text)
         self._append_to_diary(entry)
         self._lifecycle_event = None
+
+    def _trace_step(self, env_percept: Dict[str, Any] | None) -> None:
+        if not self.trace_enabled:
+            return
+        trace_path = self.trace_dir / "trace.jsonl"
+        payload = {
+            "ts": time.time(),
+            "age": self.brain.state.get("age", 0),
+            "domain": self._domain_choice,
+            "stage": self.stage,
+            "selected": self._last_selection_info,
+            "actions": self._current_step_actions,
+            "env_percept": env_percept,
+            "recent_rewards": self.metrics.state.get("reward_history", [])[-5:],
+        }
+        if self.use_value_function and self._last_selection_info:
+            explanations = []
+            for info in self._last_selection_info:
+                plugin = info.get("plugin")
+                if not plugin:
+                    continue
+                explanations.append(self.value_function.explain_action(f"plugin:{plugin}"))
+            payload["value_explanations"] = explanations
+        try:
+            with trace_path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(payload) + "\n")
+        except Exception:
+            # Never break the loop due to trace errors.
+            return
 
     def _update_metrics(self) -> None:
         self.metrics.step()

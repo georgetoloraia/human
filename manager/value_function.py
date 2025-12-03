@@ -84,3 +84,31 @@ class ValueFunction:
         if self.metrics and candidate_type == "plugin":
             metric_score = self.metrics.average_reward(candidate_id)
         return hist + self.alpha * embed_score + 0.5 * strategy_score + metric_score
+
+    def explain_action(self, action_id: str, candidate_type: str = "plugin", strategy: Optional[str] = None, top_k: int = 5) -> Dict[str, object]:
+        """
+        Provide a diagnostic breakdown of how an action is valued.
+        """
+        hist = self._historical_score(action_id, candidate_type)
+        embed_score = self._embedding_score(action_id)
+        strategy_score = self._historical_score(strategy, "strategy") if strategy else 0.0
+        metric_score = self.metrics.average_reward(action_id) if self.metrics and candidate_type == "plugin" else 0.0
+        total = hist + self.alpha * embed_score + 0.5 * strategy_score + metric_score
+        neighbors = self.neuron_graph.get_neighbors(action_id, top_k=top_k)
+        recent_rewards = []
+        if self.metrics:
+            recent_rewards = self.metrics.recent_rewards(action_id, "plugin_stats" if candidate_type == "plugin" else "strategy_stats")
+        return {
+            "id": action_id,
+            "type": candidate_type,
+            "score": total,
+            "components": {
+                "historical": hist,
+                "embedding": embed_score,
+                "strategy": strategy_score,
+                "metric": metric_score,
+                "alpha": self.alpha,
+            },
+            "recent_rewards": recent_rewards,
+            "neighbors": neighbors,
+        }

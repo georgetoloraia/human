@@ -24,11 +24,17 @@ class CoderAgent(BaseAgent):
         strategy = plan.get("strategy") if isinstance(plan, dict) else None
 
         # reuse the Mind's existing mutation pipeline while constraining targets
+        preserved_actions = list(self.mind._current_step_actions)
+        preserved_selection = list(self.mind._last_selection_info)
         self.mind._current_step_actions = []
         self.mind._last_selection_info = []
         self.mind._act_and_learn(active_tasks, forced_targets=targets, strategy=strategy)
+        merged_actions = preserved_actions + list(self.mind._current_step_actions)
+        merged_selection = preserved_selection + list(self.mind._last_selection_info)
+        self.mind._current_step_actions = merged_actions
+        self.mind._last_selection_info = merged_selection
         return {
-            "actions": list(self.mind._current_step_actions),
-            "selection": list(self.mind._last_selection_info),
+            "actions": merged_actions,
+            "selection": merged_selection,
             "strategy": strategy or "mutation",
         }

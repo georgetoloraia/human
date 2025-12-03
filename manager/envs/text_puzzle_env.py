@@ -33,5 +33,12 @@ class TextPuzzleEnv:
             reward = 1.0
             self.done = True
         next_state = dict(self.state)
-        info = {"expected": expected}
+        info = {"expected": expected, "descriptor": self.describe_state()}
         return next_state, reward, self.done, info
+
+    def describe_state(self) -> Dict[str, str]:
+        return {
+            "env": "TextPuzzleEnv",
+            "word": self.state.get("word", ""),
+            "target": self.state.get("target", ""),
+        }

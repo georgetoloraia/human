@@ -28,5 +28,12 @@ class SymbolEnv:
         expected = self.state["sequence"][-1] + self.state["step"]
         reward = 1.0 if action == expected else -0.5
         self.done = True
-        info = {"expected": expected}
+        info = {"expected": expected, "descriptor": self.describe_state()}
         return dict(self.state), reward, self.done, info
+
+    def describe_state(self) -> Dict[str, int]:
+        return {
+            "env": "SymbolEnv",
+            "sequence_head": self.state.get("sequence", [])[-1] if self.state.get("sequence") else None,
+            "step": self.state.get("step"),
+        }

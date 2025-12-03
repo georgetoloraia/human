@@ -103,3 +103,28 @@ class NeuronGraph:
         if not isinstance(loaded, dict):
             return
         self.graph.update(loaded)
+
+    def export_for_viz(self, max_nodes: int = 100, min_weight: float = 0.1) -> Dict[str, List[Dict[str, object]]]:
+        """
+        Return a compact subgraph suitable for visualization.
+        Filters edges by weight and limits node count.
+        """
+        strong_edges = [e for e in self.edges if abs(float(e.get("weight", 0.0))) >= min_weight]
+        strong_edges.sort(key=lambda e: abs(float(e.get("weight", 0.0))), reverse=True)
+        nodes: Dict[str, Dict[str, object]] = {}
+        for edge in strong_edges:
+            for node_id in (edge.get("source"), edge.get("target")):
+                if node_id and node_id in self.nodes:
+                    nodes[node_id] = self.nodes[node_id]
+        # fallback: include a few nodes even if no edges pass the filter
+        if not nodes:
+            for node_id, node in list(self.nodes.items())[: max_nodes]:
+                nodes[node_id] = node
+        limited_nodes = dict(list(nodes.items())[:max_nodes])
+        limited_edges = [
+            e for e in strong_edges if e.get("source") in limited_nodes and e.get("target") in limited_nodes
+        ][: max_nodes * 2]
+        return {
+            "nodes": list(limited_nodes.values()),
+            "edges": limited_edges,
+        }

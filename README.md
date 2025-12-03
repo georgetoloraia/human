@@ -74,3 +74,6 @@ License: see LICENSE (all rights reserved by George Toloraia).
 - **Multi-agent loop** (`manager/agents/`): planner → coder → critic → memory agents orchestrated inside the life loop when `HUMAN_MULTI_AGENT=1`.
 - **Online learning + reward** (`manager/reward.py`, metrics extensions): moving averages per plugin/strategy plus neuron-graph edge updates driven by rewards.
 - **Perception & practice envs** (`manager/envs/`): structured error/percept logging and lightweight text/symbol environments (`HUMAN_ENABLE_ENVS=1`, `HUMAN_ENV_RATIO`).
+- **Reward shaping v2**: structured outcome taxonomy (domain/tests/env progress) with clipped rewards and breakdowns stored in metrics history.
+- **Trace/debug + async scaffolding**: set `HUMAN_TRACE=1` to emit per-step traces (candidate scores, actions, rewards) under `manager/traces/`; set `HUMAN_ASYNC=1` to use the async orchestrator wrapper for perception/env steps.
+- **Env curriculum scheduling**: `HUMAN_ENV_RATIO` controls how often env steps run alongside code steps; domain choices are recorded in metrics for analysis and visualization (see `export_for_viz` in the neuron graph).
