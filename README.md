@@ -77,3 +77,11 @@ License: see LICENSE (all rights reserved by George Toloraia).
 - **Reward shaping v2**: structured outcome taxonomy (domain/tests/env progress) with clipped rewards and breakdowns stored in metrics history.
 - **Trace/debug + async scaffolding**: set `HUMAN_TRACE=1` to emit per-step traces (candidate scores, actions, rewards) under `manager/traces/`; set `HUMAN_ASYNC=1` to use the async orchestrator wrapper for perception/env steps.
 - **Env curriculum scheduling**: `HUMAN_ENV_RATIO` controls how often env steps run alongside code steps; domain choices are recorded in metrics for analysis and visualization (see `export_for_viz` in the neuron graph).
+
+# Reset and rerun
+- Reset state (backs up JSONs to `backups/<timestamp>/` and removes them):  
+  `python3 scripts/reset_state.py`
+- Fresh run with tracing and value function, code-only:  
+  `HUMAN_MULTI_AGENT=1 HUMAN_TRACE=1 USE_VALUE_FUNCTION=1 HUMAN_ASYNC=0 HUMAN_ENV_RATIO=0.0 python3 -m manager.life_loop`
+- Analyze the latest run:  
+  `python3 scripts/analyze_brain_run.py`
