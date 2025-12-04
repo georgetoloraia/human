@@ -33,6 +33,12 @@ class CoderAgent(BaseAgent):
         merged_selection = preserved_selection + list(self.mind._last_selection_info)
         self.mind._current_step_actions = merged_actions
         self.mind._last_selection_info = merged_selection
+
+        # Debug trace to spot idle behavior.
+        print("[CoderAgent] plan:", plan)
+        print("[CoderAgent] targets:", targets)
+        print("[CoderAgent] active_tasks:", active_tasks)
+        print("[CoderAgent] new actions:", len(merged_actions) - len(preserved_actions))
         return {
             "actions": merged_actions,
             "selection": merged_selection,

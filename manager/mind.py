@@ -412,7 +412,9 @@ class Mind:
                 error_scores.update(boosted)
             candidates = propose_mutations(src, pattern_scores, error_scores)
             if not candidates:
+                print("[Mind._act_and_learn] no candidates for plugin", plugin_name)
                 continue
+            print("[Mind._act_and_learn] candidates for", plugin_name, [p for _, p in candidates])
             candidates = candidates[:max_candidates_per_plugin]
             for new_code, pattern_name in candidates:
                 if pattern_name in BANNED_PATTERNS:
