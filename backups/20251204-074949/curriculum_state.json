@@ -1,0 +1,139 @@
+{
+  "current_phase": 1,
+  "task_status": {
+    "easy_pass": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "list_sum": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "dict_merge": {
+      "status": "unlocked",
+      "phase": 2,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "list_max": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "filter_even": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "abs_value": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "set_union": {
+      "status": "unlocked",
+      "phase": 2,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "string_reverse": {
+      "status": "unlocked",
+      "phase": 2,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "map_square": {
+      "status": "unlocked",
+      "phase": 2,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "list_min": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "list_average": {
+      "status": "unlocked",
+      "phase": 2,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "add_two_numbers": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "doc_len": {
+      "status": "mastered",
+      "phase": 1,
+      "streak": 2161,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "doc_sum": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    },
+    "doc_min": {
+      "status": "unlocked",
+      "phase": 1,
+      "streak": 0,
+      "plugin": "sample_plugin.py",
+      "prerequisites": []
+    }
+  },
+  "phase_stats": {
+    "1": {
+      "tasks": [
+        "easy_pass",
+        "list_sum",
+        "list_max",
+        "filter_even",
+        "abs_value",
+        "list_min",
+        "add_two_numbers",
+        "doc_len",
+        "doc_sum",
+        "doc_min"
+      ],
+      "unlocked": true,
+      "mastered": false
+    },
+    "2": {
+      "tasks": [
+        "dict_merge",
+        "set_union",
+        "string_reverse",
+        "map_square",
+        "list_average"
+      ],
+      "unlocked": true,
+      "mastered": false
+    }
+  }
+}

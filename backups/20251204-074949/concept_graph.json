@@ -1,0 +1,1098 @@
+{
+  "_version": "1.0",
+  "plugins": {
+    "sample_plugin.py": {
+      "name": "sample_plugin.py",
+      "lines": 1239,
+      "last_modified": 1764817440.9455032,
+      "growth_count": 1228,
+      "tests_passed": 1228,
+      "tests_failed": 2844
+    }
+  },
+  "functions": {
+    "sample_plugin.py:process": {
+      "plugin": "sample_plugin.py",
+      "name": "process",
+      "lines": 8,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9196434
+    },
+    "sample_plugin.py:list_max": {
+      "plugin": "sample_plugin.py",
+      "name": "list_max",
+      "lines": 8,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.920582
+    },
+    "sample_plugin.py:list_min": {
+      "plugin": "sample_plugin.py",
+      "name": "list_min",
+      "lines": 8,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9210558
+    },
+    "sample_plugin.py:filter_even": {
+      "plugin": "sample_plugin.py",
+      "name": "filter_even",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9215252
+    },
+    "sample_plugin.py:dict_merge": {
+      "plugin": "sample_plugin.py",
+      "name": "dict_merge",
+      "lines": 5,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9220226
+    },
+    "sample_plugin.py:map_square": {
+      "plugin": "sample_plugin.py",
+      "name": "map_square",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9225483
+    },
+    "sample_plugin.py:string_reverse": {
+      "plugin": "sample_plugin.py",
+      "name": "string_reverse",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9231076
+    },
+    "sample_plugin.py:set_union": {
+      "plugin": "sample_plugin.py",
+      "name": "set_union",
+      "lines": 5,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9236832
+    },
+    "sample_plugin.py:abs_value": {
+      "plugin": "sample_plugin.py",
+      "name": "abs_value",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.924312
+    },
+    "sample_plugin.py:list_average": {
+      "plugin": "sample_plugin.py",
+      "name": "list_average",
+      "lines": 4,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9249814
+    },
+    "sample_plugin.py:easy_pass": {
+      "plugin": "sample_plugin.py",
+      "name": "easy_pass",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9256933
+    },
+    "sample_plugin.py:add_two_numbers": {
+      "plugin": "sample_plugin.py",
+      "name": "add_two_numbers",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9201148
+    },
+    "sample_plugin.py:use_len": {
+      "plugin": "sample_plugin.py",
+      "name": "use_len",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.926449
+    },
+    "sample_plugin.py:use_sum": {
+      "plugin": "sample_plugin.py",
+      "name": "use_sum",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9272552
+    },
+    "sample_plugin.py:use_min": {
+      "plugin": "sample_plugin.py",
+      "name": "use_min",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9280815
+    },
+    "sample_plugin.py:use_max": {
+      "plugin": "sample_plugin.py",
+      "name": "use_max",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9288402
+    },
+    "sample_plugin.py:use_list_append": {
+      "plugin": "sample_plugin.py",
+      "name": "use_list_append",
+      "lines": 4,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9295685
+    },
+    "sample_plugin.py:use_dict_get": {
+      "plugin": "sample_plugin.py",
+      "name": "use_dict_get",
+      "lines": 3,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9302278
+    },
+    "sample_plugin.py:use_abs": {
+      "plugin": "sample_plugin.py",
+      "name": "use_abs",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.930854
+    },
+    "sample_plugin.py:use_any": {
+      "plugin": "sample_plugin.py",
+      "name": "use_any",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9314446
+    },
+    "sample_plugin.py:use_all": {
+      "plugin": "sample_plugin.py",
+      "name": "use_all",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9320104
+    },
+    "sample_plugin.py:use_sorted": {
+      "plugin": "sample_plugin.py",
+      "name": "use_sorted",
+      "lines": 2,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764819648.9325392
+    }
+  },
+  "edges": [
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_len"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_len"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sum"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_len"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sum"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_len"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sum"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_len"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sum"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_list_append"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_dict_get"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_abs"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_any"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_all"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sorted"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:add_two_numbers"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:filter_even"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:dict_merge"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:map_square"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:string_reverse"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:set_union"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:abs_value"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:list_average"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:easy_pass"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_len"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sum"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_min"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_max"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_list_append"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_dict_get"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_abs"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_any"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_all"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:use_sorted"
+    ]
+  ],
+  "tasks": {
+    "easy_pass": {
+      "plugin": "sample_plugin.py",
+      "function": "easy_pass",
+      "passed": 3542,
+      "failed": 0,
+      "last_success": 1764817440.9590473
+    },
+    "list_sum": {
+      "plugin": "sample_plugin.py",
+      "function": "process",
+      "passed": 3542,
+      "failed": 0,
+      "last_success": 1764817440.9594178
+    },
+    "list_max": {
+      "plugin": "sample_plugin.py",
+      "function": "list_max",
+      "passed": 3542,
+      "failed": 0,
+      "last_success": 1764817440.9605553
+    },
+    "filter_even": {
+      "plugin": "sample_plugin.py",
+      "function": "filter_even",
+      "passed": 3542,
+      "failed": 0,
+      "last_success": 1764817440.9609532
+    },
+    "abs_value": {
+      "plugin": "sample_plugin.py",
+      "function": "abs_value",
+      "passed": 3542,
+      "failed": 0,
+      "last_success": 1764817440.961346
+    },
+    "list_min": {
+      "plugin": "sample_plugin.py",
+      "function": "list_min",
+      "passed": 3542,
+      "failed": 0,
+      "last_success": 1764817440.9628117
+    },
+    "dict_merge": {
+      "plugin": "sample_plugin.py",
+      "function": "dict_merge",
+      "passed": 3540,
+      "failed": 0,
+      "last_success": 1764817440.9601936
+    },
+    "set_union": {
+      "plugin": "sample_plugin.py",
+      "function": "set_union",
+      "passed": 3540,
+      "failed": 0,
+      "last_success": 1764817440.9617105
+    },
+    "string_reverse": {
+      "plugin": "sample_plugin.py",
+      "function": "string_reverse",
+      "passed": 3540,
+      "failed": 0,
+      "last_success": 1764817440.962093
+    },
+    "map_square": {
+      "plugin": "sample_plugin.py",
+      "function": "map_square",
+      "passed": 3540,
+      "failed": 0,
+      "last_success": 1764817440.9624562
+    },
+    "list_average": {
+      "plugin": "sample_plugin.py",
+      "function": "list_average",
+      "passed": 3540,
+      "failed": 0,
+      "last_success": 1764817440.9639337
+    },
+    "add_two_numbers": {
+      "plugin": "sample_plugin.py",
+      "function": "add_two_numbers",
+      "passed": 2269,
+      "failed": 0,
+      "last_success": 1764817440.95865
+    },
+    "doc_len": {
+      "plugin": "sample_plugin.py",
+      "function": "use_len",
+      "passed": 2161,
+      "failed": 54,
+      "last_success": 1764817440.9631724
+    },
+    "doc_sum": {
+      "plugin": "sample_plugin.py",
+      "function": "use_sum",
+      "passed": 2132,
+      "failed": 26,
+      "last_success": 1764817440.9598227
+    },
+    "doc_min": {
+      "plugin": "sample_plugin.py",
+      "function": "use_min",
+      "passed": 1149,
+      "failed": 980,
+      "last_success": 1764817440.963544
+    }
+  }
+}

@@ -1,0 +1,6877 @@
+{
+  "observations": [
+    {
+      "file": "sample_plugin.py",
+      "lines": 923,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 925,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 927,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 929,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 931,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 933,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 935,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 937,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 939,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 941,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 943,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 945,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 947,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 949,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 951,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 953,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 955,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 957,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 959,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 961,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 963,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 965,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 967,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 969,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 971,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 973,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 975,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 977,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 979,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 981,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 983,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 985,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 987,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 989,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 991,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 993,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 995,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 997,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 999,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1001,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1003,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1005,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1007,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1009,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1011,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1013,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1015,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1017,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1019,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1021,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1023,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1025,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1027,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1029,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1031,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1033,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1035,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1037,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1039,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1041,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1043,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1045,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1047,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1049,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1051,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1053,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1055,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1057,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1059,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1061,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1063,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1065,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1067,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1069,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1071,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1073,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1075,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1077,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1079,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1081,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1083,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1085,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1087,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1089,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1091,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1093,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1095,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1097,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1099,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1101,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1103,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1105,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1107,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1109,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1111,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1113,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1115,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1117,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1119,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1121,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1123,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1125,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1127,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1129,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1131,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1133,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1135,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1137,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1139,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1141,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1143,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1145,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1147,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1149,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1151,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1153,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1155,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1157,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1159,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1161,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1163,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1165,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1167,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1169,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1171,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1173,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1175,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1177,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1179,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1181,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1183,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1185,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1187,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1189,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1191,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1193,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1195,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1197,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1199,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1201,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1203,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1205,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1207,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1209,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1211,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1213,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1215,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1217,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1219,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1221,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1223,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1225,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1227,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1229,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1231,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1233,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1235,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 116,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 97,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 99,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 101,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 103,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 105,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 107,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 109,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 111,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 113,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 115,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 117,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 119,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 121,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 123,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 125,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 127,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 129,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 131,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 133,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 135,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 137,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 139,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 141,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 143,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 145,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 147,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 149,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 151,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 153,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 155,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 157,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 159,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 161,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 163,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 165,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 167,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 169,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 171,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 173,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 175,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 177,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 179,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 181,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 183,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 185,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 187,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 189,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 191,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 193,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 195,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 197,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 199,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 201,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 203,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 205,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 207,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 209,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 211,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 213,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 215,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 217,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 219,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 221,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 223,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 225,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 227,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 229,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 231,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 233,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 235,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 241,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 243,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 245,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 247,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 249,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 251,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 253,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 255,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 257,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 259,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 261,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 263,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 265,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 267,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 269,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 271,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 273,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 275,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 277,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 279,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 281,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 283,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 285,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 287,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 289,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 291,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 293,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 295,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 297,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 299,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 301,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 303,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 305,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 307,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 309,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 311,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 313,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 315,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 317,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 319,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 321,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 323,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 325,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 327,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 329,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 331,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 333,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 335,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 337,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 339,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 341,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 343,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 345,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 347,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 349,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 351,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 353,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 355,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 357,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 359,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 361,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 363,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 365,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 367,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 369,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 371,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 373,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 375,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 377,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 379,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 381,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 383,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 385,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 387,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 389,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 391,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 393,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 395,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 397,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 399,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 401,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 403,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 405,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 407,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 409,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 411,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 413,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 415,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 417,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 419,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 421,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 423,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 425,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 427,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 429,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 431,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 433,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 435,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 437,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 439,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 441,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 443,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 445,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 447,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 449,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 451,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 453,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 455,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 457,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 459,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 461,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 463,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 465,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 467,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 469,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 471,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 473,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 475,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 477,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 479,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 481,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 483,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 485,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 487,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 489,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 491,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 493,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 495,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 497,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 499,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 501,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 503,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 505,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 507,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 509,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 511,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 513,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 515,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 517,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 519,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 521,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 523,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 525,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 527,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 529,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 531,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 533,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 535,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 537,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 539,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 541,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 543,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 545,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 547,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 549,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 551,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 553,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 555,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 557,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 559,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 561,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 563,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 565,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 567,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 569,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 571,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 573,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 575,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 577,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 579,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 581,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 583,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 585,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 587,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 589,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 591,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 593,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 595,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 597,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 599,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 601,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 603,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 605,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 607,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 609,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 611,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 613,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 615,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 617,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 619,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 621,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 623,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 625,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 627,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 629,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 631,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 633,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 635,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 637,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 639,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 641,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 643,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 645,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 647,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 649,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 651,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 653,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 655,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 657,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 659,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 661,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 663,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 665,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 667,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 669,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 671,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 673,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 675,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 677,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 679,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 681,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 683,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 685,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 687,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 689,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 691,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 693,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 695,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 697,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 699,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 701,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 703,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 705,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 707,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 709,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 711,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 713,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 715,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 717,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 719,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 721,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 723,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 725,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 727,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 729,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 731,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 733,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 735,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 737,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 739,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 741,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 743,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 745,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 747,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 749,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 751,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 753,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 755,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 757,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 759,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 761,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 763,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 765,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 767,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 769,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 771,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 773,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 775,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 777,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 779,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 781,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 783,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 785,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 787,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 789,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 791,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 793,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 795,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 797,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 799,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 801,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 803,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 805,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 807,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 809,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 811,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 813,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 815,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 817,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 819,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 821,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 823,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 825,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 827,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 829,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 831,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 833,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 835,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 837,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 839,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 841,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 843,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 845,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 847,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 849,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 851,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 853,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 855,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 857,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 859,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 861,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 863,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 865,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 867,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 869,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 871,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 873,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 875,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 877,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 879,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 881,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 883,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 885,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 887,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 889,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 891,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 893,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 895,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 897,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 899,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 901,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 903,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 905,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 907,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 909,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 911,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 913,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 915,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 917,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 919,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 921,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 923,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 925,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 927,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 929,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 931,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 933,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 935,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 937,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 939,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 941,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 943,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 945,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 947,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 949,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 951,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 953,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 955,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 957,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 959,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 961,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 963,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 965,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 967,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 969,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 971,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 973,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 975,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 977,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 979,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 981,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 983,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 985,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 987,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 989,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 991,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 993,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 995,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 997,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 999,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1001,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1003,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1005,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1007,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1009,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1011,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1013,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1015,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1017,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1019,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1021,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1023,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1025,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1027,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1029,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1031,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1033,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1035,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1037,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1039,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1041,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1043,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1045,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1047,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1049,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1051,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1053,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1055,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1057,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1059,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1061,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1063,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1065,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1067,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1069,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1071,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1073,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1075,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1077,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1079,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1081,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1083,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1085,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1087,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1089,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1091,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1093,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1095,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1097,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1099,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1101,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1103,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1105,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1107,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1109,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1111,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1113,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1115,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1117,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1119,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1121,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1123,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1125,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1127,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1129,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1131,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1133,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1135,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1137,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1139,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1141,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1143,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1145,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1147,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1149,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1151,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1153,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1155,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1157,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1159,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1161,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1163,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1165,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1167,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1169,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1171,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1173,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1175,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1177,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1179,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1181,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1183,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1185,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1187,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1189,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1191,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1193,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1195,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1197,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1199,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1201,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1203,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1205,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1207,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1209,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1211,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1213,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1215,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1217,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1219,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1221,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1223,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1225,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1227,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1229,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1231,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1233,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1235,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1237,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    },
+    {
+      "file": "sample_plugin.py",
+      "lines": 1239,
+      "has_functions": true,
+      "has_return": true
+    }
+  ],
+  "concepts": {},
+  "attempts": {
+    "sample_plugin.py:none_guard": {
+      "ok": 1152,
+      "fail": 490
+    },
+    "sample_plugin.py:try_wrap": {
+      "ok": 0,
+      "fail": 490
+    }
+  },
+  "patterns": {
+    "none_guard": {
+      "ok": 1152,
+      "fail": 761
+    },
+    "try_wrap": {
+      "ok": 0,
+      "fail": 749
+    }
+  },
+  "pattern_error_stats": {
+    "none_guard": {
+      "OK": {
+        "ok": 1152,
+        "fail": 0
+      },
+      "AttributeError": {
+        "ok": 0,
+        "fail": 490
+      }
+    },
+    "try_wrap": {
+      "AttributeError": {
+        "ok": 0,
+        "fail": 490
+      }
+    }
+  },
+  "external_knowledge": {
+    "graph:sample_plugin.py:AttributeError": {
+      "text": "the (from extending.txt) implementation (from newtypes.txt) of (from newtypes.txt)"
+    },
+    "web:https://docs.python.org/3/library/exceptions.html": {
+      "text": "Built-in Exceptions \u2014 Python 3.14.1 documentation Theme Auto Light Dark Table of Contents Built-in Exceptions Exception context Inheriting from built-in exceptions Base classes Concrete exceptions OS exceptions Warnings Exception groups Exception hierarchy Previous topic Built-in Types Next topic Text Processing Services This page Report a bug Show source Navigation index modules | next | previous | Python \u00bb 3.14.1 Documentation \u00bb The Python Standard Library \u00bb Built-in Exceptions | Theme Auto Light Dark | Built-in Exceptions \u00c2\u00b6 In Python, all exceptions must be instances of a class that derives from BaseException . In a try statement with an except clause that mentions a particular class, that clause also handles any exception classes derived from that class (but not exception classes from which it is derived). Two exception classes that are not related via subclassing are never equivalent, even if they have the same name. The built-in exceptions listed in this chapter can be generated by the interpreter or built-in functions. Except where mentioned, they have an \u00e2\u0080\u009cassociated value\u00e2\u0080\u009d indicating the detailed cause of the error. This may be a string or a tuple of several items of information (e.g., an error code and a string explaining the code). The associated value is usually passed as arguments to the exception class\u00e2\u0080\u0099s constructor. User code can raise built-in exceptions. This can be used to test an exception handler or to report an error condition \u00e2\u0080\u009cjust like\u00e2\u0080\u009d the situation in which the interpreter raises the same exception; but beware that there is nothing to prevent user code from raising an inappropriate error. The built-in exception classes can be subclassed to define new exceptions; programmers are encouraged to derive new exceptions from the Exception class or one of its subclasses, and not from BaseException . More information on defining exceptions is available in the Python Tutorial under User-defined Exceptions . Exception context \u00c2\u00b6 Three attributes on exception objects provide information about the context in which the exception was raised: BaseException. __context__ \u00c2\u00b6 BaseException. __cause__ \u00c2\u00b6 BaseException. __suppress_context__ \u00c2\u00b6 When raising a new exception while another exception is already being handled, the new exception\u00e2\u0080\u0099s __context__ attribute is automatically set to the handled exception. An exception may be handled when an except or finally clause, or a with statement, is used. This implicit exception context can be supplemented with an explicit cause by using from with raise : raise new_exc from original_exc The expression following from must be an exception or None . It will be set as __cause__ on the raised exception. Setting __cause__ also implicitly sets the __suppress_context__ attribute to True , so that using raise new_exc from None effectively replaces the old exception with the new one for display purposes (e.g. converting KeyError to AttributeError ), while leaving the old exception available in __context__ for introspection when debugging. The default traceback display code shows these chained exceptions in addition to the traceback for the exception itself. An explicitly chained exception in __cause__ is always shown when present. An implicitly chained exception in __context__ is shown only if __cause__ is None and __suppress_context__ is false. In either case, the exception itself is always shown after any chained exceptions so that the final line of the traceback always shows the last exception that was raised. Inheriting from built-in exceptions \u00c2\u00b6 User code can create subclasses that inherit from an exception type. It\u00e2\u0080\u0099s recommended to only subclass one exception type at a time to avoid any possible conflicts between how the bases handle the args attribute, as well as due to possible memory layout incompatibilities. CPython implementation detail: Most built-in exceptions are implemented in C for efficiency, see: Objects/exceptions.c . Some have custom memory layouts which m"
+    }
+  },
+  "error_streaks": {
+    "sample_plugin.py|OK": 0,
+    "sample_plugin.py|AttributeError": 980,
+    "sample_plugin.py|Unsafe": 530
+  },
+  "last_consult": {
+    "source_id": "web:https://docs.python.org/3/library/exceptions.html",
+    "error_type": "AttributeError"
+  },
+  "age": 1913,
+  "_version": "1.0",
+  "meta_skill": 3.4844914372704174e-05,
+  "meta_skill_history": [
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 1.0,
+      "score": 0.9999999999999998
+    },
+    {
+      "rate": 0.0,
+      "score": 0.7999999999999998
+    },
+    {
+      "rate": 0.0,
+      "score": 0.6399999999999999
+    },
+    {
+      "rate": 0.0,
+      "score": 0.5119999999999999
+    },
+    {
+      "rate": 0.0,
+      "score": 0.40959999999999996
+    },
+    {
+      "rate": 0.0,
+      "score": 0.32767999999999997
+    },
+    {
+      "rate": 0.0,
+      "score": 0.262144
+    },
+    {
+      "rate": 0.0,
+      "score": 0.2097152
+    },
+    {
+      "rate": 0.0,
+      "score": 0.16777216
+    },
+    {
+      "rate": 0.0,
+      "score": 0.134217728
+    },
+    {
+      "rate": 0.0,
+      "score": 0.10737418240000002
+    },
+    {
+      "rate": 0.0,
+      "score": 0.08589934592000002
+    },
+    {
+      "rate": 0.0,
+      "score": 0.06871947673600003
+    },
+    {
+      "rate": 0.0,
+      "score": 0.05497558138880002
+    },
+    {
+      "rate": 0.0,
+      "score": 0.04398046511104002
+    },
+    {
+      "rate": 0.0,
+      "score": 0.03518437208883202
+    },
+    {
+      "rate": 0.0,
+      "score": 0.028147497671065613
+    },
+    {
+      "rate": 0.0,
+      "score": 0.022517998136852492
+    },
+    {
+      "rate": 0.0,
+      "score": 0.018014398509481996
+    },
+    {
+      "rate": 0.0,
+      "score": 0.014411518807585597
+    },
+    {
+      "rate": 0.0,
+      "score": 0.011529215046068478
+    },
+    {
+      "rate": 0.0,
+      "score": 0.009223372036854782
+    },
+    {
+      "rate": 0.0,
+      "score": 0.007378697629483826
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0059029581035870615
+    },
+    {
+      "rate": 0.0,
+      "score": 0.004722366482869649
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0037778931862957194
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0030223145490365757
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0024178516392292606
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0019342813113834086
+    },
+    {
+      "rate": 0.0,
+      "score": 0.001547425049106727
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0012379400392853817
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0009903520314283054
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0007922816251426444
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0006338253001141156
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0005070602400912925
+    },
+    {
+      "rate": 0.0,
+      "score": 0.000405648192073034
+    },
+    {
+      "rate": 0.0,
+      "score": 0.00032451855365842725
+    },
+    {
+      "rate": 0.0,
+      "score": 0.00025961484292674183
+    },
+    {
+      "rate": 0.0,
+      "score": 0.00020769187434139348
+    },
+    {
+      "rate": 0.0,
+      "score": 0.0001661534994731148
+    },
+    {
+      "rate": 0.0,
+      "score": 0.00013292279957849185
+    },
+    {
+      "rate": 0.0,
+      "score": 0.00010633823966279349
+    },
+    {
+      "rate": 0.0,
+      "score": 8.50705917302348e-05
+    },
+    {
+      "rate": 0.0,
+      "score": 6.805647338418783e-05
+    },
+    {
+      "rate": 0.0,
+      "score": 5.444517870735027e-05
+    },
+    {
+      "rate": 0.0,
+      "score": 4.355614296588022e-05
+    },
+    {
+      "rate": 0.0,
+      "score": 3.4844914372704174e-05
+    }
+  ],
+  "learning_policy": {
+    "exploration_depth": 3,
+    "max_plugins_per_step": 2,
+    "web_consult_threshold": 3,
+    "weights": {
+      "curiosity": 1.5,
+      "mastery": 1.5,
+      "stability": 1.0,
+      "task": 1.0
+    }
+  },
+  "meta_trials": []
+}

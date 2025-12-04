@@ -155,9 +155,35 @@ class NoneGuardPattern(MutationPattern):
     def apply(self, src: str) -> Optional[str]:
         tree = ast.parse(src)
         changed = False
+
+        def has_existing_guard(fn: ast.FunctionDef, arg_name: str) -> bool:
+            # Look at the first few statements for `if <arg> is None: return None`
+            for stmt in fn.body[:3]:
+                if not isinstance(stmt, ast.If):
+                    continue
+                if not isinstance(stmt.test, ast.Compare):
+                    continue
+                cmp = stmt.test
+                if (
+                    isinstance(cmp.left, ast.Name)
+                    and cmp.left.id == arg_name
+                    and len(cmp.ops) == 1
+                    and isinstance(cmp.ops[0], ast.Is)
+                    and len(cmp.comparators) == 1
+                    and isinstance(cmp.comparators[0], ast.Constant)
+                    and cmp.comparators[0].value is None
+                ):
+                    if stmt.body and isinstance(stmt.body[0], ast.Return):
+                        ret = stmt.body[0]
+                        if isinstance(ret.value, ast.Constant) and ret.value.value is None:
+                            return True
+            return False
+
         for i, node in enumerate(tree.body):
             if isinstance(node, ast.FunctionDef) and node.args.args:
                 arg_name = node.args.args[0].arg
+                if has_existing_guard(node, arg_name):
+                    continue
                 guard = ast.If(
                     test=ast.Compare(
                         left=ast.Name(id=arg_name, ctx=ast.Load()),

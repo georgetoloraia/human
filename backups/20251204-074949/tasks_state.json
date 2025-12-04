@@ -1,0 +1,157 @@
+{
+  "_version": "1.0",
+  "add_two_numbers": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "math",
+    "plugin": "sample_plugin.py"
+  },
+  "easy_pass": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "basic",
+    "plugin": "sample_plugin.py"
+  },
+  "list_sum": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "general",
+    "plugin": "sample_plugin.py"
+  },
+  "doc_sum": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "general",
+    "plugin": "sample_plugin.py"
+  },
+  "dict_merge": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 2,
+    "difficulty": 2,
+    "category": "dict",
+    "plugin": "sample_plugin.py"
+  },
+  "list_max": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "math",
+    "plugin": "sample_plugin.py"
+  },
+  "filter_even": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "list",
+    "plugin": "sample_plugin.py"
+  },
+  "abs_value": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "math",
+    "plugin": "sample_plugin.py"
+  },
+  "set_union": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 2,
+    "difficulty": 2,
+    "category": "set",
+    "plugin": "sample_plugin.py"
+  },
+  "string_reverse": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 2,
+    "difficulty": 2,
+    "category": "string",
+    "plugin": "sample_plugin.py"
+  },
+  "map_square": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 2,
+    "difficulty": 2,
+    "category": "list",
+    "plugin": "sample_plugin.py"
+  },
+  "list_min": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "math",
+    "plugin": "sample_plugin.py"
+  },
+  "list_average": {
+    "passes": 2132,
+    "fails": 530,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 2,
+    "difficulty": 2,
+    "category": "math",
+    "plugin": "sample_plugin.py"
+  },
+  "doc_min": {
+    "passes": 1149,
+    "fails": 1510,
+    "streak": -86,
+    "last_status": "failing",
+    "last_error_type": "Unsafe",
+    "phase": 1,
+    "difficulty": 1,
+    "category": "general",
+    "plugin": "sample_plugin.py"
+  }
+}

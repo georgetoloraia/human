@@ -1,52 +1,64 @@
 #!/usr/bin/env python3
-from pathlib import Path
-import shutil
-import json
+"""
+Reset runtime state for the digital brain.
 
-ROOT = Path(__file__).resolve().parents[1]
-STATE_FILES = [
-    ROOT / "manager" / "brain_memory.json",
-    ROOT / "manager" / "tasks_state.json",
-    ROOT / "manager" / "concept_graph.json",
-    ROOT / "manager" / "curriculum_state.json",
-    ROOT / "manager" / "mind_diary.json",
-    ROOT / "manager" / "metrics.json",
+Backs up known JSON state files, then removes them so the next run starts fresh.
+"""
+
+from __future__ import annotations
+
+import shutil
+from datetime import datetime
+from pathlib import Path
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+BACKUPS_DIR = REPO_ROOT / "backups"
+
+# State files to clear (relative to repo root)
+STATE_PATHS = [
+    REPO_ROOT / "manager" / "brain_memory.json",
+    REPO_ROOT / "manager" / "concept_graph.json",
+    REPO_ROOT / "manager" / "curriculum_state.json",
+    REPO_ROOT / "manager" / "tasks_state.json",
+    REPO_ROOT / "manager" / "mind_diary.json",
+    REPO_ROOT / "manager" / "neuron_graph.json",
+    REPO_ROOT / "manager" / "metrics.json",
+    REPO_ROOT / "manager" / "traces" / "trace.jsonl",
 ]
 
-SAMPLE_PLUGIN = ROOT / "plugins" / "sample_plugin.py"
-SAMPLE_TASK = ROOT / "tasks" / "list_sum.yml"
+
+def ensure_backup_dir() -> Path:
+    BACKUPS_DIR.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    dest = BACKUPS_DIR / stamp
+    dest.mkdir(parents=True, exist_ok=True)
+    return dest
 
 
-def reset_state():
-    for f in STATE_FILES:
-        if f.exists():
-            f.unlink()
-    # recreate minimal plugin/task if missing
-    SAMPLE_PLUGIN.parent.mkdir(parents=True, exist_ok=True)
-    SAMPLE_TASK.parent.mkdir(parents=True, exist_ok=True)
-    if not SAMPLE_PLUGIN.exists():
-        SAMPLE_PLUGIN.write_text(
-            "def process(values):\n"
-            "    total = 0\n"
-            "    for v in values:\n"
-            "        total += v\n"
-            "    return total\n",
-            encoding="utf-8",
-        )
-    if not SAMPLE_TASK.exists():
-        SAMPLE_TASK.write_text(
-            "name: list_sum\n"
-            "phase: 1\n"
-            "target_plugin: sample_plugin.py\n"
-            "target_function: process\n"
-            "description: The function must return the sum of a list of integers.\n"
-            "requirements:\n"
-            "  - process([1,2,3]) == 6\n"
-            "  - process([]) == 0\n"
-            "  - process([-1,1]) == 0\n",
-            encoding="utf-8",
-        )
-    print("State reset. Next run will start fresh.")
+def reset_state() -> None:
+    backup_dir = ensure_backup_dir()
+    moved = []
+    missing = []
+
+    for path in STATE_PATHS:
+        if path.exists():
+            target = backup_dir / path.name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(path), str(target))
+            moved.append(path.relative_to(REPO_ROOT))
+        else:
+            missing.append(path.relative_to(REPO_ROOT))
+
+    print(f"Backed up state to {backup_dir.relative_to(REPO_ROOT)}")
+    if moved:
+        print("Moved:")
+        for p in moved:
+            print(f"  - {p}")
+    if missing:
+        print("Not found (already clean):")
+        for p in missing:
+            print(f"  - {p}")
 
 
 if __name__ == "__main__":

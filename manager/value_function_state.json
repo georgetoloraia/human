@@ -1,4 +1,18 @@
 {
-  "plugins": {},
-  "strategies": {}
+  "plugins": {
+    "plugin:sample_plugin.py": {
+      "count": 652.0,
+      "reward_sum": 1003.0
+    }
+  },
+  "strategies": {
+    "none_guard": {
+      "count": 612.0,
+      "reward_sum": 1063.0
+    },
+    "try_wrap": {
+      "count": 40.0,
+      "reward_sum": -60.0
+    }
+  }
 }

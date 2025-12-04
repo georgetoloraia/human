@@ -1,0 +1,3700 @@
+{
+  "_version": "1.0",
+  "steps": 2656,
+  "mutations_accepted": 1228,
+  "mutations_rejected": 2844,
+  "web_consults": 2190,
+  "tasks_mastered": 0,
+  "plugin_stats": {
+    "plugin:sample_plugin.py": {
+      "invocations": 658,
+      "success": 572,
+      "fail": 86,
+      "reward_sum": 1009.0,
+      "recent": [
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        }
+      ],
+      "last_reward": -1.5,
+      "last_details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    }
+  },
+  "strategy_stats": {
+    "none_guard": {
+      "invocations": 618,
+      "success": 572,
+      "fail": 46,
+      "reward_sum": 1069.0,
+      "recent": [
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        }
+      ],
+      "last_reward": -1.5,
+      "last_details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    "try_wrap": {
+      "invocations": 40,
+      "success": 0,
+      "fail": 40,
+      "reward_sum": -60.0,
+      "recent": [
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        },
+        {
+          "reward": -1.5,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": 0.0,
+            "regression_penalty": -0.0,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -1.5
+          }
+        }
+      ],
+      "last_reward": -1.5,
+      "last_details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    }
+  },
+  "reward_history": [
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": 2.0,
+      "details": {
+        "domain": "code",
+        "base": 1.2,
+        "improvement_bonus": 7.5,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": 2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "none_guard",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "try_wrap",
+      "reward": -1.5,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": 0.0,
+        "regression_penalty": -0.0,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -1.5
+      }
+    }
+  ],
+  "recent_domains": [
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code"
+  ]
+}
