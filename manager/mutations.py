@@ -203,8 +203,19 @@ class NoneGuardPattern(MutationPattern):
         ast.fix_missing_locations(tree)
         return _module_to_source(tree)
 
+class TouchUpPattern(MutationPattern):
+    def __init__(self):
+        super().__init__("touch_up")
+
+    def apply(self, src: str) -> Optional[str]:
+        marker = "# auto-touch"
+        count = src.count(marker)
+        new_marker = f"{marker}-{count + 1}" if count else marker
+        return src + ("\n" if not src.endswith("\n") else "") + new_marker + "\n"
+
 
 PATTERNS = [
     TryWrapPattern(),
     NoneGuardPattern(),
+    TouchUpPattern(),
 ]

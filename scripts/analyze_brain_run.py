@@ -57,7 +57,11 @@ def analyze_traces(traces, window=200):
         worst_streak = min(worst_streak, streak)
 
     avg_reward = sum(rewards) / len(rewards)
-    print(f"Steps in trace: {len(traces)}")
+    total_steps = len(traces)
+    total_reward = sum(rewards) if rewards else 0.0
+    avg_reward = (total_reward / len(rewards)) if rewards else 0.0
+    print(f"Steps in trace: {total_steps}")
+    print(f"Total reward: {total_reward:.3f}")
     print(f"Average reward: {avg_reward:.3f}")
     print(f"Worst negative streak: {worst_streak}")
     print("Domain counts:", dict(domains))

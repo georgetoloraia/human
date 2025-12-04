@@ -69,7 +69,7 @@ class NeuronGraph:
         existing["weight"] = max(min(existing["weight"], 10.0), -10.0)
         self.save()
 
-    def get_neighbors(self, node_id: str, top_k: int = 10) -> List[Dict[str, object]]:
+    def get_neighbors(self, node_id: str, top_k: int = 10, edge_type: str | None = None) -> List[Dict[str, object]]:
         neighbors: List[Dict[str, object]] = []
         for edge in self.edges:
             if edge.get("source") == node_id:
@@ -79,6 +79,8 @@ class NeuronGraph:
             else:
                 continue
             other = self.nodes.get(str(other_id), {"id": other_id, "type": "unknown", "embedding": [], "meta": {}})
+            if edge_type and other.get("type") != edge_type:
+                continue
             neighbors.append(
                 {
                     "id": other_id,
@@ -103,6 +105,11 @@ class NeuronGraph:
         if not isinstance(loaded, dict):
             return
         self.graph.update(loaded)
+
+    def add_concept_if_missing(self, concept_id: str, embedding: Optional[List[float]] = None, meta: Optional[Dict[str, object]] = None) -> None:
+        if concept_id in self.nodes:
+            return
+        self.add_node(concept_id, "concept", embedding or [0.0] * 8, meta or {})
 
     def export_for_viz(self, max_nodes: int = 100, min_weight: float = 0.1) -> Dict[str, List[Dict[str, object]]]:
         """

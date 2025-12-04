@@ -331,6 +331,13 @@ class Mind:
         if self.use_value_function:
             value_bonus = self.value_function.score(f"plugin:{plugin_name}", candidate_type="plugin")
             total += value_bonus
+        # -------- PHASE 3: concept transfer bonus --------
+        concept_bonus = 0.0
+        if self.use_value_function:
+            linked = self.neuron_graph.get_neighbors(f"plugin:{plugin_name}", edge_type="concept")
+            concept_ids = [n.get("id") for n in linked]
+            concept_bonus = self.value_function.transfer_from_concepts(concept_ids)
+            total += 0.3 * concept_bonus
         return {
             "curiosity": curiosity,
             "mastery": mastery,
@@ -340,6 +347,7 @@ class Mind:
             "task_failing_count": failing_count,
             "task_drive": task_drive + phase_boost - future_penalty,
             "value_bonus": value_bonus,
+            "concept_bonus": concept_bonus,
             "total": total,
         }
 
@@ -399,7 +407,8 @@ class Mind:
                 continue
             plugin_key = f"plugin:{plugin_name}"
             if self.metrics.is_deprioritized(plugin_key, bucket="plugin_stats", min_invocations=30, min_avg_reward=-0.5):
-                continue
+                if random.random() > 0.1:  # small exploration chance
+                    continue
             src = path.read_text(encoding="utf-8")
             error_scores = self.brain.pattern_error_scores(self.last_error_type) if self.last_error_type else {}
             last_consult = self.brain.get_last_consult()
@@ -420,7 +429,8 @@ class Mind:
                 if pattern_name in BANNED_PATTERNS:
                     continue
                 if self.metrics.is_deprioritized(pattern_name, bucket="strategy_stats", min_invocations=10, min_avg_reward=-0.5):
-                    continue
+                    if random.random() > 0.2:
+                        continue
                 accepted = self._try_candidate(
                     path, plugin_name, new_code, pattern_name, active_task_names, strategy=strategy
                 )
@@ -644,6 +654,24 @@ class Mind:
             }
         )
 
+        # -------- PHASE 3: automatic abstraction layer --------
+        if reward > 0 and task_results:
+            for task_name, passed in task_results.items():
+                if not passed:
+                    continue
+                if "list_" in task_name:
+                    concept = "concept:list_reduction"
+                elif "dict" in task_name:
+                    concept = "concept:key_value_mapping"
+                elif "add" in task_name or "sum" in task_name:
+                    concept = "concept:binary_arithmetic"
+                else:
+                    continue
+                self.neuron_graph.add_concept_if_missing(concept)
+                self.neuron_graph.update_edge_weight(f"plugin:{plugin_name}", concept, reward * 0.5)
+                if self.use_value_function:
+                    self.value_function.update_concept(concept, reward)
+
     def _record_percept(self, event: Dict[str, Any]) -> None:
         event["age"] = self.brain.state.get("age", 0)
         self._percepts.append(event)
@@ -796,11 +824,14 @@ class Mind:
             self._stagnation_steps = 0
         self._last_mastered = mastered
         if self._stagnation_steps >= 10:
+            weakest = self.task_state.get_weakest_task()
             self._lifecycle_event = {
-                "type": "stagnation_detected",
-                "steps": self._stagnation_steps,
-                "action": "none",
+                "type": "autonomous_goal_generated",
+                "target_task": weakest,
+                "reason": "stagnation",
             }
+            if weakest:
+                self.goals.force_focus(weakest)
             self._stagnation_steps = 0
 
     def _append_to_diary(self, entry: Dict[str, Any]) -> None:

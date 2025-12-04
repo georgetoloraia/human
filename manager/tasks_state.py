@@ -145,3 +145,15 @@ class TaskStateManager:
                 }
             )
         return items
+
+    def get_weakest_task(self):
+        weakest = None
+        worst = float("inf")
+        for name, info in self.state.items():
+            if name.startswith("_"):
+                continue
+            score = float(info.get("streak", 0)) - float(info.get("passes", 0))
+            if score < worst:
+                worst = score
+                weakest = name
+        return weakest

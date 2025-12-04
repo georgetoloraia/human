@@ -21,7 +21,7 @@ class ValueFunction:
         self.neuron_graph = neuron_graph
         self.metrics = metrics
         self.alpha = alpha if alpha is not None else float(os.getenv("VALUE_ALPHA", "0.6"))
-        self.state: Dict[str, Dict[str, float]] = {"plugins": {}, "strategies": {}}
+        self.state: Dict[str, Dict[str, float]] = {"plugins": {}, "strategies": {}, "concepts": {}}
         if VALUE_STATE_FILE.exists():
             try:
                 loaded = json.loads(VALUE_STATE_FILE.read_text(encoding="utf-8"))
@@ -73,6 +73,13 @@ class ValueFunction:
         self.state["strategies"][strategy] = stats
         self._save()
 
+    def update_concept(self, concept_id: str, reward: float) -> None:
+        stats = self.state.setdefault("concepts", {}).setdefault(concept_id, {"count": 0.0, "reward_sum": 0.0})
+        stats["count"] = stats.get("count", 0.0) + 1.0
+        stats["reward_sum"] = stats.get("reward_sum", 0.0) + float(reward)
+        self.state["concepts"][concept_id] = stats
+        self._save()
+
     def score(self, candidate_id: str, candidate_type: str = "plugin", strategy: Optional[str] = None) -> float:
         """
         Compute a blended score for a plugin/task/strategy candidate.
@@ -84,6 +91,15 @@ class ValueFunction:
         if self.metrics and candidate_type == "plugin":
             metric_score = self.metrics.average_reward(candidate_id)
         return hist + self.alpha * embed_score + 0.5 * strategy_score + metric_score
+
+    def transfer_from_concepts(self, concept_ids):
+        bonus = 0.0
+        for cid in concept_ids or []:
+            stats = self.state.get("concepts", {}).get(cid, {})
+            cnt = float(stats.get("count", 0.0))
+            if cnt > 0:
+                bonus += float(stats.get("reward_sum", 0.0)) / cnt
+        return bonus
 
     def explain_action(self, action_id: str, candidate_type: str = "plugin", strategy: Optional[str] = None, top_k: int = 5) -> Dict[str, object]:
         """
