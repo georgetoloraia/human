@@ -82,6 +82,6 @@ License: see LICENSE (all rights reserved by George Toloraia).
 - Reset state (backs up JSONs to `backups/<timestamp>/` and removes them):  
   `python3 scripts/reset_state.py`
 - Fresh run with tracing and value function, code-only:  
-  `HUMAN_MULTI_AGENT=1 HUMAN_TRACE=1 USE_VALUE_FUNCTION=1 HUMAN_ASYNC=0 HUMAN_ENV_RATIO=0.0 python3 -m manager.life_loop`
+  ```HUMAN_MULTI_AGENT=1 HUMAN_TRACE=1 USE_VALUE_FUNCTION=1 HUMAN_ASYNC=0 HUMAN_ENV_RATIO=0.0 python3 -m manager.life_loop```
 - Analyze the latest run:  
-  `python3 scripts/analyze_brain_run.py`
+  ```python3 scripts/analyze_brain_run.py```
