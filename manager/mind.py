@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Tuple
 from manager.memory import BrainMemory
 from manager.concepts import ConceptGraph
 from manager.goals import Goals
-from manager.generator import propose_mutations
+from manager.generator import propose_mutations, BANNED_PATTERNS
 from manager.safety import is_safe
 from manager.tester import run_tests
 from manager.evaluator import evaluate
@@ -397,6 +397,9 @@ class Mind:
             path = PLUGINS_DIR / plugin_name
             if not path.exists():
                 continue
+            plugin_key = f"plugin:{plugin_name}"
+            if self.metrics.is_deprioritized(plugin_key, bucket="plugin_stats", min_invocations=30, min_avg_reward=-0.5):
+                continue
             src = path.read_text(encoding="utf-8")
             error_scores = self.brain.pattern_error_scores(self.last_error_type) if self.last_error_type else {}
             last_consult = self.brain.get_last_consult()
@@ -412,6 +415,10 @@ class Mind:
                 continue
             candidates = candidates[:max_candidates_per_plugin]
             for new_code, pattern_name in candidates:
+                if pattern_name in BANNED_PATTERNS:
+                    continue
+                if self.metrics.is_deprioritized(pattern_name, bucket="strategy_stats", min_invocations=10, min_avg_reward=-0.5):
+                    continue
                 accepted = self._try_candidate(
                     path, plugin_name, new_code, pattern_name, active_task_names, strategy=strategy
                 )

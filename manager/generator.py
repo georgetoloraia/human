@@ -6,6 +6,9 @@ from manager.mutations import (
     try_stats,
 )
 
+# Hard-coded ban list for problematic mutation patterns.
+BANNED_PATTERNS = {"try_wrap"}
+
 
 def propose_mutations(
     src: str, pattern_scores: Dict[str, float], error_scores: Dict[str, float]
@@ -21,7 +24,7 @@ def propose_mutations(
         err = error_scores.get(p.name, 0.5) if error_scores else 0.5
         return 0.7 * base + 0.3 * err
 
-    ordered = sorted(PATTERNS, key=combined_score, reverse=True)
+    ordered = sorted((p for p in PATTERNS if p.name not in BANNED_PATTERNS), key=combined_score, reverse=True)
     proposals: List[Tuple[str, str]] = []
     seen_codes = set()
     for pattern in ordered:

@@ -109,3 +109,14 @@ class Metrics:
         domains.append(domain)
         self.state["recent_domains"] = domains[-50:]
         self._save()
+
+    def is_deprioritized(self, key: str, bucket: str = "strategy_stats", min_invocations: int = 20, min_avg_reward: float = -0.5) -> bool:
+        """
+        Returns True when a strategy/plugin has enough history and a consistently bad average reward.
+        """
+        stats = self.state.get(bucket, {}).get(key, {})
+        inv = int(stats.get("invocations", 0))
+        if inv < min_invocations:
+            return False
+        avg = self.average_reward(key, bucket=bucket)
+        return avg <= min_avg_reward

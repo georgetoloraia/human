@@ -1,8 +1,8 @@
 {
   "plugins": {
     "plugin:sample_plugin.py": {
-      "count": 652.0,
-      "reward_sum": 1003.0
+      "count": 1586.0,
+      "reward_sum": -865.0
     }
   },
   "strategies": {
@@ -11,8 +11,8 @@
       "reward_sum": 1063.0
     },
     "try_wrap": {
-      "count": 40.0,
-      "reward_sum": -60.0
+      "count": 974.0,
+      "reward_sum": -1928.0
     }
   }
 }
