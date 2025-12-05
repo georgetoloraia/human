@@ -38,6 +38,7 @@ def compute_reward(outcome: Dict[str, Any], return_details: bool = False) -> flo
     env_reward = outcome.get("env_reward")
     progress = float(outcome.get("progress", 0.0) or 0.0)
     result = outcome.get("result")
+    error_type = outcome.get("error_type")
 
     base = 0.0
     if tests_ok is True:
@@ -55,7 +56,8 @@ def compute_reward(outcome: Dict[str, Any], return_details: bool = False) -> flo
         base -= 0.2
 
     soft_explore = (
-        result == "rejected"
+        domain == "code"
+        and result == "rejected"
         and tests_ok is True
         and regressions <= 0
         and tests_delta >= 0
@@ -66,10 +68,14 @@ def compute_reward(outcome: Dict[str, Any], return_details: bool = False) -> flo
     env_component = float(env_reward) if isinstance(env_reward, (int, float)) else 0.0
     progress_component = 0.3 * progress
 
+    if soft_explore:
+        # exploration without making things worse should be near-neutral
+        regression_penalty = 0.0
+        progress_component = max(progress_component, 0.2)
+
     reward = base + improvement_bonus + regression_penalty + env_component + progress_component
     if soft_explore and reward < 0:
-        # Gentle penalty for safe-but-reverted exploration to encourage trying fixes without regressions.
-        reward = max(reward, -0.1)
+        reward = max(reward, -0.05)
     reward = _clip(reward)
 
     details = {

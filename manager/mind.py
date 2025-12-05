@@ -411,6 +411,10 @@ class Mind:
                     continue
             src = path.read_text(encoding="utf-8")
             error_scores = self.brain.pattern_error_scores(self.last_error_type) if self.last_error_type else {}
+            if self.last_error_type == "AttributeError":
+                # Boost attribute-error targeted fixes when stuck there.
+                pattern_scores["attr_fix"] = max(pattern_scores.get("attr_fix", 0.5), 1.0)
+                error_scores["attr_fix"] = max(error_scores.get("attr_fix", 0.5), 1.0)
             last_consult = self.brain.get_last_consult()
             if last_consult.get("error_type") and last_consult.get("error_type") == self.last_error_type:
                 # boost patterns that historically work for this error type
@@ -874,27 +878,34 @@ class Mind:
             return out
 
     def _build_graph_context(self, error_type: str | None = None, plugin_name: str | None = None, store: bool = False):
+        """
+        Query neuron_graph using explicit node ids so graph knowledge is actually returned.
+        """
         try:
-            parts = []
-            if plugin_name:
-                parts.append(plugin_name)
-            if error_type:
-                parts.append(error_type)
-            query = " ".join(parts) if parts else None
-            if not query:
-                return None
-            g_results = query_graph(query)[:3]
-            if not g_results:
-                return None
-            texts = []
-            for r in g_results:
-                label = r.get("label") or ""
-                source = r.get("source") or ""
-                texts.append(f"{label} (from {source})")
-            graph_text = " ".join(texts)[:4000]
+            snippets: List[str] = []
+            total_neighbors = 0
             source_id = f"graph:{plugin_name or 'generic'}:{error_type or 'none'}"
+
+            def _gather(node_id: str):
+                nonlocal total_neighbors
+                results = query_graph(node_id, limit=1, neighbor_limit=10) or []
+                for r in results:
+                    for n in r.get("neighbors", []):
+                        total_neighbors += 1
+                        meta = n.get("meta", {})
+                        meta_excerpt = {k: meta.get(k) for k in list(meta.keys())[:3]} if isinstance(meta, dict) else meta
+                        snippets.append(f"{n.get('id')} (type={n.get('type')}, meta={meta_excerpt})")
+
+            if error_type:
+                _gather(f"error:{error_type}")
+            if plugin_name:
+                _gather(f"plugin:{plugin_name}")
+
+            if not snippets:
+                return None
+            graph_text = " ".join(snippets)[:4000]
             if store:
                 self.brain.store_external_knowledge(source_id, graph_text)
-            return {"source_id": source_id, "count": len(g_results), "text": graph_text}
+            return {"source_id": source_id, "count": total_neighbors, "text": graph_text}
         except Exception:
             return None

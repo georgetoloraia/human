@@ -1,7 +1,7 @@
 {
   "plugins": {
     "plugin:sample_plugin.py": {
-      "count": 1648.0,
+      "count": 1649.0,
       "reward_sum": -989.0
     }
   },
@@ -19,7 +19,7 @@
       "reward_sum": -20.0
     },
     "easy_arith_fix": {
-      "count": 52.0,
+      "count": 53.0,
       "reward_sum": -104.0
     }
   },
