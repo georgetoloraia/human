@@ -51,6 +51,8 @@ def dict_merge(a, b):
 
 
 def doc_sum(numbers):
+    if not numbers:
+        return 0
     return sum(numbers)
 
 
@@ -60,3 +62,17 @@ def doc_min(numbers):
 
 def doc_len(items):
     return len(items)
+
+
+def use_len(obj):
+    return len(obj)
+
+
+def use_sum(iterable, start=0):
+    return sum(iterable, start)
+
+
+def use_min(iterable):
+    if iterable is None or len(iterable) == 0:
+        return None
+    return min(iterable)

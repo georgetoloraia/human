@@ -1,0 +1,161 @@
+{
+  "_version": "1.0",
+  "plugins": {
+    "sample_plugin.py": {
+      "name": "sample_plugin.py",
+      "lines": 7,
+      "last_modified": 1764875519.991845,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 10
+    }
+  },
+  "functions": {
+    "sample_plugin.py:process": {
+      "plugin": "sample_plugin.py",
+      "name": "process",
+      "lines": 7,
+      "growth_count": 0,
+      "tests_passed": 0,
+      "tests_failed": 0,
+      "last_seen": 1764877527.341638
+    }
+  },
+  "edges": [
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ],
+    [
+      "sample_plugin.py",
+      "sample_plugin.py:process"
+    ]
+  ],
+  "tasks": {
+    "add_two_numbers": {
+      "plugin": "sample_plugin.py",
+      "function": "add_two_numbers",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "easy_pass": {
+      "plugin": "sample_plugin.py",
+      "function": "easy_pass",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "list_sum": {
+      "plugin": "sample_plugin.py",
+      "function": "process",
+      "passed": 10,
+      "failed": 0,
+      "last_success": 1764875519.6529608
+    },
+    "doc_sum": {
+      "plugin": "sample_plugin.py",
+      "function": "use_sum",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "list_max": {
+      "plugin": "sample_plugin.py",
+      "function": "list_max",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "filter_even": {
+      "plugin": "sample_plugin.py",
+      "function": "filter_even",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "abs_value": {
+      "plugin": "sample_plugin.py",
+      "function": "abs_value",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "list_min": {
+      "plugin": "sample_plugin.py",
+      "function": "list_min",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "doc_len": {
+      "plugin": "sample_plugin.py",
+      "function": "use_len",
+      "passed": 10,
+      "failed": 0,
+      "last_success": 1764875519.6540415
+    },
+    "doc_min": {
+      "plugin": "sample_plugin.py",
+      "function": "use_min",
+      "passed": 0,
+      "failed": 10,
+      "last_success": 0
+    },
+    "dict_merge": {
+      "plugin": "sample_plugin.py",
+      "function": "dict_merge",
+      "passed": 0,
+      "failed": 9,
+      "last_success": 0
+    },
+    "set_union": {
+      "plugin": "sample_plugin.py",
+      "function": "set_union",
+      "passed": 0,
+      "failed": 9,
+      "last_success": 0
+    },
+    "string_reverse": {
+      "plugin": "sample_plugin.py",
+      "function": "string_reverse",
+      "passed": 0,
+      "failed": 9,
+      "last_success": 0
+    },
+    "map_square": {
+      "plugin": "sample_plugin.py",
+      "function": "map_square",
+      "passed": 0,
+      "failed": 9,
+      "last_success": 0
+    },
+    "list_average": {
+      "plugin": "sample_plugin.py",
+      "function": "list_average",
+      "passed": 0,
+      "failed": 9,
+      "last_success": 0
+    }
+  }
+}

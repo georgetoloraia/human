@@ -1,8 +1,8 @@
 {
   "plugins": {
     "plugin:sample_plugin.py": {
-      "count": 1596.0,
-      "reward_sum": -885.0
+      "count": 1648.0,
+      "reward_sum": -989.0
     }
   },
   "strategies": {
@@ -17,6 +17,10 @@
     "fallback_trivial": {
       "count": 10.0,
       "reward_sum": -20.0
+    },
+    "easy_arith_fix": {
+      "count": 52.0,
+      "reward_sum": -104.0
     }
   },
   "concepts": {}

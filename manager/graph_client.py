@@ -10,8 +10,14 @@ GRAPH_FILE = Path("manager/neuron_graph.json")
 
 
 def load_graph(path: str | Path | None = None) -> NeuronGraph:
-    ng = NeuronGraph(path or GRAPH_FILE)
-    ng.load()
+    target = Path(path or GRAPH_FILE)
+    ng = NeuronGraph(target)
+    try:
+        ng.load()
+    except Exception as exc:
+        # Gracefully handle non-JSON/binary inputs (e.g., legacy graph.db).
+        print(f"[graph_client] Failed to load graph from {target}: {exc}. Starting with empty graph.")
+        ng.graph = {"version": ng.graph.get("version", "0.1"), "nodes": {}, "edges": []}
     return ng
 
 

@@ -1,0 +1,642 @@
+{
+  "_version": "1.0",
+  "steps": 227,
+  "mutations_accepted": 0,
+  "mutations_rejected": 10,
+  "web_consults": 8,
+  "tasks_mastered": 1,
+  "plugin_stats": {
+    "plugin:sample_plugin.py": {
+      "invocations": 10,
+      "success": 0,
+      "fail": 10,
+      "reward_sum": -20.0,
+      "recent": [
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        }
+      ],
+      "last_reward": -2.0,
+      "last_details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    }
+  },
+  "strategy_stats": {
+    "fallback_trivial": {
+      "invocations": 10,
+      "success": 0,
+      "fail": 10,
+      "reward_sum": -20.0,
+      "recent": [
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        },
+        {
+          "reward": -2.0,
+          "success": false,
+          "details": {
+            "domain": "code",
+            "base": -1.5,
+            "improvement_bonus": -5.5,
+            "regression_penalty": -6.5,
+            "env_component": 0.0,
+            "progress_component": 0.0,
+            "clipped": -2.0
+          }
+        }
+      ],
+      "last_reward": -2.0,
+      "last_details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    }
+  },
+  "reward_history": [
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "plugin_stats",
+      "key": "plugin:sample_plugin.py",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    },
+    {
+      "bucket": "strategy_stats",
+      "key": "fallback_trivial",
+      "reward": -2.0,
+      "details": {
+        "domain": "code",
+        "base": -1.5,
+        "improvement_bonus": -5.5,
+        "regression_penalty": -6.5,
+        "env_component": 0.0,
+        "progress_component": 0.0,
+        "clipped": -2.0
+      }
+    }
+  ],
+  "recent_domains": [
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "code",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle",
+    "idle"
+  ]
+}

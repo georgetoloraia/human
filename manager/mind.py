@@ -853,6 +853,7 @@ class Mind:
             "IndexError": "https://docs.python.org/3/library/exceptions.html#IndexError",
             "KeyError": "https://docs.python.org/3/library/exceptions.html#KeyError",
             "AssertionError": "https://docs.python.org/3/library/exceptions.html#AssertionError",
+            "AttributeError": "https://docs.python.org/3/library/exceptions.html#AttributeError",
         }
         url = error_docs.get(error_type) or "https://docs.python.org/3/library/exceptions.html"
         graph_info = self._build_graph_context(error_type=error_type, plugin_name=plugin_name, store=True)
