@@ -1,11 +1,34 @@
 graph.db
 venv
+venv/
+.venv/
+__pycache__/
+*.pyc
+
 manager/brain_memory.json
 manager/concept_graph.json
 manager/curriculum_state.json
+manager/cognitive_state.json
+manager/neuron_graph.json
+manager/traces/
 tests/generated/
 manager/tasks_state.json
 manager/metrics.json
 manager/guidance_log.json
-mind_diary.json
+manager/mind_diary.json
 manager/doc_mastery_state.json
+manager/meta_policy_state.json
+manager/value_function_state.json
+
+# Local artifacts / backups
+artifacts/
+backups/
+*.log
+
+# Collected speech data (keep sample dataset tracked)
+datasets/audio/
+datasets/audio_corrections/
+datasets/impulse_dataset.user.jsonl
+datasets/impulse_dataset.corrections.jsonl
+
+graph.db
