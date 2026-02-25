@@ -1,0 +1,2 @@
+{"id":"sample1","wav":"artifacts/impulse_core_train_demo/demo_input.wav","target_text":"hello signal learning hello signal"}
+{"id":"sample2","wav":"artifacts/impulse_demo_test2/demo_input.wav","target_text":"focus signal learning focus"}

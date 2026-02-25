@@ -6,9 +6,8 @@ def easy_pass():
     return True
 
 
-def list_sum(values):
-    return sum(values) if values is not None else 0
-
+def list_sum(lst):
+    return sum(lst)
 
 def list_min(values):
     return min(values) if values else None

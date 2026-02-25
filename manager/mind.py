@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import random
+import re
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
@@ -37,6 +38,7 @@ from manager.reward import compute_reward
 from manager.agents import PlannerAgent, CoderAgent, CriticAgent, MemoryAgent
 from manager.envs import TextPuzzleEnv, SymbolEnv
 from manager.async_orchestrator import AsyncOrchestrator
+from manager.cognitive_core import CognitiveCore
 
 PLUGINS_DIR = Path("plugins")
 DIARY_FILE = Path("manager/mind_diary.json")
@@ -94,6 +96,11 @@ class Mind:
         self.doc_mastery = load_doc_mastery_state()
         self._doc_curriculum_events: List[Dict[str, Any]] = []
         self._diary_logged: bool = False
+        self._teacher_directives: Dict[str, Any] = {}
+        self.cognitive = CognitiveCore()
+        self._cognitive_snapshot: Dict[str, Any] = self.cognitive.snapshot()
+        self._last_cognitive_guidance_message: str | None = None
+        self._cognitive_sleep_event: Dict[str, Any] | None = None
         self.envs = [TextPuzzleEnv(), SymbolEnv()]
         if self.multi_agent_enabled:
             self.planner_agent = PlannerAgent(self.value_function)
@@ -108,6 +115,7 @@ class Mind:
         self._doc_curriculum_events = []
         self._diary_logged = False
         self._domain_choice = "code"
+        self._cognitive_sleep_event = None
         self._age_and_stage()
         self._maybe_expand_doc_curriculum()
         current_age = self.brain.state.get("age", 0)
@@ -116,6 +124,8 @@ class Mind:
         self._register_task_nodes(tasks)
         self.graph.register_tasks(tasks)
         active_task_names = [t["name"] for t in tasks if "name" in t]
+        self._refresh_teacher_directives(active_task_names)
+        self._refresh_cognitive_state()
         env_percept = None
         if self.async_enabled:
             results = self.async_orchestrator.run([self._perceive_world, self._maybe_environment_step])
@@ -133,6 +143,7 @@ class Mind:
             self._domain_choice = "mixed" if env_percept else "code"
         elif not self._current_step_actions and not env_percept:
             self._domain_choice = "idle"
+        self._cognitive_post_step_maintenance()
         self.metrics.record_domain_choice(self._domain_choice)
         self._update_metrics()
         self.curriculum.sync_with_task_state(self.task_state.state)
@@ -193,6 +204,7 @@ class Mind:
                 "doc_snippet": concept.get("doc_snippet"),
             }
             self._doc_curriculum_events.append(event)
+
     def _perceive_world(self) -> None:
         for p in PLUGINS_DIR.glob("*.py"):
             if p.name == "__init__.py":
@@ -287,6 +299,125 @@ class Mind:
         self.neuron_graph.update_edge_weight(plugin_node, env_node, reward_value * 0.3)
         return percept
 
+    def _refresh_teacher_directives(self, active_task_names: List[str]) -> None:
+        guidance_msgs = latest_guidance(5)
+        directives: Dict[str, Any] = {
+            "focus_tasks": [],
+            "focus_plugins": [],
+            "style": "balanced",
+            "wants_conversation": False,
+            "source_messages": [],
+        }
+        if not guidance_msgs:
+            self._teacher_directives = directives
+            return
+
+        messages: List[str] = []
+        for item in guidance_msgs:
+            if not isinstance(item, dict):
+                continue
+            msg = str(item.get("message", "")).strip()
+            if not msg:
+                continue
+            directives["source_messages"].append(msg)
+            messages.append(msg.lower())
+        full_text = " ".join(messages)
+
+        known_tasks = set(active_task_names)
+        known_tasks.update(k for k in self.task_state.state.keys() if not str(k).startswith("_"))
+        focus_tasks: List[str] = []
+        for task_name in sorted(known_tasks):
+            t = str(task_name)
+            if t and t.lower() in full_text:
+                focus_tasks.append(t)
+
+        plugin_names = [p.name for p in PLUGINS_DIR.glob("*.py") if p.name != "__init__.py"]
+        focus_plugins: List[str] = []
+        for pname in plugin_names:
+            stem = Path(pname).stem.lower()
+            if pname.lower() in full_text or (stem and re.search(rf"\b{re.escape(stem)}\b", full_text)):
+                focus_plugins.append(pname)
+
+        for tname in focus_tasks:
+            info = self.task_state.state.get(tname, {})
+            plugin = info.get("plugin")
+            if plugin and plugin not in focus_plugins:
+                focus_plugins.append(plugin)
+
+        cautious_markers = ("careful", "safe", "stable", "slow", "less risk")
+        explore_markers = ("explore", "aggressive", "creative", "try more", "faster", "more mutations")
+        if any(marker in full_text for marker in cautious_markers):
+            directives["style"] = "cautious"
+        if any(marker in full_text for marker in explore_markers):
+            directives["style"] = "exploratory"
+        if any(word in full_text for word in ("talk", "chat", "speak", "conversation", "human")):
+            directives["wants_conversation"] = True
+
+        directives["focus_tasks"] = focus_tasks[:5]
+        directives["focus_plugins"] = focus_plugins[:3]
+        self._teacher_directives = directives
+
+        if directives["focus_tasks"]:
+            self.goals.force_focus(directives["focus_tasks"][0])
+        if directives["source_messages"]:
+            self._record_percept(
+                {
+                    "type": "teacher_guidance",
+                    "focus_tasks": directives["focus_tasks"],
+                    "focus_plugins": directives["focus_plugins"],
+                    "style": directives["style"],
+                    "wants_conversation": directives["wants_conversation"],
+                }
+            )
+
+    def _refresh_cognitive_state(self) -> None:
+        directives = self._teacher_directives or {}
+        source_messages = directives.get("source_messages") or []
+        latest_message = source_messages[-1] if source_messages else None
+        if latest_message and latest_message != self._last_cognitive_guidance_message:
+            self._cognitive_snapshot = self.cognitive.observe_teacher_signal(latest_message)
+            self._last_cognitive_guidance_message = latest_message
+        else:
+            self._cognitive_snapshot = self.cognitive.snapshot()
+        self._record_percept(
+            {
+                "type": "cognitive_state",
+                "style": self._cognitive_snapshot.get("style"),
+                "drives": self._cognitive_snapshot.get("drives", {}),
+                "emotion": self._cognitive_snapshot.get("emotion", {}),
+                "intentions": self._cognitive_snapshot.get("intentions", []),
+            }
+        )
+
+    def _cognitive_post_step_maintenance(self) -> None:
+        age = int(self.brain.state.get("age", 0) or 0)
+        had_actions = bool(self._current_step_actions)
+        try:
+            self._cognitive_snapshot = self.cognitive.observe_step(age=age, domain=self._domain_choice, had_actions=had_actions)
+            self._record_percept(
+                {
+                    "type": "cognitive_homeostasis",
+                    "style": self._cognitive_snapshot.get("style"),
+                    "drives": self._cognitive_snapshot.get("drives", {}),
+                    "emotion": self._cognitive_snapshot.get("emotion", {}),
+                    "attention": self._cognitive_snapshot.get("attention", {}),
+                }
+            )
+            sleep_event = self.cognitive.maybe_sleep_consolidate(age=age)
+            if sleep_event:
+                self._cognitive_sleep_event = sleep_event
+                self._cognitive_snapshot = self.cognitive.snapshot()
+                self._record_percept(
+                    {
+                        "type": "cognitive_sleep",
+                        "summary": sleep_event,
+                        "sleep": self._cognitive_snapshot.get("sleep", {}),
+                        "memory": self._cognitive_snapshot.get("memory", {}),
+                    }
+                )
+        except Exception:
+            return
+
     def _score_plugin(self, plugin_name: str) -> Dict[str, float]:
         p = self.graph.graph.get("plugins", {}).get(plugin_name, {})
         tests_passed = float(p.get("tests_passed", 0))
@@ -338,6 +469,25 @@ class Mind:
             concept_ids = [n.get("id") for n in linked]
             concept_bonus = self.value_function.transfer_from_concepts(concept_ids)
             total += 0.3 * concept_bonus
+        cognitive_bonus = 0.0
+        drives = (self._cognitive_snapshot or {}).get("drives", {})
+        curiosity_drive = float(drives.get("curiosity", 0.5) or 0.5)
+        caution_drive = float(drives.get("caution", 0.5) or 0.5)
+        confidence_drive = float(drives.get("confidence", 0.5) or 0.5)
+        # Prefer reliable plugins when cautious; allow novelty when curious.
+        cognitive_bonus += (curiosity_drive - 0.5) * curiosity
+        cognitive_bonus += (caution_drive - 0.5) * (tests_passed - max(tests_failed, 0.0))
+        cognitive_bonus += (confidence_drive - 0.5) * mastery * 0.2
+        total += cognitive_bonus
+        teacher_bonus = 0.0
+        directives = self._teacher_directives or {}
+        if plugin_name in (directives.get("focus_plugins") or []):
+            teacher_bonus += 5.0
+        for task_name in directives.get("focus_tasks") or []:
+            info = self.task_state.state.get(task_name, {})
+            if info.get("plugin") == plugin_name:
+                teacher_bonus += 2.0
+        total += teacher_bonus
         return {
             "curiosity": curiosity,
             "mastery": mastery,
@@ -348,6 +498,8 @@ class Mind:
             "task_drive": task_drive + phase_boost - future_penalty,
             "value_bonus": value_bonus,
             "concept_bonus": concept_bonus,
+            "cognitive_bonus": cognitive_bonus,
+            "teacher_bonus": teacher_bonus,
             "total": total,
         }
 
@@ -377,6 +529,8 @@ class Mind:
                 "curiosity": scores["curiosity"],
                 "mastery": scores["mastery"],
                 "stability_penalty": scores["stability_penalty"],
+                "cognitive_bonus": scores.get("cognitive_bonus", 0.0),
+                "teacher_bonus": scores.get("teacher_bonus", 0.0),
             }
             for (total, name, scores) in selected
         ]
@@ -399,6 +553,16 @@ class Mind:
         if meta > 0.6:
             max_candidates_per_plugin = max(1, max_candidates_per_plugin - 1)
         elif meta < 0.3:
+            max_candidates_per_plugin = min(5, max_candidates_per_plugin + 1)
+        teacher_style = (self._teacher_directives or {}).get("style", "balanced")
+        if teacher_style == "cautious":
+            max_candidates_per_plugin = max(1, max_candidates_per_plugin - 1)
+        elif teacher_style == "exploratory":
+            max_candidates_per_plugin = min(5, max_candidates_per_plugin + 1)
+        cognitive_style = (self._cognitive_snapshot or {}).get("style", "balanced")
+        if cognitive_style == "careful":
+            max_candidates_per_plugin = max(1, max_candidates_per_plugin - 1)
+        elif cognitive_style == "exploratory":
             max_candidates_per_plugin = min(5, max_candidates_per_plugin + 1)
 
         for plugin_name in targets:
@@ -449,6 +613,8 @@ class Mind:
             "active_tasks": active_task_names,
             "percepts": list(self._percepts),
             "stage": self.stage,
+            "teacher_directives": dict(self._teacher_directives),
+            "cognitive": dict(self._cognitive_snapshot),
         }
 
     def _step_multi_agent(self, active_task_names: List[str]) -> None:
@@ -657,6 +823,31 @@ class Mind:
                 "domain": domain,
             }
         )
+        try:
+            self._cognitive_snapshot = self.cognitive.observe_outcome(
+                reward=reward,
+                error_type=error_type,
+                task_results=task_results,
+                domain=domain,
+                plugin_name=plugin_name,
+                pattern_name=pattern_name,
+            )
+            self._record_percept(
+                {
+                    "type": "cognitive_outcome_update",
+                    "style": self._cognitive_snapshot.get("style"),
+                    "drives": self._cognitive_snapshot.get("drives", {}),
+                    "source": {
+                        "plugin": plugin_name,
+                        "pattern": pattern_name,
+                        "domain": domain,
+                        "reward": reward,
+                        "error_type": error_type,
+                    },
+                }
+            )
+        except Exception:
+            pass
 
         # -------- PHASE 3: automatic abstraction layer --------
         if reward > 0 and task_results:
@@ -710,7 +901,11 @@ class Mind:
             "lifecycle_event": self._lifecycle_event,
             "learning_policy": self.brain.get_learning_policy(),
             "domain": self._domain_choice,
+            "teacher_directives": dict(self._teacher_directives),
+            "cognitive": dict(self._cognitive_snapshot),
         }
+        if self._cognitive_sleep_event:
+            entry["cognitive_sleep"] = dict(self._cognitive_sleep_event)
         if self._doc_curriculum_events:
             entry["doc_curriculum"] = self._doc_curriculum_events
         if guidance_msgs:
